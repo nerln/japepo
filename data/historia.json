@@ -1,0 +1,143 @@
+{
+  "_nota": "Temporadas anteriores. Sirven de contexto y de tasa base; el modelo declara cuanto peso les da, y hoy es cero, porque de Celebrity hay una sola temporada terminada.",
+  "temporadas": [
+    {
+      "n": 1,
+      "tipo": "amateur",
+      "anho": 2018,
+      "canal": "Telefuturo",
+      "estreno": "2018-04-03",
+      "final": "2018-08-07",
+      "episodios": 20,
+      "participantes": 18,
+      "ganador": "María Liz Ocampos",
+      "finalista": "Diego Brítez",
+      "jurado": [
+        "Rodolfo Angenscheidt",
+        "Eugenia Aquino",
+        "José Torrijos"
+      ],
+      "fuente": "wiki_en"
+    },
+    {
+      "n": 2,
+      "tipo": "amateur",
+      "anho": 2018,
+      "canal": "Telefuturo",
+      "estreno": "2018-08-14",
+      "final": "2018-12-18",
+      "episodios": null,
+      "participantes": null,
+      "ganador": "Nancy Talavera",
+      "finalista": "Verónica Pereira",
+      "jurado": [
+        "Rodolfo Angenscheidt",
+        "Eugenia Aquino",
+        "José Torrijos"
+      ],
+      "fuente": "wiki_en"
+    },
+    {
+      "n": 3,
+      "tipo": "amateur",
+      "anho": 2019,
+      "canal": "Telefuturo",
+      "estreno": "2019-04-01",
+      "final": "2019-08-19",
+      "episodios": 22,
+      "participantes": 21,
+      "ganador": "Joaquín Alcorta",
+      "finalista": "Fernando Fabio",
+      "jurado": [
+        "Nicolás Bo",
+        "Eugenia Aquino",
+        "José Torrijos"
+      ],
+      "fuente": "wiki_en"
+    },
+    {
+      "n": 4,
+      "tipo": "amateur",
+      "anho": 2023,
+      "canal": "Telefuturo",
+      "estreno": "2023-08-07",
+      "final": "2023-12-19",
+      "episodios": 40,
+      "participantes": 22,
+      "ganador": "María Marta Villalba",
+      "finalista": "Shosiana Plesnar",
+      "jurado": [
+        "Rodolfo Angenscheidt",
+        "Eugenia Aquino",
+        "José Torrijos"
+      ],
+      "fuente": "wiki_en"
+    },
+    {
+      "n": 5,
+      "tipo": "celebrity",
+      "anho": 2025,
+      "canal": "SNT",
+      "estreno": null,
+      "final": "2025-09-17",
+      "episodios": null,
+      "participantes": null,
+      "ganador": "Karina Grau",
+      "finalista": "Jessica Torres",
+      "conduccion": "Mercedes Almada",
+      "jurado": [
+        "Eugenia Aquino",
+        "José Torrijos",
+        "Federico Scappini"
+      ],
+      "premio_guaranies": 50000000,
+      "fuente": "rdn_final2025"
+    },
+    {
+      "n": 6,
+      "tipo": "celebrity",
+      "anho": 2026,
+      "canal": "SNT",
+      "estreno": "2026-08-10",
+      "final": null,
+      "episodios": null,
+      "participantes": 18,
+      "ganador": null,
+      "finalista": null,
+      "conduccion": "Paola Maltese",
+      "jurado": [
+        "Eugenia Aquino",
+        "Federico Scappini",
+        "Nicolás Bo"
+      ],
+      "en_curso": true,
+      "fuente": "tvpy_estreno"
+    }
+  ],
+  "cambios_2025_2026": [
+    {
+      "es": "Cambió la conducción: Mercedes Almada en 2025, Paola Maltese en 2026.",
+      "gn": "Oñemoambue pe conducción: Mercedes Almada 2025-pe, Paola Maltese 2026-pe.",
+      "fuentes": [
+        "rdn_final2025",
+        "tvpy_estreno"
+      ]
+    },
+    {
+      "es": "Cambió una silla del jurado: salió José Torrijos, entró Nicolás «Colaso» Bo, que ya había juzgado la temporada 2019.",
+      "gn": "Oñemoambue peteĩ jurado apyka: osẽ José Torrijos, oike Nicolás «Colaso» Bo, ohechajeýva 2019 aja.",
+      "fuentes": [
+        "rdn_final2025",
+        "tvpy_estreno",
+        "wiki_en"
+      ]
+    },
+    {
+      "es": "La temporada amateur se emitía por Telefuturo; Celebrity va por SNT desde 2025.",
+      "gn": "Pe temporada amateur osẽ Telefuturo rupi; Celebrity osẽ SNT rupi 2025 guive.",
+      "fuentes": [
+        "wiki_en"
+      ]
+    }
+  ]
+}

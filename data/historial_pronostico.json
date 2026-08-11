@@ -1,0 +1,15 @@
+{
+  "_nota": "Un pronostico por corrida, con fecha. No se edita hacia atras: si una entrada envejece mal, envejece mal a la vista.",
+  "entradas": [
+    {
+      "fecha": "2026-08-11",
+      "galas": 1,
+      "eliminados": 0,
+      "lider": "joaquin",
+      "p_lider": 0.10755,
+      "p_lider_ee": 0.00382,
+      "ignorancia": 0.9663,
+      "semilla": 20260810
+    }
+  ]
+}

@@ -1,0 +1,552 @@
+{
+  "_nota": "Toda la prosa de la pagina, en castellano y en guarani. Los numeros no se escriben aca: entran como {marcadores} que build.py rellena desde data/. gui/verificar.py rechaza una clave que exista en un idioma y no en el otro, y rechaza un digito suelto en la prosa.",
+  "_marcadores": "Los valores permitidos estan en build.py, funcion contexto().",
+  "titulo_sitio": {
+    "es": "MasterChef Celebrity Paraguay 2026",
+    "gn": "MasterChef Celebrity Paraguay 2026"
+  },
+  "bajada": {
+    "es": "Cuándo se juega, quiénes cocinan y cómo va la competencia.",
+    "gn": "Araka'épe oñeha'ã, máva ombojy ha mba'éichapa oho pe ñorãirõ."
+  },
+  "idioma": {
+    "es": "Idioma",
+    "gn": "Ñe'ẽ"
+  },
+  "idioma_es": {
+    "es": "Castellano",
+    "gn": "Castellano"
+  },
+  "idioma_gn": {
+    "es": "Guaraní",
+    "gn": "Guarani"
+  },
+  "tema": {
+    "es": "Tema",
+    "gn": "Sa'y"
+  },
+  "tema_sistema": {
+    "es": "Del sistema",
+    "gn": "Sistema mba'e"
+  },
+  "tema_claro": {
+    "es": "Claro",
+    "gn": "Hesakã"
+  },
+  "tema_oscuro": {
+    "es": "Oscuro",
+    "gn": "Ipytũ"
+  },
+  "tema_brasa": {
+    "es": "Brasa",
+    "gn": "Tatapỹi"
+  },
+  "tema_kaa": {
+    "es": "Ka'a",
+    "gn": "Ka'a"
+  },
+  "tema_contraste": {
+    "es": "Alto contraste",
+    "gn": "Ojuavypa"
+  },
+  "nav_ficha": {
+    "es": "La ficha",
+    "gn": "Kuatia'atã"
+  },
+  "nav_plantel": {
+    "es": "Quiénes cocinan",
+    "gn": "Mávapa ombojy"
+  },
+  "nav_galas": {
+    "es": "Las galas",
+    "gn": "Umi gala"
+  },
+  "nav_spoilers": {
+    "es": "Lo que ya se sabe",
+    "gn": "Ojekuaámava"
+  },
+  "nav_metodo": {
+    "es": "Cómo se hizo",
+    "gn": "Mba'éichapa ojejapo"
+  },
+  "ficha_h": {
+    "es": "La ficha",
+    "gn": "Pe kuatia'atã"
+  },
+  "ficha_p": {
+    "es": "Segunda edición de la versión con famosos. La primera la ganó {ganador_2025} en {final_2025}.",
+    "gn": "Mokõiha edición umi tapicha herakuãva ndive. Peteĩha ogana {ganador_2025} {final_2025}-pe."
+  },
+  "ficha_canal": {
+    "es": "Canal",
+    "gn": "Kanal"
+  },
+  "ficha_horario": {
+    "es": "Horario",
+    "gn": "Aravo"
+  },
+  "ficha_conduccion": {
+    "es": "Conducción",
+    "gn": "Ogueraháva"
+  },
+  "ficha_jurado": {
+    "es": "Jurado",
+    "gn": "Jurado"
+  },
+  "ficha_participantes": {
+    "es": "Participantes",
+    "gn": "Oikéva"
+  },
+  "ficha_premio": {
+    "es": "Premio",
+    "gn": "Jopói"
+  },
+  "ficha_premio_nota": {
+    "es": "El de 2025. El de esta edición no se publicó.",
+    "gn": "2025 mba'e. Ko edición mba'e ndosẽi gueteri."
+  },
+  "ignorancia_p": {
+    "es": "Vale uno cuando las {n} personas son indistinguibles y cero cuando queda una sola. Hoy vale {ignorancia}.",
+    "gn": "Ha'e peteĩ umi {n} tapicha ojojoguapa jave, ha cero opyta jave peteĩnte. Ko'ág̃a ha'e {ignorancia}."
+  },
+  "ignorancia_lectura": {
+    "es": "Traducido: la gala del lunes se llevó el {sabido_pct} por ciento de lo que hay para saber.",
+    "gn": "He'ise: pe gala arakõi ogueraha {sabido_pct} porciento umi mba'e jaikuaava'erãgui."
+  },
+  "barras_p": {
+    "es": "La barra es la chance de ganar y la banda clara alrededor es el margen de error. La línea vertical marca el {plano_pct} por ciento, que es el reparto plano. Cuando dos bandas se tocan, el orden entre esas dos personas no significa nada.",
+    "gn": "Pe barra ha'e ikatuha ipu'aka hag̃ua ha pe banda hesakãva ijerére ha'e pe jejavy margen. Pe línea oñembo'yva omarka {plano_pct} porciento, ha'éva pe ñemboja'o joja. Mokõi banda ojopoko jave, pe orden umi mokõi tapicha mbytépe ndaha'éi mba'eve."
+  },
+  "barras_trio": {
+    "es": "Los tres que la fuente nombró sin decir el orden salen iguales entre sí.",
+    "gn": "Umi mbohapy pe fuente omombe'úva he'i'ỹre mávapa tenondevéva osẽ ojojogua."
+  },
+  "col_persona": {
+    "es": "Persona",
+    "gn": "Tapicha"
+  },
+  "col_gana": {
+    "es": "Gana",
+    "gn": "Ipu'aka"
+  },
+  "col_proxima": {
+    "es": "Cae en la próxima",
+    "gn": "Ho'a upe oútavape"
+  },
+  "escenarios_h": {
+    "es": "Qué pasa si el modelo se equivoca",
+    "gn": "Mba'e oikóta pe modelo ojavýrõ"
+  },
+  "escenarios_p": {
+    "es": "Cada fila cambia un supuesto y vuelve a correr todo. La columna de la derecha dice cuánta ignorancia queda en cada caso.",
+    "gn": "Peteĩteĩ tysỹi omoambue peteĩ ñeimo'ã ha omboguata jey opa mba'e. Pe columna akatúa gotyo he'i mboýpa ñeikuaa'ỹ opyta peteĩteĩme."
+  },
+  "esc_base_n": {
+    "es": "Caso base",
+    "gn": "Caso base"
+  },
+  "esc_base_d": {
+    "es": "El modelo tal como está especificado.",
+    "gn": "Pe modelo ojehaiháicha."
+  },
+  "esc_sin_gala1_n": {
+    "es": "Sin la gala 1",
+    "gn": "Gala 1 'ỹre"
+  },
+  "esc_sin_gala1_d": {
+    "es": "Se borra la prueba de cortes. Devuelve el reparto plano exacto, que es el punto de comparación.",
+    "gn": "Oñembogue pe ñeha'ã ñeikytĩ rehegua. Omeẽ jey pe ñemboja'o joja, ha'éva pe ñembojoja renda."
+  },
+  "esc_corte_manda_n": {
+    "es": "El cuchillo manda",
+    "gn": "Kyse he'i"
+  },
+  "esc_corte_manda_d": {
+    "es": "La prueba técnica predice fuerte. Es el escenario que más separa a la gente.",
+    "gn": "Pe ñeha'ã técnica he'i mbarete mba'épa oikóta. Ha'e pe escenario omoambuevéva tapicha kuéra apytépe."
+  },
+  "esc_orden_completo_n": {
+    "es": "Leyendo la nota al máximo",
+    "gn": "Ñamoñe'ẽvo kuatiahai hetavéva"
+  },
+  "esc_orden_completo_d": {
+    "es": "Se toma como ranking el orden en que la nota nombró a los tres destacados sin puesto declarado.",
+    "gn": "Ojejapo ranking-ramo pe orden pe kuatiahai omombe'uhaguéicha umi mbohapy ojehechakuaáva puesto he'i'ỹre."
+  },
+  "esc_loteria_n": {
+    "es": "Lotería",
+    "gn": "Po'a rei"
+  },
+  "esc_loteria_d": {
+    "es": "Nadie cocina mejor que nadie y todo lo decide el azar.",
+    "gn": "Avave ndombojyporãvéi ambuégui ha opa mba'e oheja po'a po guýpe."
+  },
+  "esc_plantel_parejo_n": {
+    "es": "Plantel parejo",
+    "gn": "Plantel joja"
+  },
+  "esc_plantel_parejo_d": {
+    "es": "Las diferencias reales de cocina entre famosos son chicas.",
+    "gn": "Umi ñemoambue añetegua kosína rehegua tapicha herakuãva mbytépe michĩ."
+  },
+  "esc_plantel_disparejo_n": {
+    "es": "Plantel disparejo",
+    "gn": "Plantel joja'ỹ"
+  },
+  "esc_plantel_disparejo_d": {
+    "es": "Hay quienes cocinan de verdad y quienes nunca cocinaron.",
+    "gn": "Oĩ ombojy añetéva ha oĩ araka'eve ombojy'ỹva."
+  },
+  "col_escenario": {
+    "es": "Escenario",
+    "gn": "Escenario"
+  },
+  "col_supuesto": {
+    "es": "Supuesto",
+    "gn": "Ñeimo'ã"
+  },
+  "col_lider": {
+    "es": "Arriba",
+    "gn": "Yvatépe"
+  },
+  "col_ignorancia": {
+    "es": "Ignorancia",
+    "gn": "Ñeikuaa'ỹ"
+  },
+  "calibracion_h": {
+    "es": "Una prueba que el modelo se hace a sí mismo",
+    "gn": "Peteĩ ñeha'ã modelo ojapóva ijehe"
+  },
+  "calibracion_p": {
+    "es": "Si el mundo funcionara como el modelo lo describe, ¿acertaría lo que dice acertar? Se generan {n_calibracion} temporadas inventadas con la misma maquinaria y se mira si el ganador cae dentro del conjunto anunciado.",
+    "gn": "Ko yvy oikóramo pe modelo he'iháicha, ¿oikuaátapa he'íva oikuaataha? Ojejapo {n_calibracion} temporada apopyre pe máquina peteĩchavape ha ojehecha pe ipu'akáva ho'ápa pe aty oñemombe'u va'ekuépe."
+  },
+  "col_nominal": {
+    "es": "Nivel anunciado",
+    "gn": "Nivel oñemombe'úva"
+  },
+  "col_observado": {
+    "es": "Acierto observado",
+    "gn": "Oje'e porãva ojehecháva"
+  },
+  "col_tamano": {
+    "es": "Personas en el conjunto",
+    "gn": "Tapicha pe atýpe"
+  },
+  "proxima_h": {
+    "es": "Lo que se juega esta gala",
+    "gn": "Mba'épa oñeha'ã ko galápe"
+  },
+  "proxima_p": {
+    "es": "La primera eliminación todavía no ocurrió. Estas son las probabilidades de ser el primero en salir, y son casi iguales para todos: entre {prox_min_pct} y {prox_max_pct} por ciento.",
+    "gn": "Ñemosẽ peteĩha ndoikói gueteri. Ko'ãva ha'e ikatuha osẽ hag̃ua tenonde, ha ojojogua opavavére: {prox_min_pct} ha {prox_max_pct} porciento mbytépe."
+  },
+  "plantel_h": {
+    "es": "Quiénes cocinan",
+    "gn": "Mávapa ombojy"
+  },
+  "plantel_p": {
+    "es": "Las {n} personas confirmadas por la producción. Cada figura es un dibujo hecho a partir del nombre.",
+    "gn": "Umi {n} tapicha pe producción omoneĩva. Peteĩteĩ ta'anga ojejapo héra guive."
+  },
+  "plantel_orden": {
+    "es": "Ordenado por probabilidad de ganar.",
+    "gn": "Oñemohenda ikatuha ipu'aka hag̃ua rupive."
+  },
+  "sin_confirmar": {
+    "es": "Sin confirmar",
+    "gn": "Oñemoneĩ'ỹva"
+  },
+  "fuente_label": {
+    "es": "Fuente",
+    "gn": "Moógui ou"
+  },
+  "puesto_declarado": {
+    "es": "Puesto {puesto} declarado",
+    "gn": "Puesto {puesto} oje'e va'ekue"
+  },
+  "puesto_sin_orden": {
+    "es": "Entre los seis, sin puesto declarado",
+    "gn": "Umi poteĩ apytépe, puesto oje'e'ỹre"
+  },
+  "galas_h": {
+    "es": "Las galas",
+    "gn": "Umi gala"
+  },
+  "galas_p": {
+    "es": "Una fila por emisión, con la fuente que la cuenta. Se carga cuando hay algo publicado, no antes.",
+    "gn": "Peteĩ tysỹi peteĩteĩ emisión-pe, pe fuente omombe'úva ndive. Oike oĩ jave osẽmava, upe mboyve nahániri."
+  },
+  "gala_sin_eliminacion": {
+    "es": "La nota no menciona eliminación",
+    "gn": "Pe kuatiahai nde'íri ñemosẽ rehe"
+  },
+  "gala_anunciada": {
+    "es": "Anunciada, todavía no emitida",
+    "gn": "Oñemombe'úma, ndosẽi gueteri"
+  },
+  "gala_destacados": {
+    "es": "Destacados",
+    "gn": "Ojehechakuaáva"
+  },
+  "gala_minutos": {
+    "es": "{minutos} minutos",
+    "gn": "{minutos} aravo'i"
+  },
+  "spoilers_h": {
+    "es": "Lo que ya se sabe",
+    "gn": "Ojekuaámava"
+  },
+  "spoilers_aviso": {
+    "es": "Esta sección cuenta cosas de emisiones que quizá no viste. Está cerrada hasta que la abras y tu decisión queda guardada en este navegador.",
+    "gn": "Ko vore omombe'u mba'e emisión rehegua ndereikuaáiva. Oñemboty reipe'a peve, ha nde poravo opyta ko navegador-pe."
+  },
+  "spoilers_abrir": {
+    "es": "Mostrar lo que ya se sabe",
+    "gn": "Ehechauka ojekuaámava"
+  },
+  "spoilers_anunciado_h": {
+    "es": "Anunciado",
+    "gn": "Oñemombe'u va'ekue"
+  },
+  "spoilers_deducido_h": {
+    "es": "Deducido del formato",
+    "gn": "Ojeguenohẽva formato-gui"
+  },
+  "spoilers_deducido_p": {
+    "es": "Con {eliminaciones} eliminaciones por delante y {emisiones} emisiones por semana, la final cae entre las {semanas_rapido} y las {semanas_lento} semanas desde el estreno, según caiga una persona por emisión o una por semana. La edición anterior cerró el {final_2025}.",
+    "gn": "Oĩgui {eliminaciones} ñemosẽ tenonderã ha {emisiones} emisión peteĩ semana-pe, pe final ho'a {semanas_rapido} ha {semanas_lento} semana mbytépe oñepyrũ guive, ho'áramo peteĩ tapicha peteĩteĩ emisión-pe térã peteĩ peteĩteĩ semana-pe. Pe edición ohasa va'ekue omboty {final_2025}-pe."
+  },
+  "spoilers_rumores_h": {
+    "es": "Rumores",
+    "gn": "Ñe'ẽ rei"
+  },
+  "spoilers_rumores_vacio": {
+    "es": "Ninguno. Para entrar acá, un rumor necesita dos fuentes independientes.",
+    "gn": "Ndaipóri. Oike hag̃ua ko'ápe, peteĩ ñe'ẽ rei oikotevẽ mokõi fuente oñoirũ'ỹva."
+  },
+  "spoilers_falta_h": {
+    "es": "Lo que no se sabe",
+    "gn": "Ojekuaa'ỹva"
+  },
+  "tuits_h": {
+    "es": "La conversación",
+    "gn": "Ñemongeta"
+  },
+  "tuits_cargar": {
+    "es": "Abrir en X",
+    "gn": "Eipe'a X-pe"
+  },
+  "tuits_aviso": {
+    "es": "Abrir el original te lleva a x.com, que registra la visita.",
+    "gn": "Eipe'ávo pe ypykue nde reraha x.com-pe, ha upéva ohai nde jeguata."
+  },
+  "tuits_lectura_h": {
+    "es": "Cómo viene la conversación",
+    "gn": "Mba'éichapa oho pe ñemongeta"
+  },
+  "metodo_h": {
+    "es": "Cómo se hizo",
+    "gn": "Mba'éichapa ojejapo"
+  },
+  "metodo_p": {
+    "es": "Los datos están en archivos abiertos y la página se arma desde ahí. Ningún número del texto está escrito a mano.",
+    "gn": "Umi datos oĩ archivo ojepe'apyre kuérape ha pe kuatiarogue ojejapo upégui. Ni peteĩ papapy pe moñe'ẽrãme ndojehaivéi pópe."
+  },
+  "metodo_modelo_h": {
+    "es": "El modelo, en tres líneas",
+    "gn": "Pe modelo, mbohapy tysỹipe"
+  },
+  "metodo_l1": {
+    "es": "La habilidad de cada persona es un número que no se ve, sacado de una normal.",
+    "gn": "Peteĩteĩ tapicha katupyry ha'e peteĩ papapy ojehecha'ỹva, oñenohẽva peteĩ normal-gui."
+  },
+  "metodo_l2": {
+    "es": "La prueba de cortes es un ranking ruidoso de esa habilidad; los tres destacados sin puesto entran como conjunto, sumando las seis permutaciones.",
+    "gn": "Pe ñeha'ã ñeikytĩ rehegua ha'e peteĩ ranking sarambi upe katupyry rehegua; umi mbohapy ojehechakuaáva puesto'ỹre oike atýramo, ojembojoapývo umi poteĩ permutación."
+  },
+  "metodo_l3": {
+    "es": "Cada gala elimina a alguien con probabilidad inversa a su habilidad, hasta que queda una persona.",
+    "gn": "Peteĩteĩ gala omosẽ peteĩme ikatuha ijehe'a rupive ikatupyry ndive, opyta peve peteĩ tapicha."
+  },
+  "metodo_limites_h": {
+    "es": "Lo que el modelo no usa",
+    "gn": "Mba'e pe modelo noiporúiva"
+  },
+  "metodo_lim1": {
+    "es": "Las temporadas anteriores. De la versión con famosos hay una sola terminada, y con eso no se estima una tasa base por campo. La historia está en la página como contexto y el modelo le da peso cero.",
+    "gn": "Umi temporada ohasa va'ekue. Pe versión tapicha herakuãva ndive oĩ peteĩnte opa va'ekue, ha upévagui ndaikatúi oñemboheko peteĩ tasa base peteĩteĩ campo-pe. Pe tembiasakue oĩ ko kuatiaroguépe contexto-ramo ha pe modelo ndome'ẽi chupe mba'eve."
+  },
+  "metodo_lim2": {
+    "es": "Las eliminaciones todavía no entran en la verosimilitud. Cuando empiecen, hay que sumarlas: hasta que eso se haga, la ignorancia va a bajar solo porque queda menos gente.",
+    "gn": "Umi ñemosẽ ndoikéi gueteri pe verosimilitud-pe. Oñepyrũvo, tekotevẽ ojembojoapy: upéva ojejapo'ỹ aja, pe ñeikuaa'ỹ oguejýta opytágui sa'ive tapicha, ndaha'éi oikuaágui hetave."
+  },
+  "metodo_lim3": {
+    "es": "El voto del público. Este formato lo decide el jurado, así que no hay encuestas que calibrar.",
+    "gn": "Tapicha kuéra voto. Ko formato-pe pe jurado he'i, upévare ndaipóri encuesta oñembohekóva."
+  },
+  "metodo_firma": {
+    "es": "Firma de esta corrida",
+    "gn": "Ko ñemboguata ra'ãnga"
+  },
+  "metodo_repo": {
+    "es": "El código",
+    "gn": "Pe código"
+  },
+  "registro_h": {
+    "es": "El registro",
+    "gn": "Kuatiahaipyre"
+  },
+  "registro_p": {
+    "es": "Cada vez que la página se actualiza, el pronóstico de ese día queda guardado con fecha. Dentro de dos meses se va a poder ver cuánto acertó.",
+    "gn": "Ko kuatiarogue oñembopyahu jave, pe ñemombe'u upe ára pegua opyta ñongatupyre ára reheve. Mokõi jasy rire ikatúta jahecha mboýpa oje'e porã."
+  },
+  "registro_vacio": {
+    "es": "Una sola entrada, la de hoy. Todavía no hay nada que revisar.",
+    "gn": "Peteĩ jeike añoite, ko árape guáva. Ndaipóri gueteri mba'eve ojehecha jey hag̃ua."
+  },
+  "col_fecha": {
+    "es": "Fecha",
+    "gn": "Ára"
+  },
+  "col_galas": {
+    "es": "Galas",
+    "gn": "Gala"
+  },
+  "pie_aviso": {
+    "es": "Página de análisis independiente. No tiene relación con MasterChef, con Banijay, con el SNT ni con la producción del programa. Las marcas nombradas son de sus dueños y se nombran para decir de qué trata el análisis.",
+    "gn": "Kuatiarogue ñehesa'ỹijo ijehegui. Ndoguerekói ñemoirũ MasterChef, Banijay, SNT ha pe programa producción ndive. Umi marca oñemombe'úva ijára kuéra mba'e ha oñemombe'u oje'e hag̃ua mba'e rehepa oñeñe'ẽ."
+  },
+  "pie_guarani": {
+    "es": "El guaraní de esta página lo escribió una máquina y no lo revisó un hablante. Si algo está mal dicho, la corrección se agradece en el repositorio.",
+    "gn": "Ko kuatiarogue guarani ohai peteĩ máquina ha ndohechái peteĩ oñe'ẽkuaáva. Oĩramo oje'e vaíva, pe ñemyatyrõ ojeguerohory pe repositorio-pe."
+  },
+  "pie_licencia": {
+    "es": "Código con Apache-2.0, textos y datos con CC BY 4.0.",
+    "gn": "Código Apache-2.0 ndive, moñe'ẽrã ha datos CC BY 4.0 ndive."
+  },
+  "pie_tipografia": {
+    "es": "Compuesta en Be Vietnam Pro y en Japepo Serif y Japepo Mono, que son recortes de Source Serif 4 y de Source Code, de Adobe. Las tres con licencia SIL Open Font License 1.1 e incrustadas en esta página.",
+    "gn": "Ojehai Be Vietnam Pro ndive, ha Japepo Serif ha Japepo Mono ndive, ha'éva Source Serif 4 ha Source Code mba'e vore, Adobe mba'e. Mbohapyve oguereko licencia SIL Open Font License 1.1 ha oĩ ko kuatiarogue ryepýpe."
+  },
+  "hero_eyebrow": {
+    "es": "Segunda temporada · SNT",
+    "gn": "Temporada mokõiha · SNT"
+  },
+  "cd_proxima": {
+    "es": "Próxima gala",
+    "gn": "Gala oútava"
+  },
+  "cd_faltan": {
+    "es": "Faltan",
+    "gn": "Hembýma"
+  },
+  "cd_dias": {
+    "es": "días",
+    "gn": "ára"
+  },
+  "cd_horas": {
+    "es": "horas",
+    "gn": "aravo"
+  },
+  "cd_minutos": {
+    "es": "minutos",
+    "gn": "aravo'i"
+  },
+  "cd_al_aire": {
+    "es": "Está al aire ahora",
+    "gn": "Osẽhína ko'ág̃a"
+  },
+  "hero_en_competencia": {
+    "es": "en competencia",
+    "gn": "oñeha'ãva"
+  },
+  "hero_eliminados": {
+    "es": "eliminados",
+    "gn": "osẽva"
+  },
+  "hero_galas": {
+    "es": "galas jugadas",
+    "gn": "gala ojejapóva"
+  },
+  "nav_proxima": {
+    "es": "La próxima gala",
+    "gn": "Gala oútava"
+  },
+  "desafio_h": {
+    "es": "El desafío",
+    "gn": "Pe ñeha'ã"
+  },
+  "en_juego_h": {
+    "es": "Qué está en juego",
+    "gn": "Mba'épa oĩ ñeha'ãme"
+  },
+  "capitanes_h": {
+    "es": "Los seis capitanes",
+    "gn": "Umi poteĩ capitán"
+  },
+  "capitanes_p": {
+    "es": "Se ganaron el puesto en la prueba de cortes y cada uno eligió a dos compañeros entre los doce restantes.",
+    "gn": "Ogana hikuái ipuesto pe ñeikytĩ ñeha'ãme ha peteĩteĩ oiporavo mokõi irũ umi pakõi hembýva apytégui."
+  },
+  "calendario_h": {
+    "es": "Próximas emisiones",
+    "gn": "Emisión oútava kuéra"
+  },
+  "calendario_p": {
+    "es": "Lunes y martes a las 20:50, hora de Paraguay. Las fechas siguientes salen de esa grilla y pueden moverse.",
+    "gn": "Arakõi ha araapy 20:50-pe, Paraguay aravo. Umi ára oútava osẽ upe grilla-gui ha ikatu oñemoambue."
+  },
+  "nav_como_va": {
+    "es": "Cómo va",
+    "gn": "Mba'éichapa oho"
+  },
+  "como_va_h": {
+    "es": "Quién tiene más chances",
+    "gn": "Mávapa oguereko ikatuve"
+  },
+  "como_va_p": {
+    "es": "Con una sola gala jugada y ninguna eliminación, las {n} personas están casi empatadas. La prueba de cortes mueve poco: el puntero llega a {max_pct} por ciento y el reparto plano da {plano_pct}.",
+    "gn": "Peteĩ gala añoite ojejapo ha ndaipóri ñemosẽ, umi {n} tapicha ojojogua haimete. Pe ñeikytĩ ñeha'ã omomýi sa'i: pe tenondegua og̃uahẽ {max_pct} porciento ha pe ñemboja'o joja ome'ẽ {plano_pct}."
+  },
+  "como_va_empate": {
+    "es": "{lider} y {segundo} encabezan con {max_pct} y {segundo_pct} por ciento, y sus márgenes se superponen: hoy no hay un primero.",
+    "gn": "{lider} ha {segundo} oĩ tenonde {max_pct} ha {segundo_pct} porciento ndive, ha imargen ojoapy: ko'ág̃a ndaipóri peteĩha."
+  },
+  "como_va_leer": {
+    "es": "Cómo leer la barra",
+    "gn": "Mba'éichapa oñemoñe'ẽ pe barra"
+  },
+  "momentos_h": {
+    "es": "Los momentos",
+    "gn": "Umi mba'e oikóva"
+  },
+  "nav_social": {
+    "es": "Dónde seguirlo",
+    "gn": "Moõpa oñemoirũ"
+  },
+  "social_h": {
+    "es": "Dónde seguirlo",
+    "gn": "Moõpa oñemoirũ"
+  },
+  "social_p": {
+    "es": "Las cuentas oficiales del programa y las etiquetas con las que se comenta cada gala.",
+    "gn": "Pe programa cuenta oficial ha umi etiqueta ojeporúva oñeñe'ẽ hag̃ua peteĩteĩ gala rehe."
+  },
+  "seguir_h": {
+    "es": "Las cuentas",
+    "gn": "Umi cuenta"
+  },
+  "hashtags_h": {
+    "es": "Las etiquetas",
+    "gn": "Umi etiqueta"
+  },
+  "detalle_abrir": {
+    "es": "Abrir el detalle: escenarios y calibración",
+    "gn": "Eipe'a pe detalle: escenario ha calibración"
+  },
+  "chance_ganar": {
+    "es": "de ganar",
+    "gn": "ipu'aka hag̃ua"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "_nota": "Registro de fuentes. Todo dato publicado en la pagina lleva el id de la fuente que lo sostiene; gui/verificar.py rechaza cualquier id que no exista aca.",
+  "fuentes": {
+    "tvpy_ficha": {
+      "medio": "TVPY / television.com.py",
+      "titulo": "MasterChef Celebrity Paraguay: participantes y como ver en vivo",
+      "url": "https://television.com.py/masterchef-celebrity-paraguay",
+      "fecha": "2026-08-10",
+      "consultada": "2026-08-11"
+    },
+    "tvpy_18": {
+      "medio": "TVPY / television.com.py",
+      "titulo": "MasterChef Celebrity Paraguay confirma a sus 18 participantes",
+      "url": "https://television.com.py/masterchef-celebrity-paraguay-confirma-a-sus-18-participantes",
+      "fecha": "2026-08-03",
+      "consultada": "2026-08-11"
+    },
+    "tvpy_estreno": {
+      "medio": "TVPY / television.com.py",
+      "titulo": "MasterChef Celebrity Paraguay se estrena HOY: horario, jurado y participantes",
+      "url": "https://television.com.py/masterchef-celebrity-paraguay-se-estrena-hoy-horario-jurado-y-participantes",
+      "fecha": "2026-08-10",
+      "consultada": "2026-08-11"
+    },
+    "rdn_previa": {
+      "medio": "RDN",
+      "titulo": "MasterChef Celebrity Paraguay vuelve a encender sus fogones",
+      "url": "https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/",
+      "fecha": "2026-08-03",
+      "consultada": "2026-08-11"
+    },
+    "rdn_gala1": {
+      "medio": "RDN",
+      "titulo": "MasterChef Celebrity Paraguay: seis famosos brillaron en el desafio de cortes de vegetales",
+      "url": "https://www.rdn.com.py/2026/08/11/masterchef-celebrity-paraguay-seis-famosos-brillaron-en-el-desafio-de-cortes-de-vegetales/",
+      "fecha": "2026-08-11",
+      "consultada": "2026-08-11"
+    },
+    "popular_lista": {
+      "medio": "Popular",
+      "titulo": "Ya esta la lista oficial de famosos que cocinaran en reality de teve",
+      "url": "https://www.popular.com.py/2026/08/03/video-ya-esta-la-lista-oficial-de-famosos-que-cocinaran-en-reality-de-teve/",
+      "fecha": "2026-08-03",
+      "consultada": "2026-08-11"
+    },
+    "tecuento_lista": {
+      "medio": "Te Cuento Paraguay",
+      "titulo": "Masterchef Celebridad ya presento a sus participantes",
+      "url": "https://www.tecuento.com.py/masterchef-celebridad-ya-presento-a-sus-participantes/",
+      "fecha": "2026-08-03",
+      "consultada": "2026-08-11"
+    },
+    "rdn_final2025": {
+      "medio": "RDN",
+      "titulo": "Karina Grau gana la primera edicion de MasterChef Celebrity Paraguay",
+      "url": "https://www.rdn.com.py/2025/09/17/karina-grau-gana-la-primera-edicion-de-masterchef-celebrity-paraguay/",
+      "fecha": "2025-09-17",
+      "consultada": "2026-08-11"
+    },
+    "wiki_en": {
+      "medio": "Wikipedia (en)",
+      "titulo": "MasterChef Paraguay",
+      "url": "https://en.wikipedia.org/wiki/MasterChef_Paraguay",
+      "fecha": "2026-05-31",
+      "revision": "1356980257",
+      "consultada": "2026-08-11"
+    },
+    "x_mcpy_18": {
+      "medio": "X · @_MasterChefPy",
+      "titulo": "Las 18 celebridades estan listas",
+      "url": "https://x.com/_MasterChefPy/status/2086936129752777210",
+      "fecha": "2026-08-10",
+      "consultada": "2026-08-11"
+    },
+    "x_mcpy_cuenta": {
+      "medio": "X · @_MasterChefPy",
+      "titulo": "Faltan 4 dias",
+      "url": "https://x.com/_MasterChefPy/status/2085443880145797134",
+      "fecha": "2026-08-06",
+      "consultada": "2026-08-11"
+    },
+    "x_snt": {
+      "medio": "X · @sntparaguay",
+      "titulo": "La cocina mas famosa del pais vuelve con todo",
+      "url": "https://x.com/sntparaguay/status/2084307425755103256",
+      "fecha": "2026-08-03",
+      "consultada": "2026-08-11"
+    },
+    "level_vierci": {
+      "medio": "LEVEL",
+      "titulo": "Vale Vierci, una fashionista autentica y singular",
+      "url": "https://www.level.com.py/",
+      "fecha": "2026-08-11",
+      "consultada": "2026-08-11",
+      "_nota": "Solo el titular aparecio en el buscador; no se abrio la nota. Por eso el campo de Vale Vierci queda como no confirmado."
+    },
+    "sitio_oficial": {
+      "medio": "masterchefparaguay.com",
+      "titulo": "Sitio oficial del programa",
+      "url": "https://www.masterchefparaguay.com/",
+      "fecha": "2026-08-11",
+      "consultada": "2026-08-11"
+    },
+    "ig_oficial": {
+      "medio": "Instagram · @masterchefparaguay",
+      "titulo": "Cuenta oficial en Instagram",
+      "url": "https://www.instagram.com/masterchefparaguay/",
+      "fecha": "2026-08-11",
+      "consultada": "2026-08-11"
+    },
+    "fb_oficial": {
+      "medio": "Facebook · MasterChef Paraguay",
+      "titulo": "Cuenta oficial en Facebook",
+      "url": "https://www.facebook.com/masterchefparaguay/",
+      "fecha": "2026-08-11",
+      "consultada": "2026-08-11"
+    }
+  }
+}

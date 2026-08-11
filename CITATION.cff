@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Si usás estos datos, este modelo o esta página, citalos así."
+title: "japepo: MasterChef Celebrity Paraguay 2026, en castellano y guaraní"
+abstract: >-
+  Página de seguimiento de la segunda temporada de MasterChef Celebrity
+  Paraguay: cuándo se emite cada gala, quiénes compiten, qué pasó en cada
+  emisión y una estimación de la probabilidad de ganar de cada participante.
+  El modelo convierte el orden parcial observado en las pruebas en una
+  posterior sobre la habilidad de cada persona, con muestreo por importancia y
+  simulación Monte Carlo de las eliminaciones restantes, y publica cuánta
+  incertidumbre queda. Todo el contenido existe en castellano y en guaraní.
+type: software
+authors:
+  - alias: nerln
+    website: "https://github.com/nerln"
+repository-code: "https://github.com/nerln/japepo"
+url: "https://nerln.github.io/japepo/"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - MasterChef Paraguay
+  - Paraguay
+  - guaraní
+  - Plackett-Luce
+  - Monte Carlo
+  - reality television
+version: "2026.08.11"
+date-released: "2026-08-11"

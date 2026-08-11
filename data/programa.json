@@ -1,0 +1,136 @@
+{
+  "programa": "MasterChef Celebrity Paraguay",
+  "edicion": 2,
+  "anho": 2026,
+  "canal": "SNT",
+  "estreno": "2026-08-10",
+  "hora": "20:50",
+  "zona_horaria": "America/Asuncion",
+  "dias": [
+    "lunes",
+    "martes"
+  ],
+  "dias_iso": [
+    1,
+    2
+  ],
+  "n_participantes": 18,
+  "conduccion": [
+    {
+      "nombre": "Paola Maltese",
+      "fuente": "tvpy_estreno"
+    }
+  ],
+  "jurado": [
+    {
+      "nombre": "Eugenia Aquino",
+      "fuente": "tvpy_estreno"
+    },
+    {
+      "nombre": "Federico Scappini",
+      "fuente": "tvpy_estreno"
+    },
+    {
+      "nombre": "Nicolás Bo",
+      "alias": "Colaso",
+      "fuente": "tvpy_estreno"
+    }
+  ],
+  "premio_2025": {
+    "monto_guaranies": 50000000,
+    "aporte": "Banco GNB",
+    "extra": "carrera de Gastronomía en el IGA",
+    "fuente": "rdn_final2025",
+    "_nota": "Es el premio de la edición 2025. La producción no publicó todavía el de 2026."
+  },
+  "premio_2026_confirmado": false,
+  "transmision": [
+    {
+      "que": "SNT, aire",
+      "fuente": "tvpy_estreno"
+    },
+    {
+      "que": "YouTube, con Mariano, reacciones en vivo",
+      "fuente": "rdn_gala1"
+    }
+  ],
+  "fuentes": [
+    "tvpy_ficha",
+    "tvpy_18",
+    "tvpy_estreno",
+    "rdn_gala1"
+  ],
+  "formato": {
+    "pruebas": [
+      {
+        "id": "caja",
+        "es": "Caja misteriosa",
+        "fuente": "wiki_en"
+      },
+      {
+        "id": "equipos",
+        "es": "Desafío por equipos",
+        "fuente": "wiki_en"
+      },
+      {
+        "id": "eliminacion",
+        "es": "Prueba de eliminación",
+        "fuente": "wiki_en"
+      },
+      {
+        "id": "presion",
+        "es": "Prueba de presión",
+        "fuente": "wiki_en"
+      }
+    ]
+  },
+  "proxima_gala": "2026-08-11",
+  "donde_ver": [
+    {
+      "que": "SNT",
+      "detalle_es": "Al aire, canal 9",
+      "detalle_gn": "Yvytúre, kanal 9",
+      "url": "https://www.snt.com.py/",
+      "fuente": "tvpy_estreno"
+    },
+    {
+      "que": "YouTube",
+      "detalle_es": "En vivo con Mariano, con las reacciones del público",
+      "detalle_gn": "Oikohápe Mariano ndive, tapicha kuéra ñe'ẽ reheve",
+      "url": "https://www.youtube.com/results?search_query=MasterChef+Celebrity+Paraguay",
+      "fuente": "rdn_gala1"
+    }
+  ],
+  "redes": [
+    {
+      "nombre": "Instagram",
+      "cuenta": "@masterchefparaguay",
+      "url": "https://www.instagram.com/masterchefparaguay/",
+      "fuente": "ig_oficial"
+    },
+    {
+      "nombre": "Facebook",
+      "cuenta": "MasterChef Paraguay",
+      "url": "https://www.facebook.com/masterchefparaguay/",
+      "fuente": "fb_oficial"
+    },
+    {
+      "nombre": "TikTok",
+      "cuenta": "@masterchefpy",
+      "url": "https://www.tiktok.com/@masterchefpy",
+      "fuente": "sitio_oficial"
+    },
+    {
+      "nombre": "X",
+      "cuenta": "@_MasterChefPy",
+      "url": "https://x.com/_MasterChefPy",
+      "fuente": "x_mcpy_18"
+    },
+    {
+      "nombre": "Sitio oficial",
+      "cuenta": "masterchefparaguay.com",
+      "url": "https://www.masterchefparaguay.com/",
+      "fuente": "sitio_oficial"
+    }
+  ]
+}

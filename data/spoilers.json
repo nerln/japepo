@@ -1,0 +1,48 @@
+{
+  "_nota": "Tres niveles y una regla. 'anunciado' es lo que dijo la produccion o la prensa, con fuente. 'deducido' es lo que sale de aplicar el formato a lo anunciado, con el supuesto escrito al lado. 'rumor' entra solo si hay dos fuentes independientes que lo sostengan; hoy la lista esta vacia y se queda vacia hasta que eso pase.",
+  "regla_rumor": {
+    "es": "Para entrar acá, un rumor necesita dos fuentes independientes.",
+    "gn": "Oike hag̃ua ko'ápe, peteĩ ñe'ẽ rei oikotevẽ mokõi fuente oñoirũ'ỹva."
+  },
+  "anunciado": [
+    {
+      "id": "gala2",
+      "es": "La gala del martes 11 pide algo casero, hecho desde cero, con la temperatura del aceite como problema.",
+      "gn": "Pe gala araapy 11-pegua ojerure peteĩ mba'e ógape guare, ojejapóva iñepyrũmby guive, ha pe ñandyry akuhu ha'e pe apañuãi.",
+      "fuente": "rdn_gala1"
+    },
+    {
+      "id": "equipos",
+      "es": "Los seis destacados de la primera gala son capitanes de grupos de tres: cada uno eligió a dos compañeros entre los doce restantes.",
+      "gn": "Umi poteĩ ojehechakuaáva gala peteĩhape ha'e capitán aty mbohapy-mbohapy rehe: peteĩteĩ oiporavo mokõi irũ umi pakõi hembýva apytégui.",
+      "fuente": "rdn_gala1"
+    },
+    {
+      "id": "dias",
+      "es": "El programa va lunes y martes a las 20:50 por el SNT.",
+      "gn": "Pe programa osẽ arakõi ha araapy 20:50-pe SNT rupi.",
+      "fuente": "tvpy_estreno"
+    },
+    {
+      "id": "youtube",
+      "es": "La transmisión se acompaña en YouTube con Mariano, con las reacciones del público en vivo.",
+      "gn": "Pe ñemosarambi oñemoirũ YouTube-pe Mariano ndive, ohechaukávo mba'éichapa ohecha tapicha kuéra.",
+      "fuente": "rdn_gala1"
+    }
+  ],
+  "rumores": [],
+  "no_confirmado": [
+    {
+      "id": "premio2026",
+      "es": "El premio de esta edición. En 2025 fueron 50 millones de guaraníes y una carrera de gastronomía; la producción no publicó todavía el de 2026.",
+      "gn": "Ko edición jopói. 2025-pe oĩ 50 millón guaraní ha peteĩ carrera gastronomía-gua; pe producción ndosẽi gueteri he'i mba'épa oĩta 2026-pe.",
+      "fuente": "rdn_final2025"
+    },
+    {
+      "id": "campos",
+      "es": "De qué se dedican cuatro de las dieciocho personas del plantel. La nota previa nombra a quince y describe el campo de catorce; la lista oficial suma tres nombres más sin decir nada de ellos.",
+      "gn": "Mba'épepa omba'apo irundy tapicha pe papoapy apytégui. Pe kuatiahai ypykue omombe'u papo, ha omyesakã parundy rembiapo; pe lista oficial ombojoapy mbohapy héra he'i'ỹre mba'eve hesekuéra.",
+      "fuente": "tvpy_18"
+    }
+  ]
+}

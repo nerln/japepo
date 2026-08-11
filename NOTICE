@@ -1,0 +1,19 @@
+japepo — MasterChef Celebrity Paraguay 2026, en castellano y guaraní
+Copyright 2026 nerln
+
+Este producto incluye software y datos desarrollados por nerln
+(https://github.com/nerln/japepo · https://nerln.github.io/japepo/).
+
+El modelo estadístico, la metodología descrita en METODOLOGIA.md y el conjunto
+de datos de data/ son obra de nerln.
+
+  Software (model/, gui/, .github/): Apache License 2.0
+  Datos y textos (data/, web/datos.json, *.md): CC BY 4.0
+    https://creativecommons.org/licenses/by/4.0/
+
+Las tipografías incrustadas son de terceros y llevan su propia licencia:
+ver TERCEROS.md y gui/tipos/OFL-*.txt.
+
+Página de análisis independiente. Sin relación con MasterChef, con Banijay, con
+el SNT ni con la producción del programa. Las marcas nombradas son de sus
+dueños y se nombran para identificar el programa del que trata el análisis.

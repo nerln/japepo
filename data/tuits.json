@@ -1,0 +1,54 @@
+{
+  "_nota": "Solo tuits leidos uno por uno y guardados con su id. La pagina no carga nada de x.com hasta que alguien apreta el boton: la tarjeta se dibuja con este texto y el embed real se pide despues, si el lector quiere. Asi nadie queda registrado por X por el solo hecho de abrir la pagina.",
+  "hashtags": [
+    "MasterChefParaguay",
+    "Celebrity2026",
+    "MasterChefPY"
+  ],
+  "cuentas": [
+    {
+      "handle": "_MasterChefPy",
+      "nombre": "MasterChef Paraguay",
+      "verificada": true
+    },
+    {
+      "handle": "sntparaguay",
+      "nombre": "SNT Canal 9",
+      "verificada": false
+    }
+  ],
+  "tuits": [
+    {
+      "id": "2086936129752777210",
+      "handle": "_MasterChefPy",
+      "fecha": "2026-08-10T22:02:01Z",
+      "texto": "¡LAS 18 CELEBRIDADES ESTÁN LISTAS!\n\nCada vez falta menos para el GRAN ESTRENO de MasterChef Celebrity Paraguay\n\nEN INSTANTES POR EL SNT\n\n¿Ya tenés a tu favorito? Dejale tu apoyo en los comentarios\n\n#MasterChefParaguay #Celebrity2026",
+      "me_gusta": 25,
+      "respuestas": 3,
+      "fuente": "x_mcpy_18"
+    },
+    {
+      "id": "2085443880145797134",
+      "handle": "_MasterChefPy",
+      "fecha": "2026-08-06T19:12:21Z",
+      "texto": "¡FALTAN 4 DÍAS!\n\nLa cuenta regresiva ya inició.\n\nMasterChef Celebrity Paraguay\n\nGRAN ESTRENO, Lunes 10 de agosto a las 20:50 por el SNT\n\n#MasterChefParaguay #Celebrity2026",
+      "me_gusta": 8,
+      "respuestas": 0,
+      "fuente": "x_mcpy_cuenta"
+    },
+    {
+      "id": "2084307425755103256",
+      "handle": "sntparaguay",
+      "fecha": "2026-08-03T15:56:29Z",
+      "texto": "La cocina más famosa del país vuelve con todo. MasterChef Celebrity Paraguay reunirá a reconocidas figuras que deberán demostrar su talento, creatividad y temple frente a los desafíos culinarios.\n\nEl gran estreno será el lunes 10 de agosto, a las 20:50, por las pantallas del SNT.",
+      "me_gusta": 0,
+      "respuestas": 0,
+      "fuente": "x_snt"
+    }
+  ],
+  "lectura": {
+    "es": "Tres cuentas oficiales, ningún comentario de hinchada. La conversación de este programa no vive en X: vive en Instagram, en Facebook y en TikTok, que son las redes que enlaza el sitio oficial.",
+    "gn": "Mbohapy cuenta oficial, ndaipóri peteĩ ñe'ẽ tapichágui. Ko programa ñemongeta ndoikói X-pe: oiko Instagram, Facebook ha TikTok-pe, umi ñanduti pe sitio oficial ombojoajúva.",
+    "fuente": "sitio_oficial"
+  }
+}

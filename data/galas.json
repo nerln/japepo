@@ -1,0 +1,79 @@
+{
+  "_nota": "Cada gala se carga cuando hay una fuente que la cuente. El campo 'destacados' distingue el orden declarado del que no lo esta: RDN nombra primero, segundo y tercero, y despues completa la lista de seis sin decir en que orden. El modelo usa esa distincion tal cual.",
+  "galas": [
+    {
+      "n": 1,
+      "fecha": "2026-08-10",
+      "titulo_es": "Cortes de vegetales",
+      "titulo_gn": "Ñeikytĩ vegetal-kuéra",
+      "prueba": "caja",
+      "prueba_detalle_es": "Mini caja misteriosa. Debajo, vegetales frescos y quince minutos para hacer cortes tradicionales: cebolla en pluma, locote rojo en juliana, locote verde en brunoise, tres dientes de ajo laminados y papa en rodajas finas a la española.",
+      "prueba_detalle_gn": "Mini káha ñemi. Iguýpe, vegetal pyahu ha papo aravo'i ojejapo hag̃ua ñeikytĩ ymaguare: sevói pluma-pe, lokóte pytã juliana-pe, lokóte hovyũ brunoise-pe, mbohapy ajo laminado ha papa rodaja po'i española-pe.",
+      "minutos": 15,
+      "eliminado": null,
+      "sin_eliminacion": true,
+      "destacados": {
+        "ordenados": [
+          "joaquin",
+          "negro",
+          "mariaelsa"
+        ],
+        "sin_orden": [
+          "maricha",
+          "silvia",
+          "marilina"
+        ]
+      },
+      "consecuencia_es": "Los seis destacados quedaron como capitanes de grupos de tres y eligieron a dos compañeros cada uno entre los doce restantes.",
+      "consecuencia_gn": "Umi poteĩ ojehechakuaáva opyta capitán-ramo aty mbohapy-mbohapy rehe, ha peteĩteĩ oiporavo mokõi irũ umi pakõi hembýva apytégui.",
+      "fuente": "rdn_gala1",
+      "momentos": [
+        {
+          "es": "Levantaron la mini caja misteriosa y encontraron vegetales frescos. Quince minutos para cinco cortes.",
+          "gn": "Oipe'a hikuái pe mini káha ñemi ha ojuhu vegetal pyahu. Papo aravo'i po ñeikytĩ apo hag̃ua."
+        },
+        {
+          "es": "Cebolla en pluma, locote rojo en juliana, locote verde en brunoise, tres dientes de ajo laminados y papa en rodajas a la española.",
+          "gn": "Sevói pluma-pe, lokóte pytã juliana-pe, lokóte hovyũ brunoise-pe, mbohapy ajo laminado ha papa rodaja-pe española-pe."
+        },
+        {
+          "es": "Los jueces les enseñaron a poner papel húmedo bajo la tabla para que no se mueva.",
+          "gn": "Umi juez ohechauka chupekuéra omoĩ hag̃ua kuatia akỹ tabla guýpe ani hag̃ua omýi."
+        },
+        {
+          "es": "Hubo cortes accidentales en las manos y nadie soltó el cuchillo.",
+          "gn": "Oĩ oñekytĩva ipópe hese'ỹ ha avave ndopoíri kységui."
+        },
+        {
+          "es": "Todos entregaron a tiempo, entre aplausos.",
+          "gn": "Opavave ome'ẽ hi'árape, popyapy apytépe."
+        },
+        {
+          "es": "El jurado premió la prolijidad antes que la cantidad. Joaquín Serrano se llevó el primer puesto.",
+          "gn": "Pe jurado ohepyme'ẽ mba'e joja porã, na mba'e hetáva. Joaquín Serrano ogueraha puesto peteĩha."
+        }
+      ],
+      "momentos_fuente": "rdn_gala1"
+    },
+    {
+      "n": 2,
+      "fecha": "2026-08-11",
+      "titulo_es": "Casero y desde cero",
+      "titulo_gn": "Ógape guare, iñepyrũmby guive",
+      "prueba": "equipos",
+      "prueba_detalle_es": "Algo casero, hecho desde cero. Según la nota previa hay que ir rápido y controlar la temperatura del aceite.",
+      "prueba_detalle_gn": "Peteĩ mba'e ógape guare, ojejapóva iñepyrũmby guive. Pe kuatiahai he'iháicha tekotevẽ oje'e pya'e ha oñeñangareko ñandyry akuhu rehe.",
+      "minutos": null,
+      "eliminado": null,
+      "sin_eliminacion": null,
+      "destacados": null,
+      "consecuencia_es": null,
+      "consecuencia_gn": null,
+      "estado": "anunciada",
+      "fuente": "rdn_gala1",
+      "en_juego_es": "Los seis destacados de anoche son capitanes y ya eligieron equipo. Es la primera vez que estos grupos de tres cocinan juntos.",
+      "en_juego_gn": "Umi poteĩ ojehechakuaáva kuehe pyhare ha'e capitán ha oiporavóma iñaty. Ko'ãva mbohapy-mbohapy okoseina ypy oñondive.",
+      "en_juego_fuente": "rdn_gala1"
+    }
+  ]
+}

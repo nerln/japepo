@@ -1,0 +1,267 @@
+{
+  "_nota": "La lista oficial de 18 sale de tvpy_18 y tvpy_estreno, que coinciden nombre por nombre. El campo de cada quien sale de rdn_previa, que describe de donde viene cada figura; a quien esa nota no describe se le deja campo null y la pagina lo dice.",
+  "orden_oficial_fuente": "tvpy_18",
+  "plantel": [
+    {
+      "id": "marilina",
+      "nombre": "Marilina Bogado",
+      "corto": "Marilina",
+      "campo": "musica",
+      "campo_fuente": "tvpy_ficha",
+      "nota_es": "Compite en la misma cocina que su esposo, Will Fretes.",
+      "nota_gn": "Oñeha'ã pe kosína peteĩchavape iména Will Fretes ndive.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [
+        "Marilina"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "will",
+      "nombre": "Will Fretes",
+      "corto": "Will",
+      "campo": null,
+      "campo_fuente": null,
+      "nota_es": "Entra con su esposa, Marilina Bogado; la nota de RDN los presenta como rivales.",
+      "nota_gn": "Oike hembireko Marilina Bogado ndive; RDN omombe'u ha'ekuéra oñorãirõha ojuehe.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "luana",
+      "nombre": "Luana Alonso",
+      "corto": "Luana",
+      "campo": "deporte",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "Dejó el entrenamiento por la cocina.",
+      "nota_gn": "Oheja entrenamiento ha oike kosínape.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [
+        "Luana Alfonso"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "betha",
+      "nombre": "Bethania Borba",
+      "corto": "Betha",
+      "campo": "estetica",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "RDN la nombra junto a Negro Vázquez por cómo se ve el plato.",
+      "nota_gn": "RDN omoĩ chupe Negro Vázquez ykére, pe tembi'u ojehechaháicha.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [
+        "Betha Borba"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "maricha",
+      "nombre": "Maricha Olitte",
+      "corto": "Maricha",
+      "campo": "humor",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "Viene del humor y la escena.",
+      "nota_gn": "Ou puka ha escenario guive.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "marisa",
+      "nombre": "Marisa Monutti",
+      "corto": "Marisa",
+      "campo": null,
+      "campo_fuente": null,
+      "nota_es": "La producción no contó a qué se dedica.",
+      "nota_gn": "Pe producción nde'íri mba'épepa omba'apo.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [
+        "Marissa Monutti"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "silvia",
+      "nombre": "Silvia Flores",
+      "corto": "Silvia",
+      "campo": "humor",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "Viene del humor y la escena.",
+      "nota_gn": "Ou puka ha escenario guive.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "walter",
+      "nombre": "Walter Cabrera",
+      "corto": "Walter",
+      "campo": "musica",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "Dos medios lo escriben «Walter de Flou»; la lista oficial dice Walter Cabrera.",
+      "nota_gn": "Mokõi medio ohai «Walter de Flou»; pe lista oficial he'i Walter Cabrera.",
+      "nota_fuente": "popular_lista",
+      "variantes": [
+        "Walter de Flou"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "jorge",
+      "nombre": "Jorge Castro",
+      "corto": "Jorge",
+      "campo": "musica",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "Viene de la música.",
+      "nota_gn": "Ou purahéi guive.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "faro",
+      "nombre": "Farid Safuán",
+      "corto": "Faro",
+      "campo": "musica",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "DJ.",
+      "nota_gn": "DJ.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [
+        "DJ Faro"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "junior",
+      "nombre": "Junior Rodríguez",
+      "corto": "Junior",
+      "campo": "television",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "Está acostumbrado a la cámara.",
+      "nota_gn": "Ojepokuaáma kámarare.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "mariaelsa",
+      "nombre": "María Elsa Núñez",
+      "corto": "María E.",
+      "campo": "television",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "Está acostumbrada a la cámara.",
+      "nota_gn": "Ojepokuaáma kámarare.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [
+        "María E. Núñez",
+        "Maríe E. Núñez"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "negro",
+      "nombre": "Hugo Vázquez",
+      "corto": "Negro",
+      "campo": "estetica",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "RDN lo nombra junto a Betha Borba por cómo se ve el plato.",
+      "nota_gn": "RDN omoĩ chupe Betha Borba ykére, pe tembi'u ojehechaháicha.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [
+        "Negro Vázquez"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "chad",
+      "nombre": "Chad Uddstrom",
+      "corto": "El Chad",
+      "campo": null,
+      "campo_fuente": null,
+      "nota_es": "Según la nota previa, acá juega en un terreno que no es el suyo.",
+      "nota_gn": "Pe kuatiahai he'iháicha, ko'ápe oñeha'ã peteĩ tenda ndaha'éiva imba'e.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [
+        "el Chad"
+      ],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "joaquin",
+      "nombre": "Joaquín Serrano",
+      "corto": "Joaquín",
+      "campo": null,
+      "campo_fuente": null,
+      "nota_es": "La producción no contó a qué se dedica.",
+      "nota_gn": "Pe producción nde'íri mba'épepa omba'apo.",
+      "nota_fuente": "tvpy_18",
+      "variantes": [],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "vale",
+      "nombre": "Vale Vierci",
+      "corto": "Vale",
+      "campo": null,
+      "campo_fuente": null,
+      "nota_es": "La producción no contó a qué se dedica.",
+      "nota_gn": "Pe producción nde'íri mba'épepa omba'apo.",
+      "nota_fuente": "tvpy_18",
+      "variantes": [],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "jessica",
+      "nombre": "Jessica Santa Cruz",
+      "corto": "Jessica",
+      "campo": null,
+      "campo_fuente": null,
+      "nota_es": "La producción no contó a qué se dedica.",
+      "nota_gn": "Pe producción nde'íri mba'épepa omba'apo.",
+      "nota_fuente": "tvpy_18",
+      "variantes": [],
+      "estado": "en_competencia"
+    },
+    {
+      "id": "calonga",
+      "nombre": "Rodrigo Calonga",
+      "corto": "Calonga",
+      "campo": "humor",
+      "campo_fuente": "rdn_previa",
+      "nota_es": "Viene del humor y la escena.",
+      "nota_gn": "Ou puka ha escenario guive.",
+      "nota_fuente": "rdn_previa",
+      "variantes": [],
+      "estado": "en_competencia"
+    }
+  ],
+  "campos": {
+    "musica": {
+      "es": "Música",
+      "gn": "Purahéi"
+    },
+    "deporte": {
+      "es": "Deporte",
+      "gn": "Ñembosarái"
+    },
+    "humor": {
+      "es": "Humor y escena",
+      "gn": "Puka ha escenario"
+    },
+    "estetica": {
+      "es": "Imagen",
+      "gn": "Ta'anga"
+    },
+    "television": {
+      "es": "Televisión",
+      "gn": "Ta'angambyry"
+    },
+    "redes": {
+      "es": "Redes",
+      "gn": "Ñanduti"
+    }
+  }
+}
