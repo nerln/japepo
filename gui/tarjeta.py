@@ -8,10 +8,14 @@ sin tarjeta el enlace llega como una linea de texto gris. Esta lleva lo unico
 que hace falta para decidir si abrirla: cuando es la proxima gala y quien va
 adelante.
 
-Se dibuja con las mismas tipografias que la pagina y con los mismos datos, y
-sale igual byte a byte en cada corrida: nada de fechas del reloj del sistema,
-nada de aleatoriedad. Por eso gui/verificar.py la puede reconstruir y comparar,
-igual que el HTML. Publicar una tarjeta vieja hace fallar la verificacion.
+Se dibuja con las mismas tipografias que la pagina y con los mismos datos.
+Lo que NO se puede pedirle es que salga igual byte a byte en otra maquina: la
+compresion del PNG y el dibujado de las letras dependen de la version de zlib y
+de FreeType que haya, y la de un servidor de integracion no es la de esta
+computadora. Asi que la tarjeta no se compara byte a byte como el HTML: lleva
+la firma de la corrida adentro, en un trozo de texto del propio PNG, y
+gui/verificar.py comprueba que esa firma sea la de los datos de hoy. Publicar
+una tarjeta vieja falla igual, que es lo que importa.
 
     python3 gui/tarjeta.py
 
@@ -25,6 +29,7 @@ import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+from PIL.PngImagePlugin import PngInfo
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -114,8 +119,12 @@ def main() -> None:
     d_.text((MARGEN, ALTO - 44), pie,
             font=tipo("BeVietnamPro-Medium.ttf", 20), fill=SUAVE)
 
+    from firma import firma_corrida                           # noqa: PLC0415
+    marca_texto = PngInfo()
+    marca_texto.add_text("japepo:firma", firma_corrida())
+
     WEB.mkdir(exist_ok=True)
-    img.save(WEB / "og.png", optimize=True)
+    img.save(WEB / "og.png", optimize=True, pnginfo=marca_texto)
 
     # El icono de la pestana: la misma olla, vectorial, sin mapa de bits.
     from marca import svg as marca_svg                        # noqa: PLC0415

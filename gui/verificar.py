@@ -23,7 +23,8 @@ Ademas comprueba lo que haria falsa la pagina sin romper nada visible:
   * los seis temas declaran las mismas variables, asi que ninguno se rompe a
     medias
   * el aviso de no afiliacion sigue en la pagina
-  * la firma de la corrida coincide con la que sale de los datos
+  * la firma de la corrida coincide con la que sale de los datos, y la
+    tarjeta de previsualizacion tambien es de esta corrida
   * el guion parsea y el <style> no tiene JavaScript adentro
   * las tres tipografias viajan adentro de la pagina, con su licencia
   * ningun signo de la pagina se quedo fuera del recorte de las fuentes
@@ -67,8 +68,12 @@ def bien(msg: str) -> int:
 # --------------------------------------------------------------------------
 
 def reconstruible() -> int:
+    # El PNG queda fuera de la comparacion byte a byte a proposito: la compresion
+    # y el dibujado de las letras cambian con la version de zlib y de FreeType, y
+    # la del servidor de integracion no es la de la maquina donde se construyo.
+    # Que la tarjeta sea de esta corrida lo comprueba tarjeta_al_dia().
     antes = {p.name: p.read_bytes() for p in WEB.glob("*")
-             if p.suffix in (".html", ".json", ".png", ".svg")}
+             if p.suffix in (".html", ".json", ".svg")}
     if not antes:
         return falla("web/ esta vacio: correr gui/build.py")
     for guion in ("build.py", "tarjeta.py"):
@@ -82,6 +87,27 @@ def reconstruible() -> int:
         return falla("web/ no coincide con lo que produce gui/build.py: "
                      + ", ".join(sorted(malos)) + ". Correr gui/build.py y commitear.")
     return bien(f"web/ reconstruible ({len(antes)} archivos)")
+
+
+def tarjeta_al_dia(firma_publicada: str | None) -> int:
+    """La tarjeta que se comparte tiene que ser la de los datos de hoy."""
+    esperada = firma_corrida()
+    if firma_publicada is None:
+        return falla("web/og.png no lleva firma de corrida: correr gui/tarjeta.py")
+    if firma_publicada != esperada:
+        return falla(f"la tarjeta publicada es de la corrida {firma_publicada} y los datos "
+                     f"son de la {esperada}. Correr gui/tarjeta.py y commitear.")
+    return bien(f"la tarjeta de previsualizacion es de esta corrida ({esperada})")
+
+
+def leer_firma_tarjeta() -> str | None:
+    """Se lee ANTES de reconstruir nada, o se estaria mirando la recien hecha."""
+    try:
+        from PIL import Image                                  # noqa: PLC0415
+        with Image.open(WEB / "og.png") as im:
+            return im.info.get("japepo:firma")
+    except Exception:
+        return None
 
 
 def probabilidades(d: dict) -> int:
@@ -398,7 +424,9 @@ def coherencia(d: dict) -> int:
 def main() -> int:
     print("japepo · verificacion")
     d = cargar()
+    firma_publicada = leer_firma_tarjeta()
     err = reconstruible()
+    err += tarjeta_al_dia(firma_publicada)
     html = (WEB / "index.html").read_text()
     err += probabilidades(d)
     err += fuentes(d)
