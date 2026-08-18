@@ -114,6 +114,38 @@
       "url": "https://www.facebook.com/masterchefparaguay/",
       "fecha": "2026-08-11",
       "consultada": "2026-08-11"
+    },
+    "rdn_gala2": {
+      "medio": "RDN",
+      "titulo": "MasterChef Celebrity Paraguay definio a los primeros clasificados al balcon",
+      "url": "https://www.rdn.com.py/2026/08/12/masterchef-celebrity-paraguay-definio-a-los-primeros-clasificados-al-balcon/",
+      "fecha": "2026-08-12",
+      "consultada": "2026-08-18",
+      "_nota": "Firma Katya Ayala, 11:16. Es la unica cronica de la gala 2 con contenido."
+    },
+    "snt_encendio": {
+      "medio": "SNT",
+      "titulo": "MasterChef Celebrity Paraguay encendio sus cocinas",
+      "url": "https://www.snt.com.py/noticia/masterchef-celebrity-paraguay-encendio-sus-cocinas/",
+      "fecha": "2026-08-11",
+      "consultada": "2026-08-18",
+      "_nota": "Dos parrafos del canal sobre la gala 1, sin un solo nombre."
+    },
+    "yt_programa3": {
+      "medio": "YouTube · canal oficial del programa",
+      "titulo": "PROGRAMA 3, primera parte",
+      "url": "https://www.youtube.com/watch?v=X7dRAAO54MI",
+      "fecha": "2026-08-18",
+      "consultada": "2026-08-18",
+      "_nota": "Subido en la madrugada del 18. Es la prueba de que la gala del lunes 17 se emitio: ningun medio la conto."
+    },
+    "snt_2025_ariel": {
+      "medio": "SNT",
+      "titulo": "MasterChef Celebrity arranco con emociones",
+      "url": "https://www.snt.com.py/noticia/masterchef-celebrity-arranco-con-emociones/",
+      "fecha": "2025-05-21",
+      "consultada": "2026-08-18",
+      "_nota": "Nota de la PRIMERA edicion, la de 2025. Hoy las URL snt.com.py/masterchef redirigen aca, y quien entra por ahi se lleva un eliminado que no es de esta temporada."
     }
   }
 }

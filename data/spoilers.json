@@ -6,42 +6,60 @@
   },
   "anunciado": [
     {
-      "id": "gala2",
-      "es": "La gala del martes 11 pide algo casero, hecho desde cero, con la temperatura del aceite como problema.",
-      "gn": "Pe gala araapy 11-pegua ojerure peteĩ mba'e ógape guare, ojejapóva iñepyrũmby guive, ha pe ñandyry akuhu ha'e pe apañuãi.",
-      "fuente": "rdn_gala1"
-    },
-    {
-      "id": "equipos",
-      "es": "Los seis destacados de la primera gala son capitanes de grupos de tres: cada uno eligió a dos compañeros entre los doce restantes.",
-      "gn": "Umi poteĩ ojehechakuaáva gala peteĩhape ha'e capitán aty mbohapy-mbohapy rehe: peteĩteĩ oiporavo mokõi irũ umi pakõi hembýva apytégui.",
-      "fuente": "rdn_gala1"
+      "id": "duelo",
+      "es": "La gala del lunes 17 tenía anunciado el duelo de eliminación: los nueve del delantal negro competían por el último cupo de salvación. Qué pasó esa noche no lo publicó ningún medio.",
+      "gn": "Gala arakõi 17-pegua oguereko ñemombe'upyre pe ñorãirõ ñemosẽ: umi porundy delantal hũ reheve oñeha'ã pe salvación paha rehe. Mba'e oiko upe pyharépe ndosẽi mamove.",
+      "fuente": "rdn_gala2"
     },
     {
       "id": "dias",
-      "es": "El programa va lunes y martes a las 20:50 por el SNT.",
-      "gn": "Pe programa osẽ arakõi ha araapy 20:50-pe SNT rupi.",
+      "es": "El programa va lunes y martes a las 20:50 por el SNT. Las emisiones del 10, el 11 y el 17 salieron en esa grilla.",
+      "gn": "Pe programa osẽ arakõi ha araapy 20:50-pe SNT rupi. Umi emisión 10, 11 ha 17-pegua osẽ upe grilla-pe.",
       "fuente": "tvpy_estreno"
     },
     {
       "id": "youtube",
-      "es": "La transmisión se acompaña en YouTube con Mariano, con las reacciones del público en vivo.",
-      "gn": "Pe ñemosarambi oñemoirũ YouTube-pe Mariano ndive, ohechaukávo mba'éichapa ohecha tapicha kuéra.",
-      "fuente": "rdn_gala1"
+      "es": "Cada programa sube al canal oficial de YouTube en partes, la misma madrugada.",
+      "gn": "Peteĩteĩ programa ojupi pe canal oficial YouTube-pe vore vorépe, upe pyhareve voi.",
+      "fuente": "yt_programa3"
     }
   ],
   "rumores": [],
   "no_confirmado": [
     {
-      "id": "premio2026",
-      "es": "El premio de esta edición. En 2025 fueron 50 millones de guaraníes y una carrera de gastronomía; la producción no publicó todavía el de 2026.",
-      "gn": "Ko edición jopói. 2025-pe oĩ 50 millón guaraní ha peteĩ carrera gastronomía-gua; pe producción ndosẽi gueteri he'i mba'épa oĩta 2026-pe.",
+      "id": "gala3",
+      "es": "Todo lo de la gala del lunes 17: la prueba, los platos, y sobre todo si hubo eliminación y de quién. El episodio está subido y ningún medio escribió una línea.",
+      "gn": "Opa mba'e gala arakõi 17-pegua: pe ñeha'ã, umi tembi'u, ha tuichavéva oĩpa ñemosẽ ha mávape. Pe episodio oĩ ojupi ha avave medio ndohaíri peteĩ tysỹi jepe.",
+      "fuente": "yt_programa3"
+    },
+    {
+      "id": "trampa",
+      "es": "Cuidado con el sitio del canal: las direcciones que llevan a MasterChef redirigen hoy a una nota de mayo de 2025 que anuncia un primer eliminado. Esa nota es de la edición anterior, y ese nombre no está entre los 18 de esta temporada.",
+      "gn": "Eñangareko pe canal renda ndive: umi dirección oguerahava MasterChef-pe oho ko'ág̃a peteĩ kuatiahai jasypo 2025-pegua ha he'i mávapa osẽ ypy. Upe kuatiahai ha'e edición ohasa va'ekue mba'e, ha upe téra ndaipóri umi papoapy ko temporada-pegua apytépe.",
+      "fuente": "snt_2025_ariel"
+    },
+    {
+      "id": "equipo_marilina",
+      "es": "Con quiénes cocinó Marilina Bogado. La nota nombra a un «Yuk» que no está en la lista oficial; los dos que aparecen en su equipo salen por descarte, no de una fuente.",
+      "gn": "Mávandi ombojy Marilina Bogado. Pe kuatiahai omombe'u peteĩ «Yuk» ndaipóriva pe lista oficial-pe; umi mokõi osẽva iñatýpe ou ojehejáva rupive, ndaha'éi peteĩ fuente-gui.",
+      "fuente": "rdn_gala1"
+    },
+    {
+      "id": "nueve",
+      "es": "Quiénes son exactamente los nueve del delantal negro. La nota se contradice al enumerarlos: repite un nombre e incluye a alguien de un equipo que subió al balcón. Los tres equipos que cayeron sí están claros.",
+      "gn": "Máva hína añetehápe umi porundy delantal hũ reheve. Pe kuatiahai ojoavy omombe'u jave: he'ijey peteĩ téra ha omoĩ peteĩ tapicha aty ojupi va'ekue balcón-pe. Umi mbohapy aty ho'a va'ekue katu hesakã.",
+      "fuente": "rdn_gala2"
+    },
+    {
+      "id": "premio",
+      "es": "El premio de esta edición. En 2025 fueron 50 millones de guaraníes y una carrera de gastronomía; de esta temporada no se publicó nada.",
+      "gn": "Ko edición jopói. 2025-pe oĩ 50 millón guaraní ha peteĩ carrera gastronomía-gua; ko temporada-gui ndosẽi mba'eve.",
       "fuente": "rdn_final2025"
     },
     {
       "id": "campos",
-      "es": "De qué se dedican cuatro de las dieciocho personas del plantel. La nota previa nombra a quince y describe el campo de catorce; la lista oficial suma tres nombres más sin decir nada de ellos.",
-      "gn": "Mba'épepa omba'apo irundy tapicha pe papoapy apytégui. Pe kuatiahai ypykue omombe'u papo, ha omyesakã parundy rembiapo; pe lista oficial ombojoapy mbohapy héra he'i'ỹre mba'eve hesekuéra.",
+      "es": "De qué se dedican cuatro de las dieciocho personas del plantel.",
+      "gn": "Mba'épepa omba'apo irundy tapicha pe papoapy apytégui.",
       "fuente": "tvpy_18"
     }
   ]

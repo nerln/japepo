@@ -84,7 +84,7 @@
       }
     ]
   },
-  "proxima_gala": "2026-08-11",
+  "proxima_gala": "2026-08-18",
   "donde_ver": [
     {
       "que": "SNT",
@@ -132,5 +132,6 @@
       "url": "https://www.masterchefparaguay.com/",
       "fuente": "sitio_oficial"
     }
-  ]
+  ],
+  "proxima_anunciada": false
 }

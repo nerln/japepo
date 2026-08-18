@@ -36,8 +36,26 @@ existe hace fallar la verificación.
 ## 2. Correr
 
 ```bash
+python3 model/puntaje.py --gala N        # puntúa la gala que se acaba de resolver
+bin/publicar.sh --gala N+1               # recalcula, congela la promesa siguiente y publica
+```
+
+`bin/publicar.sh` hace todo lo demás: corre el modelo, escribe la corrida en el
+registro, sella la corrida anterior con el commit desde el que salió publicada,
+rearma la página y la tarjeta, pasa las dieciocho comprobaciones y empuja. Si
+alguna falla, no publica.
+
+El puntaje va **primero**, y el orden no es capricho: `puntaje.py` lee la
+promesa que quedó escrita antes de esa gala, y `publicar.sh` escribe la
+siguiente. Si se invierten, se puntúa contra una predicción hecha después de
+saber el resultado, que es exactamente lo que este registro existe para
+impedir. `model/puntaje.py` igual se niega, pero conviene no tentarlo.
+
+Los pasos por separado, si hace falta:
+
+```bash
 python3 model/preparacion.py
-python3 model/registrar.py --fecha AAAA-MM-DD
+python3 model/registrar.py --fecha AAAA-MM-DD --gala N
 python3 gui/build.py
 python3 gui/tarjeta.py
 python3 gui/verificar.py

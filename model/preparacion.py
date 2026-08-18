@@ -4,25 +4,31 @@
 El pronostico de MasterChef Celebrity Paraguay 2026 cuando todavia no hay
 casi nada que pronosticar.
 
-Se jugo una gala. No hubo eliminacion. Lo unico observado es un orden parcial
-en una prueba tecnica de cortes: RDN nombra primero, segundo y tercero, y
-despues completa los seis destacados sin declarar el orden de los otros tres.
-Eso es todo el dato que existe.
+Van tres galas y ninguna eliminacion publicada. Lo observado son dos ordenes
+parciales, y nada mas:
 
-El modelo, entonces, hace una sola cosa bien: convertir ese orden parcial en
-una posterior sobre la habilidad de cada persona, y decir con cuanta fuerza.
-La medida que importa no es quien puntea sino el indice de ignorancia, que es
-la entropia de la distribucion dividida por la entropia maxima. Arranca en 1 y
-solo baja cuando pasa algo.
+  * gala 1, prueba individual de cortes: RDN nombra primero, segundo y tercero,
+    y completa los seis destacados sin decir el orden de los otros tres;
+  * gala 2, prueba por equipos: tres trios subieron al balcon y tres cayeron a
+    la zona de riesgo, sin orden adentro de cada grupo;
+  * gala 3: se emitio y ningun medio la conto, asi que no aporta nada. Un
+    silencio no es un dato.
+
+El modelo convierte esos dos ordenes parciales en una posterior sobre la
+habilidad de cada persona, y dice con cuanta fuerza. La medida que importa no es
+quien puntea sino el indice de ignorancia, que es la entropia de la distribucion
+dividida por la entropia maxima. Arranca en 1 y solo baja cuando pasa algo.
 
     habilidad     theta_i ~ Normal(0, sigma^2)
     prueba        Plackett-Luce sobre exp(alpha_prueba * theta)
+    equipos       Plackett-Luce sobre exp(alpha_equipo * promedio del trio)
     galas         se elimina con probabilidad proporcional a exp(-theta)
 
 alpha_prueba es cuanto vale una prueba de cuchillo como prediccion de una
-temporada entera. En el caso base vale 0,6: mide algo, no mide todo. El
-escenario sin_gala1 lo pone en cero y devuelve el 1/18 exacto, que es la forma
-de leer cuanto movio el unico dato que hay.
+temporada entera; alpha_equipo es lo mismo para un resultado repartido entre
+tres, y es mas chico por eso. Los escenarios sin_gala1, sin_equipos y sin_nada
+apagan cada observacion por separado, que es la forma de leer cuanto movio cada
+una.
 
     python3 model/preparacion.py
 
@@ -50,13 +56,16 @@ N_CALIBRACION = 200             # temporadas sinteticas para la prueba de cohere
 BASE = {
     "sigma": 0.90,              # dispersion de habilidad a priori
     "alpha_prueba": 0.60,       # cuanto informa la prueba de cortes
+    "alpha_equipo": 0.35,       # cuanto informa un resultado repartido entre tres
     "alpha_gala": 1.00,         # cuanto pesa la habilidad en cada eliminacion
     "orden_completo": False,    # tratar a los tres destacados sin orden como ordenados
 }
 
 ESCENARIOS = [
     ("base", {}),
+    ("sin_nada", {"alpha_prueba": 0.0, "alpha_equipo": 0.0}),
     ("sin_gala1", {"alpha_prueba": 0.0}),
+    ("sin_equipos", {"alpha_equipo": 0.0}),
     ("corte_manda", {"alpha_prueba": 1.6}),
     ("orden_completo", {"orden_completo": True}),
     ("loteria", {"sigma": 0.0}),
@@ -87,57 +96,96 @@ def log_pl_secuencia(logw: np.ndarray, orden: list[int], vivos: np.ndarray) -> n
     return total
 
 
-def log_verosimilitud(logw: np.ndarray, ordenados: list[int], sin_orden: list[int],
-                      n: int, orden_completo: bool) -> np.ndarray:
+def log_orden_parcial(logw: np.ndarray, bloques: list[list[int]], n: int) -> np.ndarray:
     """
-    El dato de la gala 1: tres puestos declarados y tres destacados sin orden.
+    log P de un orden parcial: una lista de bloques, de mejor a peor.
 
-    Los tres primeros entran como secuencia. Los otros tres entran como
-    conjunto: se suman las seis permutaciones, que es exactamente lo que
-    significa 'la lista se completo con estos tres' sin decir en que orden.
-    Con orden_completo=True se toma el orden en que los nombro la nota, para
-    ver cuanto cambia leer la fuente de la forma mas cargada.
+    Cada bloque es un conjunto de items que la fuente puso en ese escalon sin
+    decir en que orden entre ellos. Un bloque de uno es un puesto declarado. Lo
+    que no aparece en ningun bloque queda debajo de todos, que es exactamente lo
+    que dice una nota cuando nombra a los seis mejores y calla el resto.
+
+    Se suman las permutaciones dentro de cada bloque, que es lo que significa
+    «no dijo el orden»: no es lo mismo que inventarle uno.
     """
+    ramas = None
+    for bloque in bloques:
+        nuevas = []
+        for orden in permutations(bloque):
+            nuevas.append(list(orden))
+        if ramas is None:
+            ramas = nuevas
+        else:
+            ramas = [previa + extra for previa in ramas for extra in nuevas]
+
     vivos = np.ones(n, dtype=bool)
-    base = log_pl_secuencia(logw, ordenados, vivos)
-
-    vivos_2 = np.ones(n, dtype=bool)
-    for i in ordenados:
-        vivos_2[i] = False
-
-    if orden_completo:
-        return base + log_pl_secuencia(logw, sin_orden, vivos_2)
-
-    ramas = [base + log_pl_secuencia(logw, list(p), vivos_2)
-             for p in permutations(sin_orden)]
-    apilado = np.stack(ramas)
+    apilado = np.stack([log_pl_secuencia(logw, rama, vivos.copy()) for rama in ramas])
     m = apilado.max(axis=0)
     return m + np.log(np.exp(apilado - m).sum(axis=0))
 
 
-def posterior(rng, n, ordenados, sin_orden, par) -> np.ndarray:
-    """Muestrea la prior, la pesa con la gala 1 y remuestrea. Devuelve (N_POSTERIOR, n)."""
+def log_verosimilitud(theta: np.ndarray, obs: dict, par: dict) -> np.ndarray:
+    """
+    Todo lo que se observo, junto.
+
+    Gala 1, prueba individual: un orden parcial sobre las dieciocho personas.
+    Los tres primeros con puesto declarado, los otros tres destacados como
+    conjunto. Con orden_completo=True se lee la nota de la forma mas cargada,
+    tratando a esos tres como si tuvieran orden.
+
+    Gala 2, prueba por equipos: un orden parcial sobre los seis TRIOS. Tres
+    subieron al balcon y tres cayeron a la zona de riesgo, y adentro de cada
+    grupo la nota no ordena. La fuerza de un trio es el promedio de sus tres
+    habilidades: el plato sale de los tres. Por eso alpha_equipo es mas chico
+    que alpha_prueba, porque un resultado repartido entre tres dice menos de
+    cada uno que una prueba individual.
+    """
+    n = theta.shape[1]
+    total = np.zeros(theta.shape[0])
+
+    if par["alpha_prueba"] > 0 and obs.get("gala1"):
+        g1 = obs["gala1"]
+        bloques = [[i] for i in g1["ordenados"]]
+        bloques += ([[i] for i in g1["sin_orden"]] if par["orden_completo"]
+                    else [list(g1["sin_orden"])])
+        total = total + log_orden_parcial(par["alpha_prueba"] * theta, bloques, n)
+
+    if par["alpha_equipo"] > 0 and obs.get("equipos"):
+        eq = obs["equipos"]
+        fuerza = np.stack([theta[:, miembros].mean(axis=1) for miembros in eq["miembros"]], axis=1)
+        arriba = list(range(len(eq["balcon"])))
+        total = total + log_orden_parcial(par["alpha_equipo"] * fuerza, [arriba], len(eq["miembros"]))
+
+    return total
+
+
+def pesos(rng, n, obs, par):
+    """Muestrea la prior y la pesa con todo lo observado. Devuelve (theta, p)."""
     theta = rng.normal(0.0, par["sigma"], size=(N_PARTICULAS, n))
-    if par["alpha_prueba"] <= 0.0 or par["sigma"] <= 0.0:
-        idx = rng.choice(N_PARTICULAS, size=N_POSTERIOR, replace=False)
-        return theta[idx]
-    logw = par["alpha_prueba"] * theta
-    ll = log_verosimilitud(logw, ordenados, sin_orden, n, par["orden_completo"])
+    if par["sigma"] <= 0.0 or (par["alpha_prueba"] <= 0.0 and par["alpha_equipo"] <= 0.0):
+        return theta, None
+    ll = log_verosimilitud(theta, obs, par)
     ll -= ll.max()
     p = np.exp(ll)
     p /= p.sum()
+    return theta, p
+
+
+def posterior(rng, n, obs, par) -> np.ndarray:
+    """Remuestrea segun esos pesos. Devuelve (N_POSTERIOR, n)."""
+    theta, p = pesos(rng, n, obs, par)
+    if p is None:
+        idx = rng.choice(N_PARTICULAS, size=N_POSTERIOR, replace=False)
+        return theta[idx]
     idx = rng.choice(N_PARTICULAS, size=N_POSTERIOR, replace=True, p=p)
     return theta[idx]
 
 
-def n_efectivo(rng, n, ordenados, sin_orden, par) -> float:
-    """Tamano efectivo de muestra del remuestreo: cuantas particulas sobreviven de verdad."""
-    theta = rng.normal(0.0, par["sigma"], size=(N_PARTICULAS, n))
-    logw = par["alpha_prueba"] * theta
-    ll = log_verosimilitud(logw, ordenados, sin_orden, n, par["orden_completo"])
-    ll -= ll.max()
-    p = np.exp(ll)
-    p /= p.sum()
+def n_efectivo(rng, n, obs, par) -> float:
+    """Cuantas particulas sobreviven de verdad al remuestreo."""
+    _theta, p = pesos(rng, n, obs, par)
+    if p is None:
+        return float(N_PARTICULAS)
     return float(1.0 / (p ** 2).sum())
 
 
@@ -219,20 +267,25 @@ def ignorancia(p: np.ndarray) -> float:
 # coherencia interna
 # --------------------------------------------------------------------------
 
-def calibracion(rng, n, par) -> dict:
+def calibracion(rng, n, obs, par) -> dict:
     """
     Si el mundo fuera exactamente como el modelo lo describe, el modelo acertaria
     lo que dice acertar?
 
     Se generan temporadas sinteticas con la misma maquina: habilidad de la prior,
-    una gala 1 con su orden parcial, y una temporada completa. Despues se corre la
-    inferencia y se mira si el ganador verdadero cae dentro del conjunto de mayor
-    probabilidad al nivel nominal.
+    una gala 1 con su orden parcial, una prueba por equipos con los mismos trios,
+    y una temporada completa. Despues se corre la inferencia y se mira si el
+    ganador verdadero cae dentro del conjunto de mayor probabilidad al nivel
+    nominal.
 
-    Esto NO valida el modelo contra la realidad. Comprueba que la maquinaria no se
-    contradiga a si misma, que es lo unico comprobable antes de la primera
-    eliminacion. La validacion de verdad empieza cuando haya eliminados y esta en
-    data/historial_pronostico.json.
+    Las observaciones sinteticas son las mismas que el modelo usa de verdad: si
+    se probara solo con la gala 1 mientras el modelo real usa dos cosas, la
+    prueba estaria hablando de otro modelo.
+
+    Esto NO valida el modelo contra la realidad. Comprueba que la maquinaria no
+    se contradiga a si misma, que es lo unico comprobable antes de la primera
+    eliminacion. La validacion de verdad esta en data/historial_pronostico.json
+    y la regla, en EVALUACION.md.
     """
     niveles = [0.5, 0.8, 0.9]
     aciertos = {f"{int(x * 100)}": 0 for x in niveles}
@@ -240,14 +293,25 @@ def calibracion(rng, n, par) -> dict:
 
     for _ in range(N_CALIBRACION):
         theta_real = rng.normal(0.0, par["sigma"], size=n)
+        sintetico = {}
 
-        w = np.exp(par["alpha_prueba"] * theta_real)
-        gumbel = rng.gumbel(size=n)
-        orden_prueba = np.argsort(-(np.log(w) + gumbel))
-        ordenados = [int(i) for i in orden_prueba[:3]]
-        sin_orden = sorted(int(i) for i in orden_prueba[3:6])
+        if obs.get("gala1"):
+            orden_prueba = np.argsort(-(par["alpha_prueba"] * theta_real
+                                        + rng.gumbel(size=n)))
+            sintetico["gala1"] = {"ordenados": [int(i) for i in orden_prueba[:3]],
+                                  "sin_orden": sorted(int(i) for i in orden_prueba[3:6])}
+        if obs.get("equipos"):
+            miembros = obs["equipos"]["miembros"]
+            fuerza = np.array([theta_real[m].mean() for m in miembros])
+            orden_eq = np.argsort(-(par["alpha_equipo"] * fuerza + rng.gumbel(size=len(miembros))))
+            arriba = sorted(int(i) for i in orden_eq[:len(obs["equipos"]["balcon"])])
+            reordenado = [miembros[i] for i in arriba] + \
+                         [miembros[i] for i in range(len(miembros)) if i not in arriba]
+            sintetico["equipos"] = {"balcon": obs["equipos"]["balcon"],
+                                    "riesgo": obs["equipos"]["riesgo"],
+                                    "miembros": reordenado}
 
-        th = posterior(rng, n, ordenados, sin_orden, {**par, "_": None})
+        th = posterior(rng, n, sintetico, par)
         p = resumen(simular(rng, th, 40, par["alpha_gala"]), n)["p_gana"]
 
         riesgo = np.exp(-par["alpha_gala"] * theta_real)
@@ -322,11 +386,30 @@ def main():
     pos = {pid: i for i, pid in enumerate(ids)}
 
     g1 = galas[0]
-    ordenados = [pos[x] for x in g1["destacados"]["ordenados"]]
-    sin_orden = [pos[x] for x in g1["destacados"]["sin_orden"]]
+    obs = {"gala1": {"ordenados": [pos[x] for x in g1["destacados"]["ordenados"]],
+                     "sin_orden": [pos[x] for x in g1["destacados"]["sin_orden"]]}}
+
+    # La prueba por equipos: los seis trios, con los del balcon primero. El
+    # orden adentro de cada grupo no se declaro y no se inventa.
+    g2 = next((g for g in galas if g.get("balcon")), None)
+    if g2 and g1.get("equipos"):
+        por_capitan = {e["capitan"]: [e["capitan"]] + e["companeros"] for e in g1["equipos"]}
+        balcon = [c for c in g2["balcon"] if c in por_capitan]
+        riesgo = [c for c in g2["riesgo"] if c in por_capitan]
+        if len(balcon) + len(riesgo) == len(por_capitan):
+            obs["equipos"] = {
+                "balcon": balcon,
+                "riesgo": riesgo,
+                "miembros": [[pos[m] for m in por_capitan[c]] for c in balcon + riesgo],
+            }
 
     salida = {
         "semilla": SEMILLA,
+        "observaciones": {
+            "gala1": bool(obs.get("gala1")),
+            "equipos": bool(obs.get("equipos")),
+            "eliminaciones": 0,
+        },
         "n_particulas": N_PARTICULAS,
         "n_posterior": N_POSTERIOR,
         "n_temporadas_por_draw": N_TEMPORADAS,
@@ -339,7 +422,7 @@ def main():
 
     for nombre, cambios in ESCENARIOS:
         par = {**BASE, **cambios}
-        theta = posterior(rng, n, ordenados, sin_orden, par)
+        theta = posterior(rng, n, obs, par)
         r = por_lotes(rng, theta, n, par["alpha_gala"])
         salida["escenarios"][nombre] = {
             "parametros": par,
@@ -371,10 +454,10 @@ def main():
         "lider_distinguible_del_plano": bool(base[lider] - 2 * ee[lider] > plano),
         "empatados_arriba": [pid for pid in orden_p
                              if base[pid] + 2 * ee[pid] >= base[lider] - 2 * ee[lider]],
-        "n_efectivo": round(n_efectivo(rng, n, ordenados, sin_orden, BASE), 1),
+        "n_efectivo": round(n_efectivo(rng, n, obs, BASE), 1),
         "n_particulas": N_PARTICULAS,
     }
-    salida["calibracion"] = calibracion(rng, n, BASE)
+    salida["calibracion"] = calibracion(rng, n, obs, BASE)
     salida["calendario"] = calendario(programa, historia, n)
 
     destino = DATA / "estadisticas.json"

@@ -53,27 +53,125 @@
           "gn": "Pe jurado ohepyme'ẽ mba'e joja porã, na mba'e hetáva. Joaquín Serrano ogueraha puesto peteĩha."
         }
       ],
-      "momentos_fuente": "rdn_gala1"
+      "momentos_fuente": "rdn_gala1",
+      "equipos": [
+        {
+          "capitan": "joaquin",
+          "companeros": [
+            "marisa",
+            "will"
+          ],
+          "fuente": "rdn_gala1"
+        },
+        {
+          "capitan": "negro",
+          "companeros": [
+            "betha",
+            "calonga"
+          ],
+          "fuente": "rdn_gala1"
+        },
+        {
+          "capitan": "mariaelsa",
+          "companeros": [
+            "walter",
+            "luana"
+          ],
+          "fuente": "rdn_gala1"
+        },
+        {
+          "capitan": "maricha",
+          "companeros": [
+            "jorge",
+            "junior"
+          ],
+          "fuente": "rdn_gala1"
+        },
+        {
+          "capitan": "silvia",
+          "companeros": [
+            "jessica",
+            "faro"
+          ],
+          "fuente": "rdn_gala1"
+        },
+        {
+          "capitan": "marilina",
+          "companeros": [
+            "chad",
+            "vale"
+          ],
+          "fuente": "rdn_gala1",
+          "deducido": true,
+          "_nota": "RDN solo escribe que Marilina «completo su grupo junto al entusiasta Yuk», que no es ninguno de los 18. Estos dos salen por descarte: son los unicos dos nombres de la lista oficial que la nota no ubica en ningun otro equipo. Es aritmetica sobre los otros cinco equipos, no una fuente."
+        }
+      ]
     },
     {
       "n": 2,
       "fecha": "2026-08-11",
-      "titulo_es": "Casero y desde cero",
-      "titulo_gn": "Ógape guare, iñepyrũmby guive",
+      "titulo_es": "Nueve empanadas fritas, desde cero",
+      "titulo_gn": "Porundy empanada frita, iñepyrũmby guive",
       "prueba": "equipos",
-      "prueba_detalle_es": "Algo casero, hecho desde cero. Según la nota previa hay que ir rápido y controlar la temperatura del aceite.",
-      "prueba_detalle_gn": "Peteĩ mba'e ógape guare, ojejapóva iñepyrũmby guive. Pe kuatiahai he'iháicha tekotevẽ oje'e pya'e ha oñeñangareko ñandyry akuhu rehe.",
+      "prueba_detalle_es": "Primer desafío grupal: nueve empanadas fritas caseras en 75 minutos por trío. Había que amasar, hacer la bechamel y presentar tres de carne cortada a cuchillo, tres de pollo y tres de jamón y queso.",
+      "prueba_detalle_gn": "Aty ñeha'ã peteĩha: porundy empanada frita ógape guare 75 aravo'ípe peteĩteĩ mbohapyhápe. Tekotevẽ ojejapo pe masa, pe bechamel, ha oñemoĩ mbohapy so'ógui kyse ndive ojekytĩva, mbohapy ryguasúgui ha mbohapy jamón ha kesu.",
+      "minutos": 75,
+      "eliminado": null,
+      "sin_eliminacion": true,
+      "destacados": null,
+      "consecuencia_es": "Los equipos de María Elsa Núñez, Hugo Vázquez y Marilina Bogado subieron al balcón por sabor. Los de Maricha Olitte, Silvia Flores y Joaquín Serrano cayeron a la zona de riesgo: nueve personas con delantal negro.",
+      "consecuencia_gn": "María Elsa Núñez, Hugo Vázquez ha Marilina Bogado aty ojupi balcón-pe hete rykue rupive. Maricha Olitte, Silvia Flores ha Joaquín Serrano mba'e ho'a zona de riesgo-pe: porundy tapicha delantal hũ reheve.",
+      "estado": null,
+      "fuente": "rdn_gala2",
+      "balcon": [
+        "mariaelsa",
+        "negro",
+        "marilina"
+      ],
+      "riesgo": [
+        "maricha",
+        "silvia",
+        "joaquin"
+      ],
+      "momentos": [
+        {
+          "es": "La falta de experiencia dejó masas duras, repulgues deformes, salsas cortadas y rellenos equivocados.",
+          "gn": "Kuaapy'ỹ oheja masa hatã, repulgue vai, salsa oikytĩva ha relleno ojavýva."
+        },
+        {
+          "es": "Maricha Olitte asumió la culpa de su grupo tras fallar en la masa.",
+          "gn": "Maricha Olitte oguerohory pe jejavy iñaty rehegua, ojavy rire pe masa."
+        },
+        {
+          "es": "Al trío de Silvia Flores lo penalizaron por presentar el plato incompleto.",
+          "gn": "Silvia Flores mbohapyha oñembopaga omoĩ haguére pe tembi'u opa'ỹva."
+        },
+        {
+          "es": "Joaquín Serrano perdió el desempate por confundir los rellenos de carne y de pollo al freír.",
+          "gn": "Joaquín Serrano oñehundi pe desempate-pe, ombojehe'a haguére so'o ha ryguasu relleno omohyakuã jave."
+        }
+      ],
+      "momentos_fuente": "rdn_gala2",
+      "segunda_fuente": "rdn_gala1",
+      "_nota": "RDN se contradice consigo mismo sobre que dia se hizo la prueba de cortes: la nota del 11 la ubica en el estreno del lunes y esta del 12 dice «la jornada del martes». Vale la del 11, que se escribio el mismo dia, dice «estreno» y anuncia lo del martes como lo que venia; ademas coincide con la hora a la que el canal subio cada programa."
+    },
+    {
+      "n": 3,
+      "fecha": "2026-08-17",
+      "titulo_es": "El duelo que nadie contó",
+      "titulo_gn": "Pe ñorãirõ avave omombe'u'ỹva",
+      "prueba": "eliminacion",
+      "prueba_detalle_es": "Los nueve del delantal negro competían individualmente por el último cupo de salvación y después iban al duelo de eliminación. Eso es lo que estaba anunciado; qué pasó esa noche no lo publicó ningún medio.",
+      "prueba_detalle_gn": "Umi porundy delantal hũ reheve oñeha'ãva'erã peteĩteĩ pe salvación pahaguáre ha upéi oho ñorãirõ ñemosẽme. Upéva oñemombe'u va'ekue; mba'e oiko upe pyharépe ndosẽi mamove.",
       "minutos": null,
       "eliminado": null,
       "sin_eliminacion": null,
+      "estado": "emitida_sin_cronica",
       "destacados": null,
       "consecuencia_es": null,
       "consecuencia_gn": null,
-      "estado": "anunciada",
-      "fuente": "rdn_gala1",
-      "en_juego_es": "Los seis destacados de anoche son capitanes y ya eligieron equipo. Es la primera vez que estos grupos de tres cocinan juntos.",
-      "en_juego_gn": "Umi poteĩ ojehechakuaáva kuehe pyhare ha'e capitán ha oiporavóma iñaty. Ko'ãva mbohapy-mbohapy okoseina ypy oñondive.",
-      "en_juego_fuente": "rdn_gala1"
+      "fuente": "yt_programa3",
+      "segunda_fuente": "rdn_gala2"
     }
   ]
 }

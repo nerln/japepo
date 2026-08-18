@@ -18,7 +18,7 @@ concurrency:
 jobs:
   # La pagina que se publica se vuelve a construir desde data/ y se compara con
   # la commiteada. Si alguien retoco un numero en el HTML, o subio datos nuevos
-  # sin reconstruir, no sale nada. Son diecisiete comprobaciones, no una:
+  # sin reconstruir, no sale nada. Son dieciocho comprobaciones, no una:
   # ver gui/verificar.py.
   verificar:
     runs-on: ubuntu-latest

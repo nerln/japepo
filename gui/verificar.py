@@ -412,10 +412,26 @@ def coherencia(d: dict) -> int:
             err += falla(f"la gala {g['n']} destaca a alguien que no esta en el plantel: {desconocidos}")
         if len(set(marcados)) != len(marcados):
             err += falla(f"la gala {g['n']} destaca dos veces a la misma persona")
-    ultima = d["historial"]["entradas"][-1]
+    h = d["historial"]
     base = d["stats"]["escenarios"]["base"]
-    if abs(ultima["ignorancia"] - base["ignorancia"]) > TOL:
-        err += falla("la ultima entrada del registro no es de esta corrida: correr model/registrar.py")
+    if abs(h["corridas"][-1]["ignorancia"] - base["ignorancia"]) > TOL:
+        err += falla("la ultima corrida del registro no es esta: correr model/registrar.py")
+    # una promesa se escribe antes de la gala y no se toca: si alguna quedo
+    # apuntando a una gala que ya se jugo y sin puntuar, hay que puntuarla
+    jugadas = {g["n"] for g in d["galas"]["galas"] if g.get("estado") != "anunciada"}
+    puntuadas = {p["gala"] for p in h["puntajes"]}
+    for pr in h["predicciones_gala"]:
+        if pr["gala"] in jugadas and pr["gala"] not in puntuadas:
+            gala = next(g for g in d["galas"]["galas"] if g["n"] == pr["gala"])
+            if gala.get("eliminado"):
+                err += falla(f"la gala {pr['gala']} ya se jugo, tiene eliminado y una promesa "
+                             f"escrita, y sigue sin puntuar: correr model/puntaje.py --gala "
+                             f"{pr['gala']}")
+    # y ningun puntaje sin su promesa: eso seria haberlo escrito despues de saber
+    prometidas = {p["gala"] for p in h["predicciones_gala"]}
+    for pu in h["puntajes"]:
+        if pu["gala"] not in prometidas:
+            err += falla(f"hay un puntaje de la gala {pu['gala']} sin promesa previa")
     if err:
         return err
     return bien(f"{n} personas, {len(d['galas']['galas'])} galas y el registro al dia")

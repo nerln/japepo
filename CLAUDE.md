@@ -6,7 +6,7 @@ publica desde `web/` en `main` por GitHub Actions.
 ## Antes de tocar nada
 
 `python3 gui/verificar.py` tiene que dar cero. Es lo mismo que corre en CI y son
-diecisiete comprobaciones. Después de cualquier cambio, tiene que seguir dando
+dieciocho comprobaciones. Después de cualquier cambio, tiene que seguir dando
 cero.
 
 ## Las reglas que no se negocian
@@ -32,6 +32,11 @@ cero.
    nombre nuevo trae una letra que el recorte no cubre, la verificación falla:
    se agrega a `CHARSET` y se vuelve a correr `gui/fuentes.py`.
 
+9. **Una promesa escrita no se reescribe.** `data/historial_pronostico.json` es
+   append-only en sus tres series. Puntuar una gala cuya predicción no estaba
+   publicada de antes no es puntuar: `model/puntaje.py` se niega y hace bien.
+   La regla de puntuación está en `EVALUACION.md` y no se toca.
+
 ## La trampa que ya costó una vez en el proyecto vecino
 
 En `placa`, los bloques de la plantilla se separaban con comentarios
@@ -48,9 +53,11 @@ queda alguno sin llenar.
 ## El orden de las cosas
 
 ```
+bin/publicar.sh       →  el camino entero, y el único que hace falta saber
 gui/fuentes.py        →  gui/fuentes.css   (solo cuando cambia CHARSET)
 model/preparacion.py  →  data/estadisticas.json
-model/registrar.py    →  data/historial_pronostico.json
+model/registrar.py    →  data/historial_pronostico.json (corridas, promesas)
+model/puntaje.py      →  data/historial_pronostico.json (puntajes)
 gui/build.py          →  web/index.html, web/datos.json
 gui/verificar.py      →  el permiso para publicar
 ```

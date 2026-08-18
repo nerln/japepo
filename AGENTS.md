@@ -6,7 +6,7 @@ publica desde `web/` en `main` por GitHub Actions.
 ## Antes de tocar nada
 
 `python3 gui/verificar.py` tiene que dar cero. Es lo mismo que corre en CI y son
-diecisiete comprobaciones. Después de cualquier cambio, tiene que seguir dando
+dieciocho comprobaciones. Después de cualquier cambio, tiene que seguir dando
 cero.
 
 ## Las reglas que no se negocian

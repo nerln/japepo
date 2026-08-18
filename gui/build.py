@@ -29,6 +29,7 @@ from avatares import svg as cara_svg                                   # noqa: E
 from firma import firma_corrida                                        # noqa: E402
 from marca import svg as marca_svg                                     # noqa: E402
 
+REPO = "https://github.com/nerln/japepo"
 TEMAS = ["sistema", "claro", "oscuro", "brasa", "kaa", "contraste"]
 # El orden es el de quien mira el programa: cuando se juega, quien cocina, como
 # va, que paso. El modelo va al final, que es donde lo busca quien lo quiera.
@@ -41,6 +42,7 @@ SECCIONES = [
     ("06", "social", "nav_social"),
     ("07", "ficha", "nav_ficha"),
     ("08", "metodo", "nav_metodo"),
+    ("09", "registro", "nav_registro"),
 ]
 MESES_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
             "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
@@ -555,6 +557,27 @@ def plantel(d: dict, t: Texto) -> str:
 </section>"""
 
 
+def equipos(d: dict, t: Texto) -> str:
+    """Los seis trios, con la marca de cual no lo dijo ninguna fuente."""
+    g1 = d["galas"]["galas"][0]
+    if not g1.get("equipos"):
+        return ""
+    por_id = {p["id"]: p for p in d["plantel"]["plantel"]}
+    tarjetas = []
+    for e in g1["equipos"]:
+        gente = "".join(
+            f'<span class="{"orden" if m == e["capitan"] else ""}">'
+            f'{esc(por_id[m]["corto"])}</span>'
+            for m in [e["capitan"]] + e["companeros"]
+        )
+        marca = (f'<span class="etiqueta">{t("equipos_deducido")}</span>'
+                 if e.get("deducido") else "")
+        tarjetas.append(f'<div class="equipo"><div class="podio">{gente}</div>{marca}</div>')
+    return f"""
+    <h3>{t('equipos_h')}</h3>
+    <div class="equipos">{''.join(tarjetas)}</div>"""
+
+
 def galas(d: dict, t: Texto) -> str:
     por_id = {p["id"]: p for p in d["plantel"]["plantel"]}
     bloques = []
@@ -565,9 +588,20 @@ def galas(d: dict, t: Texto) -> str:
             meta.append(t("gala_minutos", minutos=g["minutos"]))
         if g.get("sin_eliminacion"):
             meta.append(t("gala_sin_eliminacion"))
+        if g.get("estado") == "emitida_sin_cronica":
+            meta.append(t("gala_sin_cronica"))
         if futura:
             meta.append(t("gala_anunciada"))
         meta.append(enlace_fuente(d, g["fuente"]))
+
+        grupos = ""
+        if g.get("balcon"):
+            def fila(clave, ids, clase):
+                fichas = "".join(f'<span class="{clase}">{esc(por_id[x]["corto"])}</span>'
+                                 for x in ids)
+                return (f'<p class="silencio" style="margin:.9rem 0 .3rem;font-size:.84rem">'
+                        f'{t(clave)}</p><div class="podio">{fichas}</div>')
+            grupos = fila("gala_balcon", g["balcon"], "orden") + fila("gala_riesgo", g["riesgo"], "")
 
         podio = ""
         if g.get("destacados"):
@@ -597,7 +631,7 @@ def galas(d: dict, t: Texto) -> str:
         <h3>{t.libre(f'Gala {g["n"]} · {g["titulo_es"]}', f'Gala {g["n"]} · {g["titulo_gn"]}')}</h3>
         <div class="gala-meta">{' · '.join(meta)}</div>
         <div class="prosa">{t.libre(g['prueba_detalle_es'], g['prueba_detalle_gn'], tag='p')}</div>
-        {podio}{consecuencia}{momentos}
+        {podio}{grupos}{consecuencia}{momentos}
       </div>""")
 
     return f"""
@@ -607,6 +641,7 @@ def galas(d: dict, t: Texto) -> str:
     <h2>{t('galas_h')}</h2>
     <div class="prosa">{t.par('galas_p')}</div>
     <div style="margin-top:1.5rem">{''.join(bloques)}</div>
+    {equipos(d, t)}
   </div>
 </section>"""
 
@@ -720,7 +755,6 @@ def metodo(d: dict, t: Texto, firma: str) -> str:
       <summary>{t('detalle_abrir')}</summary>
       {escenarios(d, t)}
       {calibracion(d, t)}
-      {registro(d, t)}
     </details>
     <p class="silencio" style="margin-top:1.2rem">
       {t('metodo_repo')}: <a href="https://github.com/nerln/japepo">nerln/japepo</a> ·
@@ -730,24 +764,130 @@ def metodo(d: dict, t: Texto, firma: str) -> str:
 </section>"""
 
 
+def movimiento(d: dict, t: Texto) -> str:
+    """
+    Como se movio la chance de cada uno, corrida por corrida.
+
+    Con una sola corrida no hay nada que dibujar y la pagina lo dice en vez de
+    mostrar un grafico de un punto, que es la forma elegante de mentir.
+    """
+    corridas = d["historial"]["corridas"]
+    if len(corridas) < 2:
+        return (f"<h3>{t('movimiento_h')}</h3>"
+                f"<div class=\"prosa\">{t.par('movimiento_una', clase='silencio')}</div>")
+
+    nombres = {p["id"]: p["corto"] for p in d["plantel"]["plantel"]}
+    ids = sorted(corridas[-1]["p_gana"], key=corridas[-1]["p_gana"].get, reverse=True)
+    techo = max(max(c["p_gana"].values()) for c in corridas) * 1.1
+    an, al, mi, md = 720, 240, 34, 92
+    x = lambda i: mi + i * (an - mi - md) / max(1, len(corridas) - 1)
+    y = lambda v: al - 26 - (v / techo) * (al - 46)
+
+    trazos, etiquetas = [], []
+    for n, pid in enumerate(ids):
+        puntos = " ".join(f"{x(i):.1f},{y(c['p_gana'].get(pid, 0)):.1f}"
+                          for i, c in enumerate(corridas) if pid in c["p_gana"])
+        if not puntos:
+            continue
+        destacado = n < 3
+        trazos.append(
+            f'<polyline points="{puntos}" fill="none" '
+            f'stroke="var(--{"barra" if destacado else "plano"})" '
+            f'stroke-width="{2.2 if destacado else 1.1}" '
+            f'opacity="{1 if destacado else 0.45}" stroke-linejoin="round"/>'
+        )
+        if destacado:
+            ultimo = corridas[-1]["p_gana"].get(pid)
+            if ultimo is not None:
+                etiquetas.append(
+                    f'<text x="{x(len(corridas) - 1) + 6:.1f}" y="{y(ultimo) + 4:.1f}" '
+                    f'font-size="11" fill="var(--texto-2)">{esc(nombres[pid])}</text>'
+                )
+    ejes = "".join(
+        f'<text x="{x(i):.1f}" y="{al - 6}" font-size="10" fill="var(--texto-2)" '
+        f'text-anchor="middle">{c["fecha"][8:]}/{c["fecha"][5:7]}</text>'
+        for i, c in enumerate(corridas)
+    )
+    return f"""
+    <h3>{t('movimiento_h')}</h3>
+    <div class="prosa">{t.par('movimiento_p')}</div>
+    <div class="tabla-envoltura" style="border:0">
+      <svg viewBox="0 0 {an} {al}" class="movimiento" role="img"
+           aria-label="{esc(t.crudo('movimiento_p', 'es'))}">
+        <line x1="{mi}" y1="{al - 26}" x2="{an - md}" y2="{al - 26}"
+              stroke="var(--borde)" stroke-width="1"/>
+        {"".join(trazos)}{"".join(etiquetas)}{ejes}
+      </svg>
+    </div>"""
+
+
+def promesas(d: dict, t: Texto) -> str:
+    """Lo prometido antes de cada gala, y cuanto se acerco."""
+    puntajes = d["historial"]["puntajes"]
+    nombres = {p["id"]: p["nombre"] for p in d["plantel"]["plantel"]}
+    if not puntajes:
+        return (f"<h3>{t('promesas_h')}</h3>"
+                f"<div class=\"prosa\">{t.par('promesas_p')}"
+                f"{t.par('promesas_vacio', clase='silencio')}</div>")
+    filas = "".join(
+        f'<tr><td class="num">{p["gala"]}</td>'
+        f'<td>{esc(nombres.get(p["eliminado"], p["eliminado"]))}</td>'
+        f'<td class="num">{p["modelo"]["puesto"]} de {p["modelo"]["de"]}</td>'
+        f'<td class="num">{num(p["modelo"]["brier"], 3)}</td>'
+        f'<td class="num">{num(p["modelo"]["brier_uniforme"], 3)}</td></tr>'
+        for p in puntajes
+    )
+    return f"""
+    <h3>{t('promesas_h')}</h3>
+    <div class="prosa">{t.par('promesas_p')}</div>
+    <div class="tabla-envoltura"><table>
+      <thead><tr><th>{t('col_gala')}</th><th>{t('col_cayo')}</th>
+      <th>{t('col_puesto_modelo')}</th><th>{t('col_brier')}</th>
+      <th>{t('col_uniforme')}</th></tr></thead>
+      <tbody>{filas}</tbody>
+    </table></div>"""
+
+
+def seccion_registro(d: dict, t: Texto) -> str:
+    return f"""
+<section id="registro">
+  <div class="envoltura">
+    <p class="rotulo">09</p>
+    <h2>{t('registro_h')}</h2>
+    {registro(d, t)}
+  </div>
+</section>"""
+
+
 def registro(d: dict, t: Texto) -> str:
-    entradas = d["historial"]["entradas"]
+    corridas = d["historial"]["corridas"]
     nombres = {p["id"]: p["nombre"] for p in d["plantel"]["plantel"]}
     filas = "".join(
-        f'<tr><td class="num">{e["fecha"]}</td><td class="num">{e["galas"]}</td>'
-        f'<td>{esc(nombres.get(e["lider"], e["lider"]))}</td>'
-        f'<td class="num">{pct(e["p_lider"])} %</td>'
-        f'<td class="num">{num(e["ignorancia"], 3)}</td></tr>'
-        for e in entradas
+        f'<tr><td class="num">{c["fecha"]}</td><td class="num">{c["galas"]}</td>'
+        f'<td>{esc(nombres.get(c["lider"], c["lider"]))}</td>'
+        f'<td class="num">{pct(c["p_lider"])} %</td>'
+        f'<td class="num">{num(c["ignorancia"], 3)}</td>'
+        + (f'<td class="mono"><a href="{REPO}/commit/{c["commit"]}">'
+           f'{c["commit"][:7]}</a></td>' if c.get("commit")
+           else '<td class="silencio">·</td>')
+        + "</tr>"
+        for c in corridas
     )
-    vacio = t.par("registro_vacio", clase="silencio") if len(entradas) < 2 else ""
     return f"""
-    <h3>{t('registro_h')}</h3>
-    <div class="prosa">{t.par('registro_p')}{vacio}</div>
+    <div class="prosa">{t.par('registro_p')}
+      <p class="persona-nota"><a href="{REPO}/blob/main/EVALUACION.md">
+        {t('evaluacion_enlace')}</a></p>
+    </div>
+    {movimiento(d, t)}
+    {promesas(d, t)}
+    <h3>{t('versiones_h')}</h3>
+    <div class="prosa">{t.par('versiones_p')}
+      <p class="mono persona-nota">git show &lt;commit&gt;:web/index.html</p>
+    </div>
     <div class="tabla-envoltura"><table>
       <thead><tr><th>{t('col_fecha')}</th><th>{t('col_galas')}</th>
       <th>{t('col_lider')}</th><th>{t('col_gana')}</th>
-      <th>{t('col_ignorancia')}</th></tr></thead>
+      <th>{t('col_ignorancia')}</th><th>{t('col_version')}</th></tr></thead>
       <tbody>{filas}</tbody>
     </table></div>"""
 
@@ -779,7 +919,7 @@ def main():
     cuerpo = "\n".join([
         portada(d, t), seccion_proxima(d, t), plantel(d, t), seccion_como_va(d, t),
         galas(d, t), spoilers(d, t), seccion_social(d, t), ficha(d, t),
-        metodo(d, t, firma),
+        metodo(d, t, firma), seccion_registro(d, t),
     ])
 
     opciones = {

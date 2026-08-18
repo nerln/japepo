@@ -23,6 +23,7 @@ poner un número a ese poco.
 | Dónde seguirlo | Las cuentas oficiales, las etiquetas y los tuits |
 | La ficha | Canal, horario, conducción, jurado, premio |
 | Cómo se hizo | El modelo, sus límites, y el detalle para quien lo quiera |
+| El registro | Lo que se dijo antes de cada gala, cuánto se acercó, y todas las versiones publicadas |
 
 El orden es el de quien mira el programa. El modelo y su letra chica van al
 final, que es donde los busca quien los busca.
@@ -30,12 +31,24 @@ final, que es donde los busca quien los busca.
 ## Cómo correrlo
 
 ```bash
-python3 model/preparacion.py              # el modelo, escribe data/estadisticas.json
-python3 model/registrar.py --fecha 2026-08-11
-python3 gui/fuentes.py                    # recorta e incrusta las tipografias
-python3 gui/build.py                      # arma web/index.html desde data/
-python3 gui/tarjeta.py                    # la tarjeta de previsualización y el icono
-python3 gui/verificar.py                  # diecisiete comprobaciones; es lo que corre en CI
+bin/publicar.sh                 # el camino entero: recalcula, comprueba y publica
+bin/publicar.sh --gala 5        # además congela la predicción para la gala 5
+bin/publicar.sh --sin-empujar   # deja el commit hecho y no lo manda
+```
+
+Si falla cualquiera de las dieciocho comprobaciones, no publica y sale con
+error. Es lo que permite que esto pueda correr sin que nadie lo mire.
+
+Los pasos por separado, cuando hace falta:
+
+```bash
+python3 model/preparacion.py                     # el modelo → data/estadisticas.json
+python3 model/registrar.py --fecha AAAA-MM-DD --gala N   # congela la corrida y la promesa
+python3 model/puntaje.py --gala N                # puntúa una gala ya resuelta
+python3 gui/fuentes.py                           # recorta e incrusta las tipografías
+python3 gui/build.py                             # arma web/index.html desde data/
+python3 gui/tarjeta.py                           # la tarjeta de previsualización y el icono
+python3 gui/verificar.py                         # el portero
 ```
 
 Hace falta Python 3.12 con numpy, fonttools y Pillow, y node para una de las
@@ -64,6 +77,18 @@ letras de otra tipografía.
 En [ACTUALIZACION.md](ACTUALIZACION.md). Resumen: se carga la gala en
 `data/galas.json`, se marca al eliminado en `data/plantel.json`, y se vuelve a
 correr la secuencia de arriba.
+
+## Cómo se sabe si el pronóstico sirve
+
+[EVALUACION.md](EVALUACION.md) fija cómo se puntúa **antes** de que termine la
+temporada: Brier multiclase sobre quién cae, contra la baseline uniforme, y
+log-loss sobre quién gana. Declarar la predicción sin declarar la métrica no
+sirve de nada: al final se elige la que conviene y se lee como excusa.
+
+Cada corrida congela en `data/historial_pronostico.json` tres cosas que no se
+reescriben nunca: la foto del día, la promesa para la gala siguiente, y el
+puntaje cuando esa gala se resuelve. `model/puntaje.py` se niega a puntuar una
+gala que no tenía predicción publicada de antes.
 
 ## Las reglas de la casa
 

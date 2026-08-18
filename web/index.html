@@ -6,7 +6,7 @@
 <title>MasterChef Celebrity Paraguay 2026 · japepo</title>
 <meta name="description" content="Cuándo es la próxima gala de MasterChef Celebrity Paraguay 2026, quiénes siguen en competencia y qué chance tiene cada uno. En castellano y guaraní. Sitio de hinchas, sin relación con la producción.">
 <meta name="author" content="nerln">
-<meta name="japepo:firma" content="4d96c96d322d">
+<meta name="japepo:firma" content="1f193247db46">
 <meta name="japepo:no-afiliacion" content="Análisis independiente. Sin relación con MasterChef, Banijay, SNT ni la producción del programa.">
 <meta property="og:title" content="MasterChef Celebrity Paraguay 2026 · cuándo se juega y cómo va">
 <meta property="og:description" content="Cuándo es la próxima gala y quién tiene más chances.">
@@ -288,6 +288,9 @@ a.hecho:hover { border-color: var(--acento); }
 .calendario li:last-child { border-bottom: 0; }
 .calendario .mono { color: var(--texto-2); font-size: .85rem; }
 
+/* ---------- el movimiento del pronostico ---------- */
+.movimiento { width: 100%; min-width: 30rem; height: auto; display: block; }
+
 /* ---------- momentos ---------- */
 .momentos-h {
   font-family: var(--tipo-display); font-weight: 700; font-size: .72rem;
@@ -401,6 +404,12 @@ td.entero { white-space: nowrap; }
 .podio span { border: 1px solid var(--borde); border-radius: var(--radio-pastilla); padding: .12rem .65rem; font-family: var(--tipo-display); font-weight: 500; font-size: .8rem; background: var(--fondo-2); }
 .podio span.orden { border-color: var(--destacado); }
 
+/* ---------- los equipos ---------- */
+.equipos { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: .6rem; margin-top: 1rem; }
+.equipo { border: 1px solid var(--borde); border-radius: var(--radio); padding: .6rem .7rem; background: var(--fondo-2); }
+.equipo .podio { margin-top: 0; }
+.equipo .etiqueta { margin-top: .45rem; }
+
 /* ---------- spoilers ---------- */
 details.spoiler { border: 1px solid var(--borde-fuerte); border-radius: var(--radio); background: var(--fondo-2); padding: .9rem 1rem; margin-top: 1.5rem; }
 details.spoiler > summary { cursor: pointer; font-family: var(--tipo-display); font-weight: 700; list-style: none; display: flex; align-items: center; gap: .5rem; }
@@ -470,19 +479,19 @@ footer p { max-width: 42rem; }
 <header class="portada">
   <div class="envoltura">
     <div class="portada-fila">
-      <svg viewBox="0 0 128 128" role="img" aria-label="japepo" class="marca" xmlns="http://www.w3.org/2000/svg"><circle cx="64.0" cy="64.0" r="44.5" fill="var(--marca-caldo)"/><path d="M 64.00 12.00 A 52.00 52.00 0 0 1 93.42 21.12" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 95.05 22.29 A 52.00 52.00 0 0 1 112.35 44.86" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 113.05 46.74 A 52.00 52.00 0 0 1 115.24 72.85" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 114.86 74.82 A 52.00 52.00 0 0 1 104.45 96.68" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 103.16 98.21 A 52.00 52.00 0 0 1 84.11 111.95" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 82.26 112.69 A 52.00 52.00 0 0 1 59.14 115.77" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 57.16 115.55 A 52.00 52.00 0 0 1 45.44 112.57" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.863"/><path d="M 43.58 111.82 A 52.00 52.00 0 0 1 33.14 105.85" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.861"/><path d="M 31.56 104.64 A 52.00 52.00 0 0 1 23.35 96.42" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.846"/><path d="M 22.13 94.84 A 52.00 52.00 0 0 1 16.34 84.79" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.846"/><path d="M 15.57 82.94 A 52.00 52.00 0 0 1 12.64 72.15" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.832"/><path d="M 12.37 70.17 A 52.00 52.00 0 0 1 12.22 59.18" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.825"/><path d="M 12.45 57.20 A 52.00 52.00 0 0 1 14.95 46.74" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.817"/><path d="M 15.65 44.87 A 52.00 52.00 0 0 1 20.60 35.36" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.815"/><path d="M 21.73 33.72 A 52.00 52.00 0 0 1 28.77 25.75" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.813"/><path d="M 30.27 24.43 A 52.00 52.00 0 0 1 38.91 18.45" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.808"/><path d="M 40.68 17.52 A 52.00 52.00 0 0 1 50.22 13.86" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.798"/><path d="M 52.15 13.37 A 52.00 52.00 0 0 1 62.00 12.04" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.789"/><circle cx="8.0" cy="64.0" r="4.5" fill="var(--marca-anillo)" opacity="0.8"/><circle cx="120.0" cy="64.0" r="4.5" fill="var(--marca-anillo)" opacity="0.8"/><path d="M 64.00 60.00 L 64.29 59.76 L 64.61 59.53 L 64.95 59.34 L 65.33 59.17 L 65.74 59.03 L 66.17 58.92 L 66.62 58.85 L 67.09 58.82 L 67.58 58.84 L 68.07 58.89 L 68.58 58.99 L 69.09 59.13 L 69.60 59.32 L 70.11 59.56 L 70.61 59.85 L 71.10 60.18 L 71.57 60.56 L 72.02 60.99 L 72.45 61.46 L 72.84 61.98 L 73.21 62.54 L 73.54 63.14 L 73.83 63.78 L 74.08 64.45 L 74.27 65.16 L 74.42 65.89 L 74.52 66.65 L 74.56 67.43 L 74.54 68.23 L 74.46 69.04 L 74.32 69.85 L 74.11 70.67 L 73.84 71.49 L 73.50 72.30 L 73.10 73.10 L 72.64 73.89 L 72.11 74.65 L 71.51 75.38 L 70.85 76.08 L 70.14 76.74 L 69.36 77.36 L 68.53 77.93 L 67.64 78.45 L 66.71 78.91 L 65.73 79.31 L 64.70 79.65 L 63.64 79.91 L 62.55 80.11 L 61.43 80.22 L 60.29 80.26 L 59.13 80.22 L 57.96 80.09 L 56.79 79.88 L 55.62 79.58 L 54.45 79.20 L 53.30 78.72 L 52.17 78.17 L 51.07 77.52 L 50.00 76.79 L 48.98 75.98 L 48.00 75.09 L 47.07 74.12 L 46.20 73.07 L 45.40 71.95 L 44.67 70.76 L 44.01 69.52 L 43.44 68.21 L 42.95 66.85 L 42.55 65.45 L 42.25 64.00 L 42.05 62.52 L 41.94 61.01 L 41.95 59.48 L 42.06 57.94 L 42.27 56.40 L 42.60 54.85 L 43.04 53.32 L 43.59 51.80 L 44.25 50.31 L 45.01 48.86 L 45.89 47.44 L 46.87 46.08 L 47.95 44.77 L 49.13 43.53 L 50.40 42.36 L 51.77 41.27 L 53.22 40.27 L 54.75 39.36 L 56.36 38.55 L 58.03 37.85 L 59.76 37.26 L 61.55 36.78 L 63.38 36.42 L 65.25 36.19 L 67.15 36.09 L 69.06 36.11 L 70.99 36.27 L 72.92 36.56 L 74.84 36.99 L 76.74 37.55 L 78.61 38.25 L 80.45 39.08 L 82.25 40.04 L 83.98 41.13 L 85.66 42.34 L 87.25 43.68 L 88.77 45.14 L 90.19 46.71 L 91.52 48.39 L 92.73 50.16 L 93.84 52.03 L 94.81 53.99 L 95.66 56.02 L 96.38 58.12 L 96.95 60.29 L 97.38 62.50 L 97.66 64.76 L 97.78 67.04 L 97.75 69.35 L 97.57 71.66 L 97.22 73.97 L 96.71 76.28 L 96.04 78.55 L 95.21 80.80 L 94.23 82.99 L 93.08 85.13 L 91.79 87.20 L 90.35 89.19 L 88.77 91.10 L 87.05 92.90 L 85.19 94.59 L 83.22 96.17 L 81.13 97.61 L 78.93 98.92 L 76.63 100.09 L 74.24 101.10 L 71.77 101.95 L 69.23 102.64 L 66.64 103.16 L 64.00 103.50" stroke="var(--marca-vapor)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/></svg>
+      <svg viewBox="0 0 128 128" role="img" aria-label="japepo" class="marca" xmlns="http://www.w3.org/2000/svg"><circle cx="64.0" cy="64.0" r="44.5" fill="var(--marca-caldo)"/><path d="M 64.00 12.00 A 52.00 52.00 0 0 1 93.68 21.30" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 95.30 22.47 A 52.00 52.00 0 0 1 112.93 46.40" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 113.57 48.29 A 52.00 52.00 0 0 1 114.94 74.45" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 114.50 76.40 A 52.00 52.00 0 0 1 102.79 98.63" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 101.43 100.10 A 52.00 52.00 0 0 1 81.62 112.92" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 79.73 113.56 A 52.00 52.00 0 0 1 57.39 115.58" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="1.000"/><path d="M 55.41 115.29 A 52.00 52.00 0 0 1 43.43 111.76" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.876"/><path d="M 41.61 110.93 A 52.00 52.00 0 0 1 31.20 104.35" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.871"/><path d="M 29.67 103.06 A 52.00 52.00 0 0 1 21.45 93.89" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.870"/><path d="M 20.33 92.23 A 52.00 52.00 0 0 1 15.05 81.55" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.856"/><path d="M 14.41 79.66 A 52.00 52.00 0 0 1 12.16 68.09" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.852"/><path d="M 12.04 66.10 A 52.00 52.00 0 0 1 12.81 54.88" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.834"/><path d="M 13.19 52.92 A 52.00 52.00 0 0 1 16.36 43.15" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.800"/><path d="M 17.20 41.33 A 52.00 52.00 0 0 1 22.44 32.74" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.793"/><path d="M 23.67 31.17 A 52.00 52.00 0 0 1 30.57 24.17" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.785"/><path d="M 32.13 22.91 A 52.00 52.00 0 0 1 40.41 17.66" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.784"/><path d="M 42.20 16.79 A 52.00 52.00 0 0 1 50.93 13.67" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.766"/><path d="M 52.87 13.20 A 52.00 52.00 0 0 1 62.00 12.04" stroke="var(--marca-anillo)" stroke-width="9.0" fill="none" stroke-linecap="butt" opacity="0.764"/><circle cx="8.0" cy="64.0" r="4.5" fill="var(--marca-anillo)" opacity="0.8"/><circle cx="120.0" cy="64.0" r="4.5" fill="var(--marca-anillo)" opacity="0.8"/><path d="M 64.00 60.00 L 64.29 59.76 L 64.61 59.53 L 64.95 59.34 L 65.33 59.17 L 65.74 59.03 L 66.17 58.92 L 66.62 58.85 L 67.09 58.82 L 67.58 58.84 L 68.07 58.89 L 68.58 58.99 L 69.09 59.13 L 69.60 59.32 L 70.11 59.56 L 70.61 59.85 L 71.10 60.18 L 71.57 60.56 L 72.02 60.99 L 72.45 61.46 L 72.84 61.98 L 73.21 62.54 L 73.54 63.14 L 73.83 63.78 L 74.08 64.45 L 74.27 65.16 L 74.42 65.89 L 74.52 66.65 L 74.56 67.43 L 74.54 68.23 L 74.46 69.04 L 74.32 69.85 L 74.11 70.67 L 73.84 71.49 L 73.50 72.30 L 73.10 73.10 L 72.64 73.89 L 72.11 74.65 L 71.51 75.38 L 70.85 76.08 L 70.14 76.74 L 69.36 77.36 L 68.53 77.93 L 67.64 78.45 L 66.71 78.91 L 65.73 79.31 L 64.70 79.65 L 63.64 79.91 L 62.55 80.11 L 61.43 80.22 L 60.29 80.26 L 59.13 80.22 L 57.96 80.09 L 56.79 79.88 L 55.62 79.58 L 54.45 79.20 L 53.30 78.72 L 52.17 78.17 L 51.07 77.52 L 50.00 76.79 L 48.98 75.98 L 48.00 75.09 L 47.07 74.12 L 46.20 73.07 L 45.40 71.95 L 44.67 70.76 L 44.01 69.52 L 43.44 68.21 L 42.95 66.85 L 42.55 65.45 L 42.25 64.00 L 42.05 62.52 L 41.94 61.01 L 41.95 59.48 L 42.06 57.94 L 42.27 56.40 L 42.60 54.85 L 43.04 53.32 L 43.59 51.80 L 44.25 50.31 L 45.01 48.86 L 45.89 47.44 L 46.87 46.08 L 47.95 44.77 L 49.13 43.53 L 50.40 42.36 L 51.77 41.27 L 53.22 40.27 L 54.75 39.36 L 56.36 38.55 L 58.03 37.85 L 59.76 37.26 L 61.55 36.78 L 63.38 36.42 L 65.25 36.19 L 67.15 36.09 L 69.06 36.11 L 70.99 36.27 L 72.92 36.56 L 74.84 36.99 L 76.74 37.55 L 78.61 38.25 L 80.45 39.08 L 82.25 40.04 L 83.98 41.13 L 85.66 42.34 L 87.25 43.68 L 88.77 45.14 L 90.19 46.71 L 91.52 48.39 L 92.73 50.16 L 93.84 52.03 L 94.81 53.99 L 95.66 56.02 L 96.38 58.12 L 96.95 60.29 L 97.38 62.50 L 97.66 64.76 L 97.78 67.04 L 97.75 69.35 L 97.57 71.66 L 97.22 73.97 L 96.71 76.28 L 96.04 78.55 L 95.21 80.80 L 94.23 82.99 L 93.08 85.13 L 91.79 87.20 L 90.35 89.19 L 88.77 91.10 L 87.05 92.90 L 85.19 94.59 L 83.22 96.17 L 81.13 97.61 L 78.93 98.92 L 76.63 100.09 L 74.24 101.10 L 71.77 101.95 L 69.23 102.64 L 66.64 103.16 L 64.00 103.50" stroke="var(--marca-vapor)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/></svg>
       <div>
         <p class="rotulo"><span data-l="es">Segunda temporada · SNT</span><span data-l="gn">Temporada mokõiha · SNT</span></p>
         <h1>MasterChef Celebrity Paraguay 2026</h1>
         <p data-l="es" class="bajada">Cuándo se juega, quiénes cocinan y cómo va la competencia.</p><p data-l="gn" class="bajada">Araka'épe oñeha'ã, máva ombojy ha mba'éichapa oho pe ñorãirõ.</p>
-        <div class="cifras"><div class="cifra"><span class="cifra-num">18</span><span data-l="es">en competencia</span><span data-l="gn">oñeha'ãva</span></div><div class="cifra"><span class="cifra-num">0</span><span data-l="es">eliminados</span><span data-l="gn">osẽva</span></div><div class="cifra"><span class="cifra-num">1</span><span data-l="es">galas jugadas</span><span data-l="gn">gala ojejapóva</span></div></div>
+        <div class="cifras"><div class="cifra"><span class="cifra-num">18</span><span data-l="es">en competencia</span><span data-l="gn">oñeha'ãva</span></div><div class="cifra"><span class="cifra-num">0</span><span data-l="es">eliminados</span><span data-l="gn">osẽva</span></div><div class="cifra"><span class="cifra-num">3</span><span data-l="es">galas jugadas</span><span data-l="gn">gala ojejapóva</span></div></div>
       </div>
     </div>
     
     <div class="proxima-tarjeta">
       <p class="proxima-rotulo"><span data-l="es">Próxima gala</span><span data-l="gn">Gala oútava</span></p>
       <p class="proxima-cuando">
-        <span data-l="es" class="proxima-fecha">martes 11 de agosto</span><span data-l="gn" class="proxima-fecha">araapy 11 jasypoapy</span><span
+        <span data-l="es" class="proxima-fecha">martes 18 de agosto</span><span data-l="gn" class="proxima-fecha">araapy 18 jasypoapy</span><span
           class="proxima-hora">20:50</span>
       </p>
       <p class="proxima-reloj mono"><span class="reloj" data-l="es" data-faltan="Faltan" data-dias="días" data-horas="horas" data-minutos="minutos" data-aire="Está al aire ahora"></span><span class="reloj" data-l="gn" data-faltan="Hembýma" data-dias="ára" data-horas="aravo" data-minutos="aravo'i" data-aire="Osẽhína ko'ág̃a"></span></p>
@@ -490,7 +499,7 @@ footer p { max-width: 42rem; }
     </div>
   </div>
   <nav class="envoltura">
-    <div class="indice"><a href="#proxima"><span class="numero-seccion">01</span> <span data-l="es">La próxima gala</span><span data-l="gn">Gala oútava</span></a><a href="#plantel"><span class="numero-seccion">02</span> <span data-l="es">Quiénes cocinan</span><span data-l="gn">Mávapa ombojy</span></a><a href="#como-va"><span class="numero-seccion">03</span> <span data-l="es">Cómo va</span><span data-l="gn">Mba'éichapa oho</span></a><a href="#galas"><span class="numero-seccion">04</span> <span data-l="es">Las galas</span><span data-l="gn">Umi gala</span></a><a href="#spoilers"><span class="numero-seccion">05</span> <span data-l="es">Lo que ya se sabe</span><span data-l="gn">Ojekuaámava</span></a><a href="#social"><span class="numero-seccion">06</span> <span data-l="es">Dónde seguirlo</span><span data-l="gn">Moõpa oñemoirũ</span></a><a href="#ficha"><span class="numero-seccion">07</span> <span data-l="es">La ficha</span><span data-l="gn">Kuatia'atã</span></a><a href="#metodo"><span class="numero-seccion">08</span> <span data-l="es">Cómo se hizo</span><span data-l="gn">Mba'éichapa ojejapo</span></a></div>
+    <div class="indice"><a href="#proxima"><span class="numero-seccion">01</span> <span data-l="es">La próxima gala</span><span data-l="gn">Gala oútava</span></a><a href="#plantel"><span class="numero-seccion">02</span> <span data-l="es">Quiénes cocinan</span><span data-l="gn">Mávapa ombojy</span></a><a href="#como-va"><span class="numero-seccion">03</span> <span data-l="es">Cómo va</span><span data-l="gn">Mba'éichapa oho</span></a><a href="#galas"><span class="numero-seccion">04</span> <span data-l="es">Las galas</span><span data-l="gn">Umi gala</span></a><a href="#spoilers"><span class="numero-seccion">05</span> <span data-l="es">Lo que ya se sabe</span><span data-l="gn">Ojekuaámava</span></a><a href="#social"><span class="numero-seccion">06</span> <span data-l="es">Dónde seguirlo</span><span data-l="gn">Moõpa oñemoirũ</span></a><a href="#ficha"><span class="numero-seccion">07</span> <span data-l="es">La ficha</span><span data-l="gn">Kuatia'atã</span></a><a href="#metodo"><span class="numero-seccion">08</span> <span data-l="es">Cómo se hizo</span><span data-l="gn">Mba'éichapa ojejapo</span></a><a href="#registro"><span class="numero-seccion">09</span> <span data-l="es">El registro</span><span data-l="gn">Kuatiahaipyre</span></a></div>
   </nav>
 </header>
 
@@ -499,19 +508,12 @@ footer p { max-width: 42rem; }
     <p class="rotulo">01</p>
     <h2><span data-l="es">Lo que se juega esta gala</span><span data-l="gn">Mba'épa oñeha'ã ko galápe</span></h2>
     
-      <h3><span data-l="es">El desafío</span><span data-l="gn">Pe ñeha'ã</span></h3>
-      <div class="prosa"><p data-l="es">Algo casero, hecho desde cero. Según la nota previa hay que ir rápido y controlar la temperatura del aceite.</p><p data-l="gn">Peteĩ mba'e ógape guare, ojejapóva iñepyrũmby guive. Pe kuatiahai he'iháicha tekotevẽ oje'e pya'e ha oñeñangareko ñandyry akuhu rehe.</p></div>
-      <h3><span data-l="es">Qué está en juego</span><span data-l="gn">Mba'épa oĩ ñeha'ãme</span></h3>
-      <div class="prosa"><p data-l="es">Los seis destacados de anoche son capitanes y ya eligieron equipo. Es la primera vez que estos grupos de tres cocinan juntos.</p><p data-l="gn">Umi poteĩ ojehechakuaáva kuehe pyhare ha'e capitán ha oiporavóma iñaty. Ko'ãva mbohapy-mbohapy okoseina ypy oñondive.</p>
-        <p class="silencio" style="font-size:.84rem"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>:
-          <a href="https://www.rdn.com.py/2026/08/11/masterchef-celebrity-paraguay-seis-famosos-brillaron-en-el-desafio-de-cortes-de-vegetales/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay: seis famosos brillaron en el desafio de cortes de vegetales · 2026-08-11">RDN</a></p>
-      </div>
     <h3><span data-l="es">Los seis capitanes</span><span data-l="gn">Umi poteĩ capitán</span></h3>
     <div class="prosa"><p data-l="es">Se ganaron el puesto en la prueba de cortes y cada uno eligió a dos compañeros entre los doce restantes.</p><p data-l="gn">Ogana hikuái ipuesto pe ñeikytĩ ñeha'ãme ha peteĩteĩ oiporavo mokõi irũ umi pakõi hembýva apytégui.</p></div>
     <div class="capitanes"><span class="capitan"><svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(228 38% 34%)"/><path d="M 57.33 37.85 A 26 26 0 0 1 23.54 56.58" stroke="hsl(228 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JS</text></svg>Joaquín</span><span class="capitan"><svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(256 38% 34%)"/><path d="M 20.60 8.63 A 26 26 0 0 1 56.43 23.11" stroke="hsl(256 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">HV</text></svg>Negro</span><span class="capitan"><svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(319 38% 34%)"/><path d="M 7.27 23.97 A 26 26 0 0 1 42.58 8.25" stroke="hsl(319 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">MN</text></svg>María E.</span><span class="capitan"><svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(342 38% 34%)"/><path d="M 21.42 55.75 A 26 26 0 0 1 9.48 19.00" stroke="hsl(342 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">MO</text></svg>Maricha</span><span class="capitan"><svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(3 38% 34%)"/><path d="M 57.68 36.07 A 26 26 0 0 1 25.27 57.11" stroke="hsl(3 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">SF</text></svg>Silvia</span><span class="capitan"><svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(60 38% 34%)"/><path d="M 27.04 57.52 A 26 26 0 0 1 7.14 24.40" stroke="hsl(60 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">MB</text></svg>Marilina</span></div>
     <h3><span data-l="es">Próximas emisiones</span><span data-l="gn">Emisión oútava kuéra</span></h3>
     <div class="prosa"><p data-l="es" class="silencio">Lunes y martes a las 20:50, hora de Paraguay. Las fechas siguientes salen de esa grilla y pueden moverse.</p><p data-l="gn" class="silencio">Arakõi ha araapy 20:50-pe, Paraguay aravo. Umi ára oútava osẽ upe grilla-gui ha ikatu oñemoambue.</p></div>
-    <ul class="calendario"><li><span data-l="es">lunes 17 de agosto</span><span data-l="gn">arakõi 17 jasypoapy</span><span class="mono">20:50</span></li><li><span data-l="es">martes 18 de agosto</span><span data-l="gn">araapy 18 jasypoapy</span><span class="mono">20:50</span></li><li><span data-l="es">lunes 24 de agosto</span><span data-l="gn">arakõi 24 jasypoapy</span><span class="mono">20:50</span></li><li><span data-l="es">martes 25 de agosto</span><span data-l="gn">araapy 25 jasypoapy</span><span class="mono">20:50</span></li><li><span data-l="es">lunes 31 de agosto</span><span data-l="gn">arakõi 31 jasypoapy</span><span class="mono">20:50</span></li></ul>
+    <ul class="calendario"><li><span data-l="es">lunes 24 de agosto</span><span data-l="gn">arakõi 24 jasypoapy</span><span class="mono">20:50</span></li><li><span data-l="es">martes 25 de agosto</span><span data-l="gn">araapy 25 jasypoapy</span><span class="mono">20:50</span></li><li><span data-l="es">lunes 31 de agosto</span><span data-l="gn">arakõi 31 jasypoapy</span><span class="mono">20:50</span></li><li><span data-l="es">martes 1 de septiembre</span><span data-l="gn">araapy 1 jasyporundy</span><span class="mono">20:50</span></li><li><span data-l="es">lunes 7 de septiembre</span><span data-l="gn">arakõi 7 jasyporundy</span><span class="mono">20:50</span></li></ul>
   </div>
 </section>
 
@@ -523,34 +525,10 @@ footer p { max-width: 42rem; }
     <div class="rejilla">
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(228 38% 34%)"/><path d="M 57.33 37.85 A 26 26 0 0 1 23.54 56.58" stroke="hsl(228 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JS</text></svg>
-          <div>
-            <div class="persona-nombre">Joaquín Serrano</div>
-            <div class="persona-p">10,8 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
-          </div>
-        </div>
-        <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span><span class="etiqueta viva"><span data-l="es">Puesto 1 declarado</span><span data-l="gn">Puesto 1 oje'e va'ekue</span></span></div>
-        <p data-l="es" class="persona-nota">La producción no contó a qué se dedica.</p><p data-l="gn" class="persona-nota">Pe producción nde'íri mba'épepa omba'apo.</p>
-        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://television.com.py/masterchef-celebrity-paraguay-confirma-a-sus-18-participantes" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay confirma a sus 18 participantes · 2026-08-03">TVPY / television.com.py</a></p>
-      </article>
-      <article class="persona">
-        <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(256 38% 34%)"/><path d="M 20.60 8.63 A 26 26 0 0 1 56.43 23.11" stroke="hsl(256 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">HV</text></svg>
-          <div>
-            <div class="persona-nombre">Hugo Vázquez</div>
-            <div class="persona-p">9,9 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
-          </div>
-        </div>
-        <div><span class="etiqueta"><span data-l="es">Imagen</span><span data-l="gn">Ta'anga</span></span><span class="etiqueta viva"><span data-l="es">Puesto 2 declarado</span><span data-l="gn">Puesto 2 oje'e va'ekue</span></span></div>
-        <p data-l="es" class="persona-nota">RDN lo nombra junto a Betha Borba por cómo se ve el plato.</p><p data-l="gn" class="persona-nota">RDN omoĩ chupe Betha Borba ykére, pe tembi'u ojehechaháicha.</p>
-        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
-      </article>
-      <article class="persona">
-        <div class="persona-cab">
           <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(319 38% 34%)"/><path d="M 7.27 23.97 A 26 26 0 0 1 42.58 8.25" stroke="hsl(319 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">MN</text></svg>
           <div>
             <div class="persona-nombre">María Elsa Núñez</div>
-            <div class="persona-p">9,1 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-p">10,9 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
         <div><span class="etiqueta"><span data-l="es">Televisión</span><span data-l="gn">Ta'angambyry</span></span><span class="etiqueta viva"><span data-l="es">Puesto 3 declarado</span><span data-l="gn">Puesto 3 oje'e va'ekue</span></span></div>
@@ -559,10 +537,34 @@ footer p { max-width: 42rem; }
       </article>
       <article class="persona">
         <div class="persona-cab">
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(256 38% 34%)"/><path d="M 20.60 8.63 A 26 26 0 0 1 56.43 23.11" stroke="hsl(256 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">HV</text></svg>
+          <div>
+            <div class="persona-nombre">Hugo Vázquez</div>
+            <div class="persona-p">10,4 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+          </div>
+        </div>
+        <div><span class="etiqueta"><span data-l="es">Imagen</span><span data-l="gn">Ta'anga</span></span><span class="etiqueta viva"><span data-l="es">Puesto 2 declarado</span><span data-l="gn">Puesto 2 oje'e va'ekue</span></span></div>
+        <p data-l="es" class="persona-nota">RDN lo nombra junto a Betha Borba por cómo se ve el plato.</p><p data-l="gn" class="persona-nota">RDN omoĩ chupe Betha Borba ykére, pe tembi'u ojehechaháicha.</p>
+        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
+      </article>
+      <article class="persona">
+        <div class="persona-cab">
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(228 38% 34%)"/><path d="M 57.33 37.85 A 26 26 0 0 1 23.54 56.58" stroke="hsl(228 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JS</text></svg>
+          <div>
+            <div class="persona-nombre">Joaquín Serrano</div>
+            <div class="persona-p">9,1 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+          </div>
+        </div>
+        <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span><span class="etiqueta viva"><span data-l="es">Puesto 1 declarado</span><span data-l="gn">Puesto 1 oje'e va'ekue</span></span></div>
+        <p data-l="es" class="persona-nota">La producción no contó a qué se dedica.</p><p data-l="gn" class="persona-nota">Pe producción nde'íri mba'épepa omba'apo.</p>
+        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://television.com.py/masterchef-celebrity-paraguay-confirma-a-sus-18-participantes" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay confirma a sus 18 participantes · 2026-08-03">TVPY / television.com.py</a></p>
+      </article>
+      <article class="persona">
+        <div class="persona-cab">
           <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(60 38% 34%)"/><path d="M 27.04 57.52 A 26 26 0 0 1 7.14 24.40" stroke="hsl(60 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">MB</text></svg>
           <div>
             <div class="persona-nombre">Marilina Bogado</div>
-            <div class="persona-p">8,4 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-p">8,7 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
         <div><span class="etiqueta"><span data-l="es">Música</span><span data-l="gn">Purahéi</span></span><span class="etiqueta viva"><span data-l="es">Entre los seis, sin puesto declarado</span><span data-l="gn">Umi poteĩ apytépe, puesto oje'e'ỹre</span></span></div>
@@ -574,7 +576,7 @@ footer p { max-width: 42rem; }
           <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(3 38% 34%)"/><path d="M 57.68 36.07 A 26 26 0 0 1 25.27 57.11" stroke="hsl(3 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">SF</text></svg>
           <div>
             <div class="persona-nombre">Silvia Flores</div>
-            <div class="persona-p">8,1 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-p">8,2 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
         <div><span class="etiqueta"><span data-l="es">Humor y escena</span><span data-l="gn">Puka ha escenario</span></span><span class="etiqueta viva"><span data-l="es">Entre los seis, sin puesto declarado</span><span data-l="gn">Umi poteĩ apytépe, puesto oje'e'ỹre</span></span></div>
@@ -586,7 +588,7 @@ footer p { max-width: 42rem; }
           <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(342 38% 34%)"/><path d="M 21.42 55.75 A 26 26 0 0 1 9.48 19.00" stroke="hsl(342 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32.0" cy="32.0" r="30" fill="none" stroke="var(--destacado)" stroke-width="2.5" stroke-dasharray="3 4"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">MO</text></svg>
           <div>
             <div class="persona-nombre">Maricha Olitte</div>
-            <div class="persona-p">8,1 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-p">7,8 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
         <div><span class="etiqueta"><span data-l="es">Humor y escena</span><span data-l="gn">Puka ha escenario</span></span><span class="etiqueta viva"><span data-l="es">Entre los seis, sin puesto declarado</span><span data-l="gn">Umi poteĩ apytépe, puesto oje'e'ỹre</span></span></div>
@@ -595,51 +597,63 @@ footer p { max-width: 42rem; }
       </article>
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(359 38% 34%)"/><path d="M 9.95 18.22 A 26 26 0 0 1 48.01 11.51" stroke="hsl(359 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JC</text></svg>
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(188 38% 34%)"/><path d="M 57.33 26.15 A 26 26 0 0 1 35.17 57.81" stroke="hsl(188 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">CU</text></svg>
           <div>
-            <div class="persona-nombre">Jorge Castro</div>
-            <div class="persona-p">4,2 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
-          </div>
-        </div>
-        <div><span class="etiqueta"><span data-l="es">Música</span><span data-l="gn">Purahéi</span></span></div>
-        <p data-l="es" class="persona-nota">Viene de la música.</p><p data-l="gn" class="persona-nota">Ou purahéi guive.</p>
-        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
-      </article>
-      <article class="persona">
-        <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(290 38% 34%)"/><path d="M 55.37 20.60 A 26 26 0 0 1 40.89 56.43" stroke="hsl(290 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">FS</text></svg>
-          <div>
-            <div class="persona-nombre">Farid Safuán</div>
-            <div class="persona-p">4,1 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
-          </div>
-        </div>
-        <div><span class="etiqueta"><span data-l="es">Música</span><span data-l="gn">Purahéi</span></span></div>
-        <p data-l="es" class="persona-nota">DJ.</p><p data-l="gn" class="persona-nota">DJ.</p>
-        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
-      </article>
-      <article class="persona">
-        <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(210 38% 34%)"/><path d="M 18.22 54.05 A 26 26 0 0 1 11.51 15.99" stroke="hsl(210 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">WF</text></svg>
-          <div>
-            <div class="persona-nombre">Will Fretes</div>
-            <div class="persona-p">4,0 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-nombre">Chad Uddstrom</div>
+            <div class="persona-p">4,3 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
         <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span></div>
-        <p data-l="es" class="persona-nota">Entra con su esposa, Marilina Bogado; la nota de RDN los presenta como rivales.</p><p data-l="gn" class="persona-nota">Oike hembireko Marilina Bogado ndive; RDN omombe'u ha'ekuéra oñorãirõha ojuehe.</p>
+        <p data-l="es" class="persona-nota">Según la nota previa, acá juega en un terreno que no es el suyo.</p><p data-l="gn" class="persona-nota">Pe kuatiahai he'iháicha, ko'ápe oñeha'ã peteĩ tenda ndaha'éiva imba'e.</p>
         <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
       </article>
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(343 38% 34%)"/><path d="M 23.11 7.57 A 26 26 0 0 1 57.23 25.71" stroke="hsl(343 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JC</text></svg>
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(88 38% 34%)"/><path d="M 55.37 20.60 A 26 26 0 0 1 40.89 56.43" stroke="hsl(88 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">BB</text></svg>
           <div>
-            <div class="persona-nombre">Jessica Santa Cruz</div>
-            <div class="persona-p">4,0 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-nombre">Bethania Borba</div>
+            <div class="persona-p">4,2 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+          </div>
+        </div>
+        <div><span class="etiqueta"><span data-l="es">Imagen</span><span data-l="gn">Ta'anga</span></span></div>
+        <p data-l="es" class="persona-nota">RDN la nombra junto a Negro Vázquez por cómo se ve el plato.</p><p data-l="gn" class="persona-nota">RDN omoĩ chupe Negro Vázquez ykére, pe tembi'u ojehechaháicha.</p>
+        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
+      </article>
+      <article class="persona">
+        <div class="persona-cab">
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(327 38% 34%)"/><path d="M 56.11 41.74 A 26 26 0 0 1 19.79 54.96" stroke="hsl(327 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">VV</text></svg>
+          <div>
+            <div class="persona-nombre">Vale Vierci</div>
+            <div class="persona-p">4,2 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
         <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span></div>
         <p data-l="es" class="persona-nota">La producción no contó a qué se dedica.</p><p data-l="gn" class="persona-nota">Pe producción nde'íri mba'épepa omba'apo.</p>
         <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://television.com.py/masterchef-celebrity-paraguay-confirma-a-sus-18-participantes" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay confirma a sus 18 participantes · 2026-08-03">TVPY / television.com.py</a></p>
+      </article>
+      <article class="persona">
+        <div class="persona-cab">
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(120 38% 34%)"/><path d="M 6.39 36.51 A 26 26 0 0 1 30.19 6.06" stroke="hsl(120 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">WC</text></svg>
+          <div>
+            <div class="persona-nombre">Walter Cabrera</div>
+            <div class="persona-p">4,1 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+          </div>
+        </div>
+        <div><span class="etiqueta"><span data-l="es">Música</span><span data-l="gn">Purahéi</span></span></div>
+        <p data-l="es" class="persona-nota">Dos medios lo escriben «Walter de Flou»; la lista oficial dice Walter Cabrera.</p><p data-l="gn" class="persona-nota">Mokõi medio ohai «Walter de Flou»; pe lista oficial he'i Walter Cabrera.</p>
+        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.popular.com.py/2026/08/03/video-ya-esta-la-lista-oficial-de-famosos-que-cocinaran-en-reality-de-teve/" rel="noopener noreferrer" target="_blank" title="Ya esta la lista oficial de famosos que cocinaran en reality de teve · 2026-08-03">Popular</a></p>
+      </article>
+      <article class="persona">
+        <div class="persona-cab">
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(48 38% 34%)"/><path d="M 34.27 6.10 A 26 26 0 0 1 57.52 36.96" stroke="hsl(48 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">RC</text></svg>
+          <div>
+            <div class="persona-nombre">Rodrigo Calonga</div>
+            <div class="persona-p">4,1 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+          </div>
+        </div>
+        <div><span class="etiqueta"><span data-l="es">Humor y escena</span><span data-l="gn">Puka ha escenario</span></span></div>
+        <p data-l="es" class="persona-nota">Viene del humor y la escena.</p><p data-l="gn" class="persona-nota">Ou puka ha escenario guive.</p>
+        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
       </article>
       <article class="persona">
         <div class="persona-cab">
@@ -655,46 +669,46 @@ footer p { max-width: 42rem; }
       </article>
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(88 38% 34%)"/><path d="M 55.37 20.60 A 26 26 0 0 1 40.89 56.43" stroke="hsl(88 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">BB</text></svg>
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(259 38% 34%)"/><path d="M 15.64 52.21 A 26 26 0 0 1 13.62 13.62" stroke="hsl(259 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">MM</text></svg>
           <div>
-            <div class="persona-nombre">Bethania Borba</div>
-            <div class="persona-p">3,8 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-nombre">Marisa Monutti</div>
+            <div class="persona-p">3,5 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
-        <div><span class="etiqueta"><span data-l="es">Imagen</span><span data-l="gn">Ta'anga</span></span></div>
-        <p data-l="es" class="persona-nota">RDN la nombra junto a Negro Vázquez por cómo se ve el plato.</p><p data-l="gn" class="persona-nota">RDN omoĩ chupe Negro Vázquez ykére, pe tembi'u ojehechaháicha.</p>
+        <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span></div>
+        <p data-l="es" class="persona-nota">La producción no contó a qué se dedica.</p><p data-l="gn" class="persona-nota">Pe producción nde'íri mba'épepa omba'apo.</p>
         <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
       </article>
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(215 38% 34%)"/><path d="M 56.43 23.11 A 26 26 0 0 1 38.29 57.23" stroke="hsl(215 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JR</text></svg>
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(290 38% 34%)"/><path d="M 55.37 20.60 A 26 26 0 0 1 40.89 56.43" stroke="hsl(290 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">FS</text></svg>
           <div>
-            <div class="persona-nombre">Junior Rodríguez</div>
-            <div class="persona-p">3,7 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-nombre">Farid Safuán</div>
+            <div class="persona-p">3,5 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
-        <div><span class="etiqueta"><span data-l="es">Televisión</span><span data-l="gn">Ta'angambyry</span></span></div>
-        <p data-l="es" class="persona-nota">Está acostumbrado a la cámara.</p><p data-l="gn" class="persona-nota">Ojepokuaáma kámarare.</p>
+        <div><span class="etiqueta"><span data-l="es">Música</span><span data-l="gn">Purahéi</span></span></div>
+        <p data-l="es" class="persona-nota">DJ.</p><p data-l="gn" class="persona-nota">DJ.</p>
         <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
       </article>
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(48 38% 34%)"/><path d="M 34.27 6.10 A 26 26 0 0 1 57.52 36.96" stroke="hsl(48 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">RC</text></svg>
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(210 38% 34%)"/><path d="M 18.22 54.05 A 26 26 0 0 1 11.51 15.99" stroke="hsl(210 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">WF</text></svg>
           <div>
-            <div class="persona-nombre">Rodrigo Calonga</div>
-            <div class="persona-p">3,7 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-nombre">Will Fretes</div>
+            <div class="persona-p">3,4 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
-        <div><span class="etiqueta"><span data-l="es">Humor y escena</span><span data-l="gn">Puka ha escenario</span></span></div>
-        <p data-l="es" class="persona-nota">Viene del humor y la escena.</p><p data-l="gn" class="persona-nota">Ou puka ha escenario guive.</p>
+        <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span></div>
+        <p data-l="es" class="persona-nota">Entra con su esposa, Marilina Bogado; la nota de RDN los presenta como rivales.</p><p data-l="gn" class="persona-nota">Oike hembireko Marilina Bogado ndive; RDN omombe'u ha'ekuéra oñorãirõha ojuehe.</p>
         <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
       </article>
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(327 38% 34%)"/><path d="M 56.11 41.74 A 26 26 0 0 1 19.79 54.96" stroke="hsl(327 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">VV</text></svg>
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(343 38% 34%)"/><path d="M 23.11 7.57 A 26 26 0 0 1 57.23 25.71" stroke="hsl(343 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JC</text></svg>
           <div>
-            <div class="persona-nombre">Vale Vierci</div>
-            <div class="persona-p">3,7 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-nombre">Jessica Santa Cruz</div>
+            <div class="persona-p">3,4 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
         <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span></div>
@@ -703,38 +717,26 @@ footer p { max-width: 42rem; }
       </article>
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(188 38% 34%)"/><path d="M 57.33 26.15 A 26 26 0 0 1 35.17 57.81" stroke="hsl(188 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">CU</text></svg>
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(215 38% 34%)"/><path d="M 56.43 23.11 A 26 26 0 0 1 38.29 57.23" stroke="hsl(215 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JR</text></svg>
           <div>
-            <div class="persona-nombre">Chad Uddstrom</div>
-            <div class="persona-p">3,6 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-nombre">Junior Rodríguez</div>
+            <div class="persona-p">3,2 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
-        <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span></div>
-        <p data-l="es" class="persona-nota">Según la nota previa, acá juega en un terreno que no es el suyo.</p><p data-l="gn" class="persona-nota">Pe kuatiahai he'iháicha, ko'ápe oñeha'ã peteĩ tenda ndaha'éiva imba'e.</p>
+        <div><span class="etiqueta"><span data-l="es">Televisión</span><span data-l="gn">Ta'angambyry</span></span></div>
+        <p data-l="es" class="persona-nota">Está acostumbrado a la cámara.</p><p data-l="gn" class="persona-nota">Ojepokuaáma kámarare.</p>
         <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
       </article>
       <article class="persona">
         <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(120 38% 34%)"/><path d="M 6.39 36.51 A 26 26 0 0 1 30.19 6.06" stroke="hsl(120 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">WC</text></svg>
+          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(359 38% 34%)"/><path d="M 9.95 18.22 A 26 26 0 0 1 48.01 11.51" stroke="hsl(359 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">JC</text></svg>
           <div>
-            <div class="persona-nombre">Walter Cabrera</div>
-            <div class="persona-p">3,5 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
+            <div class="persona-nombre">Jorge Castro</div>
+            <div class="persona-p">3,2 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
           </div>
         </div>
         <div><span class="etiqueta"><span data-l="es">Música</span><span data-l="gn">Purahéi</span></span></div>
-        <p data-l="es" class="persona-nota">Dos medios lo escriben «Walter de Flou»; la lista oficial dice Walter Cabrera.</p><p data-l="gn" class="persona-nota">Mokõi medio ohai «Walter de Flou»; pe lista oficial he'i Walter Cabrera.</p>
-        <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.popular.com.py/2026/08/03/video-ya-esta-la-lista-oficial-de-famosos-que-cocinaran-en-reality-de-teve/" rel="noopener noreferrer" target="_blank" title="Ya esta la lista oficial de famosos que cocinaran en reality de teve · 2026-08-03">Popular</a></p>
-      </article>
-      <article class="persona">
-        <div class="persona-cab">
-          <svg viewBox="0 0 64 64" class="cara" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><circle cx="32.0" cy="32.0" r="22" fill="hsl(259 38% 34%)"/><path d="M 15.64 52.21 A 26 26 0 0 1 13.62 13.62" stroke="hsl(259 55% 72%)" stroke-width="4" fill="none" stroke-linecap="round"/><text x="32.0" y="32.0" text-anchor="middle" dominant-baseline="central" font-size="17" font-weight="600" fill="#fff" letter-spacing="0.5">MM</text></svg>
-          <div>
-            <div class="persona-nombre">Marisa Monutti</div>
-            <div class="persona-p">3,4 % <span data-l="es">de ganar</span><span data-l="gn">ipu'aka hag̃ua</span></div>
-          </div>
-        </div>
-        <div><span class="etiqueta"><span data-l="es">Sin confirmar</span><span data-l="gn">Oñemoneĩ'ỹva</span></span></div>
-        <p data-l="es" class="persona-nota">La producción no contó a qué se dedica.</p><p data-l="gn" class="persona-nota">Pe producción nde'íri mba'épepa omba'apo.</p>
+        <p data-l="es" class="persona-nota">Viene de la música.</p><p data-l="gn" class="persona-nota">Ou purahéi guive.</p>
         <p class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/03/masterchef-celebrity-paraguay-vuelve-a-encender-sus-fogones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay vuelve a encender sus fogones · 2026-08-03">RDN</a></p>
       </article></div>
   </div>
@@ -744,184 +746,184 @@ footer p { max-width: 42rem; }
   <div class="envoltura">
     <p class="rotulo">03</p>
     <h2><span data-l="es">Quién tiene más chances</span><span data-l="gn">Mávapa oguereko ikatuve</span></h2>
-    <div class="prosa"><p data-l="es">Con una sola gala jugada y ninguna eliminación, las 18 personas están casi empatadas. La prueba de cortes mueve poco: el puntero llega a 10,8 por ciento y el reparto plano da 5,6.</p><p data-l="gn">Peteĩ gala añoite ojejapo ha ndaipóri ñemosẽ, umi 18 tapicha ojojogua haimete. Pe ñeikytĩ ñeha'ã omomýi sa'i: pe tenondegua og̃uahẽ 10,8 porciento ha pe ñemboja'o joja ome'ẽ 5,6.</p><p data-l="es">Joaquín Serrano y Hugo Vázquez encabezan con 10,8 y 9,9 por ciento, y sus márgenes se superponen: hoy no hay un primero.</p><p data-l="gn">Joaquín Serrano ha Hugo Vázquez oĩ tenonde 10,8 ha 9,9 porciento ndive, ha imargen ojoapy: ko'ág̃a ndaipóri peteĩha.</p></div>
+    <div class="prosa"><p data-l="es">Van 3 galas y ninguna eliminación publicada, así que las 18 siguen adentro. El modelo mira dos cosas: la prueba de cortes y qué equipos subieron al balcón. Con eso el puntero llega a 10,9 por ciento, cuando el reparto plano da 5,6.</p><p data-l="gn">Oĩ 3 gala ha ndaipóri ñemosẽ osẽva, upévare umi 18 opyta gueteri. Pe modelo omaña mokõi mba'ére: pe ñeikytĩ ñeha'ã ha mba'e aty ojupi balcón-pe. Upéva ndive pe tenondegua og̃uahẽ 10,9 porciento, ha pe ñemboja'o joja ome'ẽ 5,6.</p><p data-l="es">María Elsa Núñez y Hugo Vázquez encabezan con 10,9 y 10,4 por ciento, y sus márgenes se superponen: hoy no hay un primero.</p><p data-l="gn">María Elsa Núñez ha Hugo Vázquez oĩ tenonde 10,9 ha 10,4 porciento ndive, ha imargen ojoapy: ko'ág̃a ndaipóri peteĩha.</p></div>
     
     <div class="barras">
       <div class="barra-fila">
-        <span class="barra-nombre">Joaquín Serrano</span>
+        <span class="barra-nombre">María Elsa Núñez</span>
         <span class="pista">
-          <span class="valor" style="width:89.11%"></span>
-          <span class="banda" style="left:82.78%;width:12.66%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:88.60%"></span>
+          <span class="banda" style="left:83.92%;width:9.36%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
-        <span class="barra-num">10,8 %</span>
+        <span class="barra-num">10,9 %</span>
       </div>
       <div class="barra-fila">
         <span class="barra-nombre">Hugo Vázquez</span>
         <span class="pista">
-          <span class="valor" style="width:82.10%"></span>
-          <span class="banda" style="left:74.84%;width:14.52%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:84.55%"></span>
+          <span class="banda" style="left:76.95%;width:15.20%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
-        <span class="barra-num">9,9 %</span>
+        <span class="barra-num">10,4 %</span>
       </div>
       <div class="barra-fila">
-        <span class="barra-nombre">María Elsa Núñez</span>
+        <span class="barra-nombre">Joaquín Serrano</span>
         <span class="pista">
-          <span class="valor" style="width:75.50%"></span>
-          <span class="banda" style="left:68.97%;width:13.06%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:74.27%"></span>
+          <span class="banda" style="left:68.63%;width:11.29%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
         <span class="barra-num">9,1 %</span>
       </div>
       <div class="barra-fila">
         <span class="barra-nombre">Marilina Bogado</span>
         <span class="pista">
-          <span class="valor" style="width:69.65%"></span>
-          <span class="banda" style="left:65.64%;width:8.02%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:71.20%"></span>
+          <span class="banda" style="left:64.53%;width:13.34%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
-        <span class="barra-num">8,4 %</span>
+        <span class="barra-num">8,7 %</span>
       </div>
       <div class="barra-fila">
         <span class="barra-nombre">Silvia Flores</span>
         <span class="pista">
-          <span class="valor" style="width:67.52%"></span>
-          <span class="banda" style="left:64.39%;width:6.26%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:66.78%"></span>
+          <span class="banda" style="left:62.46%;width:8.65%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
-        <span class="barra-num">8,1 %</span>
+        <span class="barra-num">8,2 %</span>
       </div>
       <div class="barra-fila">
         <span class="barra-nombre">Maricha Olitte</span>
         <span class="pista">
-          <span class="valor" style="width:67.01%"></span>
-          <span class="banda" style="left:62.66%;width:8.68%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:63.43%"></span>
+          <span class="banda" style="left:58.78%;width:9.30%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
-        <span class="barra-num">8,1 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Jorge Castro</span>
-        <span class="pista">
-          <span class="valor" style="width:34.54%"></span>
-          <span class="banda" style="left:30.91%;width:7.26%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">4,2 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Farid Safuán</span>
-        <span class="pista">
-          <span class="valor" style="width:34.36%"></span>
-          <span class="banda" style="left:31.36%;width:6.00%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">4,1 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Will Fretes</span>
-        <span class="pista">
-          <span class="valor" style="width:33.16%"></span>
-          <span class="banda" style="left:29.75%;width:6.83%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">4,0 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Jessica Santa Cruz</span>
-        <span class="pista">
-          <span class="valor" style="width:33.13%"></span>
-          <span class="banda" style="left:31.27%;width:3.71%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">4,0 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Luana Alonso</span>
-        <span class="pista">
-          <span class="valor" style="width:31.94%"></span>
-          <span class="banda" style="left:27.04%;width:9.81%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">3,9 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Bethania Borba</span>
-        <span class="pista">
-          <span class="valor" style="width:31.37%"></span>
-          <span class="banda" style="left:28.35%;width:6.03%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">3,8 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Junior Rodríguez</span>
-        <span class="pista">
-          <span class="valor" style="width:30.70%"></span>
-          <span class="banda" style="left:27.73%;width:5.93%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">3,7 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Rodrigo Calonga</span>
-        <span class="pista">
-          <span class="valor" style="width:30.58%"></span>
-          <span class="banda" style="left:26.67%;width:7.82%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">3,7 %</span>
-      </div>
-      <div class="barra-fila">
-        <span class="barra-nombre">Vale Vierci</span>
-        <span class="pista">
-          <span class="valor" style="width:30.36%"></span>
-          <span class="banda" style="left:26.38%;width:7.95%"></span>
-          <span class="plano" style="left:46.04%"></span>
-        </span>
-        <span class="barra-num">3,7 %</span>
+        <span class="barra-num">7,8 %</span>
       </div>
       <div class="barra-fila">
         <span class="barra-nombre">Chad Uddstrom</span>
         <span class="pista">
-          <span class="valor" style="width:29.99%"></span>
-          <span class="banda" style="left:27.19%;width:5.60%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:35.12%"></span>
+          <span class="banda" style="left:32.20%;width:5.84%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
-        <span class="barra-num">3,6 %</span>
+        <span class="barra-num">4,3 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Bethania Borba</span>
+        <span class="pista">
+          <span class="valor" style="width:34.65%"></span>
+          <span class="banda" style="left:31.45%;width:6.39%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">4,2 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Vale Vierci</span>
+        <span class="pista">
+          <span class="valor" style="width:34.63%"></span>
+          <span class="banda" style="left:32.32%;width:4.63%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">4,2 %</span>
       </div>
       <div class="barra-fila">
         <span class="barra-nombre">Walter Cabrera</span>
         <span class="pista">
-          <span class="valor" style="width:29.17%"></span>
-          <span class="banda" style="left:26.03%;width:6.26%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:33.49%"></span>
+          <span class="banda" style="left:29.62%;width:7.73%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
-        <span class="barra-num">3,5 %</span>
+        <span class="barra-num">4,1 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Rodrigo Calonga</span>
+        <span class="pista">
+          <span class="valor" style="width:33.12%"></span>
+          <span class="banda" style="left:30.48%;width:5.29%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">4,1 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Luana Alonso</span>
+        <span class="pista">
+          <span class="valor" style="width:31.61%"></span>
+          <span class="banda" style="left:29.81%;width:3.59%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">3,9 %</span>
       </div>
       <div class="barra-fila">
         <span class="barra-nombre">Marisa Monutti</span>
         <span class="pista">
-          <span class="valor" style="width:28.36%"></span>
-          <span class="banda" style="left:26.06%;width:4.61%"></span>
-          <span class="plano" style="left:46.04%"></span>
+          <span class="valor" style="width:28.87%"></span>
+          <span class="banda" style="left:27.36%;width:3.03%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">3,5 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Farid Safuán</span>
+        <span class="pista">
+          <span class="valor" style="width:28.27%"></span>
+          <span class="banda" style="left:25.89%;width:4.76%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">3,5 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Will Fretes</span>
+        <span class="pista">
+          <span class="valor" style="width:27.62%"></span>
+          <span class="banda" style="left:25.37%;width:4.50%"></span>
+          <span class="plano" style="left:45.32%"></span>
         </span>
         <span class="barra-num">3,4 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Jessica Santa Cruz</span>
+        <span class="pista">
+          <span class="valor" style="width:27.55%"></span>
+          <span class="banda" style="left:24.76%;width:5.58%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">3,4 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Junior Rodríguez</span>
+        <span class="pista">
+          <span class="valor" style="width:26.04%"></span>
+          <span class="banda" style="left:23.75%;width:4.57%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">3,2 %</span>
+      </div>
+      <div class="barra-fila">
+        <span class="barra-nombre">Jorge Castro</span>
+        <span class="pista">
+          <span class="valor" style="width:25.85%"></span>
+          <span class="banda" style="left:24.77%;width:2.15%"></span>
+          <span class="plano" style="left:45.32%"></span>
+        </span>
+        <span class="barra-num">3,2 %</span>
       </div></div>
     <div class="leyenda"><span><i style="background:var(--barra)"></i><span data-l="es">Gana</span><span data-l="gn">Ipu'aka</span></span><span><i style="background:var(--banda)"></i><span data-l="es">margen de simulación</span><span data-l="gn">simulación margen</span></span><span><i style="background:var(--plano)"></i><span data-l="es">reparto plano</span><span data-l="gn">ñemboja'o joja</span></span></div>
     <details class="spoiler" style="margin-top:1.5rem">
       <summary><span data-l="es">Cómo leer la barra</span><span data-l="gn">Mba'éichapa oñemoñe'ẽ pe barra</span></summary>
       <div class="prosa"><p data-l="es">La barra es la chance de ganar y la banda clara alrededor es el margen de error. La línea vertical marca el 5,6 por ciento, que es el reparto plano. Cuando dos bandas se tocan, el orden entre esas dos personas no significa nada.</p><p data-l="gn">Pe barra ha'e ikatuha ipu'aka hag̃ua ha pe banda hesakãva ijerére ha'e pe jejavy margen. Pe línea oñembo'yva omarka 5,6 porciento, ha'éva pe ñemboja'o joja. Mokõi banda ojopoko jave, pe orden umi mokõi tapicha mbytépe ndaha'éi mba'eve.</p><p data-l="es">Los tres que la fuente nombró sin decir el orden salen iguales entre sí.</p><p data-l="gn">Umi mbohapy pe fuente omombe'úva he'i'ỹre mávapa tenondevéva osẽ ojojogua.</p>
-        <p data-l="es">Vale uno cuando las 18 personas son indistinguibles y cero cuando queda una sola. Hoy vale 0,966.</p><p data-l="gn">Ha'e peteĩ umi 18 tapicha ojojoguapa jave, ha cero opyta jave peteĩnte. Ko'ág̃a ha'e 0,966.</p><p data-l="es" class="silencio">Traducido: la gala del lunes se llevó el 3,4 por ciento de lo que hay para saber.</p><p data-l="gn" class="silencio">He'ise: pe gala arakõi ogueraha 3,4 porciento umi mba'e jaikuaava'erãgui.</p></div>
+        <p data-l="es">Vale uno cuando las 18 personas son indistinguibles y cero cuando queda una sola. Hoy vale 0,964.</p><p data-l="gn">Ha'e peteĩ umi 18 tapicha ojojoguapa jave, ha cero opyta jave peteĩnte. Ko'ág̃a ha'e 0,964.</p><p data-l="es" class="silencio">Traducido: la gala del lunes se llevó el 3,6 por ciento de lo que hay para saber.</p><p data-l="gn" class="silencio">He'ise: pe gala arakõi ogueraha 3,6 porciento umi mba'e jaikuaava'erãgui.</p></div>
     </details>
     
     <h3><span data-l="es">Lo que se juega esta gala</span><span data-l="gn">Mba'épa oñeha'ã ko galápe</span></h3>
-    <div class="prosa"><p data-l="es">La primera eliminación todavía no ocurrió. Estas son las probabilidades de ser el primero en salir, y son casi iguales para todos: entre 3,5 y 6,6 por ciento.</p><p data-l="gn">Ñemosẽ peteĩha ndoikói gueteri. Ko'ãva ha'e ikatuha osẽ hag̃ua tenonde, ha ojojogua opavavére: 3,5 ha 6,6 porciento mbytépe.</p></div>
+    <div class="prosa"><p data-l="es">La primera eliminación todavía no ocurrió. Estas son las probabilidades de ser el primero en salir, y son casi iguales para todos: entre 3,5 y 6,9 por ciento.</p><p data-l="gn">Ñemosẽ peteĩha ndoikói gueteri. Ko'ãva ha'e ikatuha osẽ hag̃ua tenonde, ha ojojogua opavavére: 3,5 ha 6,9 porciento mbytépe.</p></div>
     <div class="tabla-envoltura"><table>
       <thead><tr><th><span data-l="es">Persona</span><span data-l="gn">Tapicha</span></th><th><span data-l="es">Cae en la próxima</span><span data-l="gn">Ho'a upe oútavape</span></th>
       <th><span data-l="es">margen</span><span data-l="gn">margen</span></th></tr></thead>
-      <tbody><tr><td>Marisa Monutti</td><td class="num">6,6 %</td><td class="num">± 0,25</td></tr><tr><td>Rodrigo Calonga</td><td class="num">6,5 %</td><td class="num">± 0,43</td></tr><tr><td>Chad Uddstrom</td><td class="num">6,5 %</td><td class="num">± 0,28</td></tr><tr><td>Jessica Santa Cruz</td><td class="num">6,5 %</td><td class="num">± 0,30</td></tr><tr><td>Junior Rodríguez</td><td class="num">6,5 %</td><td class="num">± 0,29</td></tr><tr><td>Bethania Borba</td><td class="num">6,4 %</td><td class="num">± 0,21</td></tr></tbody>
+      <tbody><tr><td>Marisa Monutti</td><td class="num">6,9 %</td><td class="num">± 0,20</td></tr><tr><td>Jessica Santa Cruz</td><td class="num">6,9 %</td><td class="num">± 0,23</td></tr><tr><td>Jorge Castro</td><td class="num">6,8 %</td><td class="num">± 0,24</td></tr><tr><td>Junior Rodríguez</td><td class="num">6,7 %</td><td class="num">± 0,20</td></tr><tr><td>Will Fretes</td><td class="num">6,7 %</td><td class="num">± 0,37</td></tr><tr><td>Farid Safuán</td><td class="num">6,6 %</td><td class="num">± 0,22</td></tr></tbody>
     </table></div>
   </div>
 </section>
@@ -938,12 +940,21 @@ footer p { max-width: 42rem; }
         <div class="prosa"><p data-l="es">Mini caja misteriosa. Debajo, vegetales frescos y quince minutos para hacer cortes tradicionales: cebolla en pluma, locote rojo en juliana, locote verde en brunoise, tres dientes de ajo laminados y papa en rodajas finas a la española.</p><p data-l="gn">Mini káha ñemi. Iguýpe, vegetal pyahu ha papo aravo'i ojejapo hag̃ua ñeikytĩ ymaguare: sevói pluma-pe, lokóte pytã juliana-pe, lokóte hovyũ brunoise-pe, mbohapy ajo laminado ha papa rodaja po'i española-pe.</p></div>
         <p class="silencio" style="margin:.9rem 0 0;font-size:.84rem"><span data-l="es">Destacados</span><span data-l="gn">Ojehechakuaáva</span></p><div class="podio"><span class="orden">1. Joaquín Serrano</span><span class="orden">2. Hugo Vázquez</span><span class="orden">3. María Elsa Núñez</span><span>Maricha Olitte</span><span>Silvia Flores</span><span>Marilina Bogado</span></div><p data-l="es" class="persona-nota">Los seis destacados quedaron como capitanes de grupos de tres y eligieron a dos compañeros cada uno entre los doce restantes.</p><p data-l="gn" class="persona-nota">Umi poteĩ ojehechakuaáva opyta capitán-ramo aty mbohapy-mbohapy rehe, ha peteĩteĩ oiporavo mokõi irũ umi pakõi hembýva apytégui.</p><h4 class="momentos-h"><span data-l="es">Los momentos</span><span data-l="gn">Umi mba'e oikóva</span></h4><ol class="momentos"><li><span data-l="es">Levantaron la mini caja misteriosa y encontraron vegetales frescos. Quince minutos para cinco cortes.</span><span data-l="gn">Oipe'a hikuái pe mini káha ñemi ha ojuhu vegetal pyahu. Papo aravo'i po ñeikytĩ apo hag̃ua.</span></li><li><span data-l="es">Cebolla en pluma, locote rojo en juliana, locote verde en brunoise, tres dientes de ajo laminados y papa en rodajas a la española.</span><span data-l="gn">Sevói pluma-pe, lokóte pytã juliana-pe, lokóte hovyũ brunoise-pe, mbohapy ajo laminado ha papa rodaja-pe española-pe.</span></li><li><span data-l="es">Los jueces les enseñaron a poner papel húmedo bajo la tabla para que no se mueva.</span><span data-l="gn">Umi juez ohechauka chupekuéra omoĩ hag̃ua kuatia akỹ tabla guýpe ani hag̃ua omýi.</span></li><li><span data-l="es">Hubo cortes accidentales en las manos y nadie soltó el cuchillo.</span><span data-l="gn">Oĩ oñekytĩva ipópe hese'ỹ ha avave ndopoíri kységui.</span></li><li><span data-l="es">Todos entregaron a tiempo, entre aplausos.</span><span data-l="gn">Opavave ome'ẽ hi'árape, popyapy apytépe.</span></li><li><span data-l="es">El jurado premió la prolijidad antes que la cantidad. Joaquín Serrano se llevó el primer puesto.</span><span data-l="gn">Pe jurado ohepyme'ẽ mba'e joja porã, na mba'e hetáva. Joaquín Serrano ogueraha puesto peteĩha.</span></li></ol>
       </div>
-      <div class="gala futura">
-        <h3><span data-l="es">Gala 2 · Casero y desde cero</span><span data-l="gn">Gala 2 · Ógape guare, iñepyrũmby guive</span></h3>
-        <div class="gala-meta"><span data-l="es">11 de agosto de 2026</span><span data-l="gn">11 jasypoapy 2026</span> · <span data-l="es">Anunciada, todavía no emitida</span><span data-l="gn">Oñemombe'úma, ndosẽi gueteri</span> · <a href="https://www.rdn.com.py/2026/08/11/masterchef-celebrity-paraguay-seis-famosos-brillaron-en-el-desafio-de-cortes-de-vegetales/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay: seis famosos brillaron en el desafio de cortes de vegetales · 2026-08-11">RDN</a></div>
-        <div class="prosa"><p data-l="es">Algo casero, hecho desde cero. Según la nota previa hay que ir rápido y controlar la temperatura del aceite.</p><p data-l="gn">Peteĩ mba'e ógape guare, ojejapóva iñepyrũmby guive. Pe kuatiahai he'iháicha tekotevẽ oje'e pya'e ha oñeñangareko ñandyry akuhu rehe.</p></div>
+      <div class="gala">
+        <h3><span data-l="es">Gala 2 · Nueve empanadas fritas, desde cero</span><span data-l="gn">Gala 2 · Porundy empanada frita, iñepyrũmby guive</span></h3>
+        <div class="gala-meta"><span data-l="es">11 de agosto de 2026</span><span data-l="gn">11 jasypoapy 2026</span> · <span data-l="es">75 minutos</span><span data-l="gn">75 aravo'i</span> · <span data-l="es">La nota no menciona eliminación</span><span data-l="gn">Pe kuatiahai nde'íri ñemosẽ rehe</span> · <a href="https://www.rdn.com.py/2026/08/12/masterchef-celebrity-paraguay-definio-a-los-primeros-clasificados-al-balcon/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay definio a los primeros clasificados al balcon · 2026-08-12">RDN</a></div>
+        <div class="prosa"><p data-l="es">Primer desafío grupal: nueve empanadas fritas caseras en 75 minutos por trío. Había que amasar, hacer la bechamel y presentar tres de carne cortada a cuchillo, tres de pollo y tres de jamón y queso.</p><p data-l="gn">Aty ñeha'ã peteĩha: porundy empanada frita ógape guare 75 aravo'ípe peteĩteĩ mbohapyhápe. Tekotevẽ ojejapo pe masa, pe bechamel, ha oñemoĩ mbohapy so'ógui kyse ndive ojekytĩva, mbohapy ryguasúgui ha mbohapy jamón ha kesu.</p></div>
+        <p class="silencio" style="margin:.9rem 0 .3rem;font-size:.84rem"><span data-l="es">Al balcón</span><span data-l="gn">Balcón-pe</span></p><div class="podio"><span class="orden">María E.</span><span class="orden">Negro</span><span class="orden">Marilina</span></div><p class="silencio" style="margin:.9rem 0 .3rem;font-size:.84rem"><span data-l="es">A la zona de riesgo</span><span data-l="gn">Zona de riesgo-pe</span></p><div class="podio"><span class="">Maricha</span><span class="">Silvia</span><span class="">Joaquín</span></div><p data-l="es" class="persona-nota">Los equipos de María Elsa Núñez, Hugo Vázquez y Marilina Bogado subieron al balcón por sabor. Los de Maricha Olitte, Silvia Flores y Joaquín Serrano cayeron a la zona de riesgo: nueve personas con delantal negro.</p><p data-l="gn" class="persona-nota">María Elsa Núñez, Hugo Vázquez ha Marilina Bogado aty ojupi balcón-pe hete rykue rupive. Maricha Olitte, Silvia Flores ha Joaquín Serrano mba'e ho'a zona de riesgo-pe: porundy tapicha delantal hũ reheve.</p><h4 class="momentos-h"><span data-l="es">Los momentos</span><span data-l="gn">Umi mba'e oikóva</span></h4><ol class="momentos"><li><span data-l="es">La falta de experiencia dejó masas duras, repulgues deformes, salsas cortadas y rellenos equivocados.</span><span data-l="gn">Kuaapy'ỹ oheja masa hatã, repulgue vai, salsa oikytĩva ha relleno ojavýva.</span></li><li><span data-l="es">Maricha Olitte asumió la culpa de su grupo tras fallar en la masa.</span><span data-l="gn">Maricha Olitte oguerohory pe jejavy iñaty rehegua, ojavy rire pe masa.</span></li><li><span data-l="es">Al trío de Silvia Flores lo penalizaron por presentar el plato incompleto.</span><span data-l="gn">Silvia Flores mbohapyha oñembopaga omoĩ haguére pe tembi'u opa'ỹva.</span></li><li><span data-l="es">Joaquín Serrano perdió el desempate por confundir los rellenos de carne y de pollo al freír.</span><span data-l="gn">Joaquín Serrano oñehundi pe desempate-pe, ombojehe'a haguére so'o ha ryguasu relleno omohyakuã jave.</span></li></ol>
+      </div>
+      <div class="gala">
+        <h3><span data-l="es">Gala 3 · El duelo que nadie contó</span><span data-l="gn">Gala 3 · Pe ñorãirõ avave omombe'u'ỹva</span></h3>
+        <div class="gala-meta"><span data-l="es">17 de agosto de 2026</span><span data-l="gn">17 jasypoapy 2026</span> · <span data-l="es">Se emitió y ningún medio la contó</span><span data-l="gn">Osẽ ha avave medio nomombe'úi</span> · <a href="https://www.youtube.com/watch?v=X7dRAAO54MI" rel="noopener noreferrer" target="_blank" title="PROGRAMA 3, primera parte · 2026-08-18">YouTube · canal oficial del programa</a></div>
+        <div class="prosa"><p data-l="es">Los nueve del delantal negro competían individualmente por el último cupo de salvación y después iban al duelo de eliminación. Eso es lo que estaba anunciado; qué pasó esa noche no lo publicó ningún medio.</p><p data-l="gn">Umi porundy delantal hũ reheve oñeha'ãva'erã peteĩteĩ pe salvación pahaguáre ha upéi oho ñorãirõ ñemosẽme. Upéva oñemombe'u va'ekue; mba'e oiko upe pyharépe ndosẽi mamove.</p></div>
         
       </div></div>
+    
+    <h3><span data-l="es">Los equipos</span><span data-l="gn">Umi aty</span></h3>
+    <div class="equipos"><div class="equipo"><div class="podio"><span class="orden">Joaquín</span><span class="">Marisa</span><span class="">Will</span></div></div><div class="equipo"><div class="podio"><span class="orden">Negro</span><span class="">Betha</span><span class="">Calonga</span></div></div><div class="equipo"><div class="podio"><span class="orden">María E.</span><span class="">Walter</span><span class="">Luana</span></div></div><div class="equipo"><div class="podio"><span class="orden">Maricha</span><span class="">Jorge</span><span class="">Junior</span></div></div><div class="equipo"><div class="podio"><span class="orden">Silvia</span><span class="">Jessica</span><span class="">Faro</span></div></div><div class="equipo"><div class="podio"><span class="orden">Marilina</span><span class="">El Chad</span><span class="">Vale</span></div><span class="etiqueta"><span data-l="es">Por descarte</span><span data-l="gn">Ojehejáva rupive</span></span></div></div>
   </div>
 </section>
 
@@ -955,13 +966,13 @@ footer p { max-width: 42rem; }
     <details class="spoiler" id="spoilers-abre">
       <summary><span data-l="es">Mostrar lo que ya se sabe</span><span data-l="gn">Ehechauka ojekuaámava</span></summary>
       <h3><span data-l="es">Anunciado</span><span data-l="gn">Oñemombe'u va'ekue</span></h3>
-      <ul class="lista-limpia"><li><div data-l="es">La gala del martes 11 pide algo casero, hecho desde cero, con la temperatura del aceite como problema.</div><div data-l="gn">Pe gala araapy 11-pegua ojerure peteĩ mba'e ógape guare, ojejapóva iñepyrũmby guive, ha pe ñandyry akuhu ha'e pe apañuãi.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/11/masterchef-celebrity-paraguay-seis-famosos-brillaron-en-el-desafio-de-cortes-de-vegetales/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay: seis famosos brillaron en el desafio de cortes de vegetales · 2026-08-11">RDN</a></div></li><li><div data-l="es">Los seis destacados de la primera gala son capitanes de grupos de tres: cada uno eligió a dos compañeros entre los doce restantes.</div><div data-l="gn">Umi poteĩ ojehechakuaáva gala peteĩhape ha'e capitán aty mbohapy-mbohapy rehe: peteĩteĩ oiporavo mokõi irũ umi pakõi hembýva apytégui.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/11/masterchef-celebrity-paraguay-seis-famosos-brillaron-en-el-desafio-de-cortes-de-vegetales/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay: seis famosos brillaron en el desafio de cortes de vegetales · 2026-08-11">RDN</a></div></li><li><div data-l="es">El programa va lunes y martes a las 20:50 por el SNT.</div><div data-l="gn">Pe programa osẽ arakõi ha araapy 20:50-pe SNT rupi.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://television.com.py/masterchef-celebrity-paraguay-se-estrena-hoy-horario-jurado-y-participantes" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay se estrena HOY: horario, jurado y participantes · 2026-08-10">TVPY / television.com.py</a></div></li><li><div data-l="es">La transmisión se acompaña en YouTube con Mariano, con las reacciones del público en vivo.</div><div data-l="gn">Pe ñemosarambi oñemoirũ YouTube-pe Mariano ndive, ohechaukávo mba'éichapa ohecha tapicha kuéra.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/11/masterchef-celebrity-paraguay-seis-famosos-brillaron-en-el-desafio-de-cortes-de-vegetales/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay: seis famosos brillaron en el desafio de cortes de vegetales · 2026-08-11">RDN</a></div></li></ul>
+      <ul class="lista-limpia"><li><div data-l="es">La gala del lunes 17 tenía anunciado el duelo de eliminación: los nueve del delantal negro competían por el último cupo de salvación. Qué pasó esa noche no lo publicó ningún medio.</div><div data-l="gn">Gala arakõi 17-pegua oguereko ñemombe'upyre pe ñorãirõ ñemosẽ: umi porundy delantal hũ reheve oñeha'ã pe salvación paha rehe. Mba'e oiko upe pyharépe ndosẽi mamove.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/12/masterchef-celebrity-paraguay-definio-a-los-primeros-clasificados-al-balcon/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay definio a los primeros clasificados al balcon · 2026-08-12">RDN</a></div></li><li><div data-l="es">El programa va lunes y martes a las 20:50 por el SNT. Las emisiones del 10, el 11 y el 17 salieron en esa grilla.</div><div data-l="gn">Pe programa osẽ arakõi ha araapy 20:50-pe SNT rupi. Umi emisión 10, 11 ha 17-pegua osẽ upe grilla-pe.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://television.com.py/masterchef-celebrity-paraguay-se-estrena-hoy-horario-jurado-y-participantes" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay se estrena HOY: horario, jurado y participantes · 2026-08-10">TVPY / television.com.py</a></div></li><li><div data-l="es">Cada programa sube al canal oficial de YouTube en partes, la misma madrugada.</div><div data-l="gn">Peteĩteĩ programa ojupi pe canal oficial YouTube-pe vore vorépe, upe pyhareve voi.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.youtube.com/watch?v=X7dRAAO54MI" rel="noopener noreferrer" target="_blank" title="PROGRAMA 3, primera parte · 2026-08-18">YouTube · canal oficial del programa</a></div></li></ul>
       <h3><span data-l="es">Deducido del formato</span><span data-l="gn">Ojeguenohẽva formato-gui</span></h3>
       <div class="prosa"><p data-l="es">Con 17 eliminaciones por delante y 2 emisiones por semana, la final cae entre las 8,5 y las 17 semanas desde el estreno, según caiga una persona por emisión o una por semana. La edición anterior cerró el 17 de septiembre de 2025.</p><p data-l="gn">Oĩgui 17 ñemosẽ tenonderã ha 2 emisión peteĩ semana-pe, pe final ho'a 8,5 ha 17 semana mbytépe oñepyrũ guive, ho'áramo peteĩ tapicha peteĩteĩ emisión-pe térã peteĩ peteĩteĩ semana-pe. Pe edición ohasa va'ekue omboty 17 jasyporundy 2025-pe.</p></div>
       <h3><span data-l="es">Rumores</span><span data-l="gn">Ñe'ẽ rei</span></h3>
       <div class="prosa"><p data-l="es" class="silencio">Ninguno. Para entrar acá, un rumor necesita dos fuentes independientes.</p><p data-l="gn" class="silencio">Ndaipóri. Oike hag̃ua ko'ápe, peteĩ ñe'ẽ rei oikotevẽ mokõi fuente oñoirũ'ỹva.</p></div>
       <h3><span data-l="es">Lo que no se sabe</span><span data-l="gn">Ojekuaa'ỹva</span></h3>
-      <ul class="lista-limpia"><li><div data-l="es">El premio de esta edición. En 2025 fueron 50 millones de guaraníes y una carrera de gastronomía; la producción no publicó todavía el de 2026.</div><div data-l="gn">Ko edición jopói. 2025-pe oĩ 50 millón guaraní ha peteĩ carrera gastronomía-gua; pe producción ndosẽi gueteri he'i mba'épa oĩta 2026-pe.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2025/09/17/karina-grau-gana-la-primera-edicion-de-masterchef-celebrity-paraguay/" rel="noopener noreferrer" target="_blank" title="Karina Grau gana la primera edicion de MasterChef Celebrity Paraguay · 2025-09-17">RDN</a></div></li><li><div data-l="es">De qué se dedican cuatro de las dieciocho personas del plantel. La nota previa nombra a quince y describe el campo de catorce; la lista oficial suma tres nombres más sin decir nada de ellos.</div><div data-l="gn">Mba'épepa omba'apo irundy tapicha pe papoapy apytégui. Pe kuatiahai ypykue omombe'u papo, ha omyesakã parundy rembiapo; pe lista oficial ombojoapy mbohapy héra he'i'ỹre mba'eve hesekuéra.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://television.com.py/masterchef-celebrity-paraguay-confirma-a-sus-18-participantes" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay confirma a sus 18 participantes · 2026-08-03">TVPY / television.com.py</a></div></li></ul>
+      <ul class="lista-limpia"><li><div data-l="es">Todo lo de la gala del lunes 17: la prueba, los platos, y sobre todo si hubo eliminación y de quién. El episodio está subido y ningún medio escribió una línea.</div><div data-l="gn">Opa mba'e gala arakõi 17-pegua: pe ñeha'ã, umi tembi'u, ha tuichavéva oĩpa ñemosẽ ha mávape. Pe episodio oĩ ojupi ha avave medio ndohaíri peteĩ tysỹi jepe.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.youtube.com/watch?v=X7dRAAO54MI" rel="noopener noreferrer" target="_blank" title="PROGRAMA 3, primera parte · 2026-08-18">YouTube · canal oficial del programa</a></div></li><li><div data-l="es">Cuidado con el sitio del canal: las direcciones que llevan a MasterChef redirigen hoy a una nota de mayo de 2025 que anuncia un primer eliminado. Esa nota es de la edición anterior, y ese nombre no está entre los 18 de esta temporada.</div><div data-l="gn">Eñangareko pe canal renda ndive: umi dirección oguerahava MasterChef-pe oho ko'ág̃a peteĩ kuatiahai jasypo 2025-pegua ha he'i mávapa osẽ ypy. Upe kuatiahai ha'e edición ohasa va'ekue mba'e, ha upe téra ndaipóri umi papoapy ko temporada-pegua apytépe.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.snt.com.py/noticia/masterchef-celebrity-arranco-con-emociones/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity arranco con emociones · 2025-05-21">SNT</a></div></li><li><div data-l="es">Con quiénes cocinó Marilina Bogado. La nota nombra a un «Yuk» que no está en la lista oficial; los dos que aparecen en su equipo salen por descarte, no de una fuente.</div><div data-l="gn">Mávandi ombojy Marilina Bogado. Pe kuatiahai omombe'u peteĩ «Yuk» ndaipóriva pe lista oficial-pe; umi mokõi osẽva iñatýpe ou ojehejáva rupive, ndaha'éi peteĩ fuente-gui.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/11/masterchef-celebrity-paraguay-seis-famosos-brillaron-en-el-desafio-de-cortes-de-vegetales/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay: seis famosos brillaron en el desafio de cortes de vegetales · 2026-08-11">RDN</a></div></li><li><div data-l="es">Quiénes son exactamente los nueve del delantal negro. La nota se contradice al enumerarlos: repite un nombre e incluye a alguien de un equipo que subió al balcón. Los tres equipos que cayeron sí están claros.</div><div data-l="gn">Máva hína añetehápe umi porundy delantal hũ reheve. Pe kuatiahai ojoavy omombe'u jave: he'ijey peteĩ téra ha omoĩ peteĩ tapicha aty ojupi va'ekue balcón-pe. Umi mbohapy aty ho'a va'ekue katu hesakã.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2026/08/12/masterchef-celebrity-paraguay-definio-a-los-primeros-clasificados-al-balcon/" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay definio a los primeros clasificados al balcon · 2026-08-12">RDN</a></div></li><li><div data-l="es">El premio de esta edición. En 2025 fueron 50 millones de guaraníes y una carrera de gastronomía; de esta temporada no se publicó nada.</div><div data-l="gn">Ko edición jopói. 2025-pe oĩ 50 millón guaraní ha peteĩ carrera gastronomía-gua; ko temporada-gui ndosẽi mba'eve.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://www.rdn.com.py/2025/09/17/karina-grau-gana-la-primera-edicion-de-masterchef-celebrity-paraguay/" rel="noopener noreferrer" target="_blank" title="Karina Grau gana la primera edicion de MasterChef Celebrity Paraguay · 2025-09-17">RDN</a></div></li><li><div data-l="es">De qué se dedican cuatro de las dieciocho personas del plantel.</div><div data-l="gn">Mba'épepa omba'apo irundy tapicha pe papoapy apytégui.</div><div class="persona-nota"><span data-l="es">Fuente</span><span data-l="gn">Moógui ou</span>: <a href="https://television.com.py/masterchef-celebrity-paraguay-confirma-a-sus-18-participantes" rel="noopener noreferrer" target="_blank" title="MasterChef Celebrity Paraguay confirma a sus 18 participantes · 2026-08-03">TVPY / television.com.py</a></div></li></ul>
     </details>
   </div>
 </section>
@@ -1081,44 +1092,56 @@ El gran estreno será el lunes 10 de agosto, a las 20:50, por las pantallas del 
         <tr>
           <td><span data-l="es">Caso base</span><span data-l="gn">Caso base</span></td>
           <td><span data-l="es">El modelo tal como está especificado.</span><span data-l="gn">Pe modelo ojehaiháicha.</span></td>
-          <td class="entero">Joaquín Serrano · <span class="mono">10,8 %</span></td>
-          <td class="num">0,966</td>
+          <td class="entero">María Elsa Núñez · <span class="mono">10,9 %</span></td>
+          <td class="num">0,964</td>
         </tr>
         <tr>
-          <td><span data-l="es">Sin la gala 1</span><span data-l="gn">Gala 1 'ỹre</span></td>
-          <td><span data-l="es">Se borra la prueba de cortes. Devuelve el reparto plano exacto, que es el punto de comparación.</span><span data-l="gn">Oñembogue pe ñeha'ã ñeikytĩ rehegua. Omeẽ jey pe ñemboja'o joja, ha'éva pe ñembojoja renda.</span></td>
+          <td><span data-l="es">Sin ninguna de las dos</span><span data-l="gn">Mokõivéva'ỹre</span></td>
+          <td><span data-l="es">Se borran las dos pruebas. Devuelve el reparto plano exacto, que es el punto de comparación.</span><span data-l="gn">Oñembogue mokõive ñeha'ã. Omeẽ jey pe ñemboja'o joja, ha'éva pe ñembojoja renda.</span></td>
           <td class="entero">Chad Uddstrom · <span class="mono">6,0 %</span></td>
           <td class="num">1,000</td>
         </tr>
         <tr>
+          <td><span data-l="es">Sin la prueba de cortes</span><span data-l="gn">Ñeikytĩ ñeha'ã'ỹre</span></td>
+          <td><span data-l="es">Se borra la gala 1 y queda sólo el resultado por equipos.</span><span data-l="gn">Oñembogue gala 1 ha opyta pe aty rembiapokue añoite.</span></td>
+          <td class="entero">Marilina Bogado · <span class="mono">6,7 %</span></td>
+          <td class="num">0,998</td>
+        </tr>
+        <tr>
+          <td><span data-l="es">Sin la prueba por equipos</span><span data-l="gn">Aty ñeha'ã'ỹre</span></td>
+          <td><span data-l="es">Se borra la gala 2. Es lo que la página decía la semana pasada.</span><span data-l="gn">Oñembogue gala 2. Upéva he'i va'ekue ko kuatiarogue semana ohasa va'ekuépe.</span></td>
+          <td class="entero">Joaquín Serrano · <span class="mono">10,8 %</span></td>
+          <td class="num">0,968</td>
+        </tr>
+        <tr>
           <td><span data-l="es">El cuchillo manda</span><span data-l="gn">Kyse he'i</span></td>
           <td><span data-l="es">La prueba técnica predice fuerte. Es el escenario que más separa a la gente.</span><span data-l="gn">Pe ñeha'ã técnica he'i mbarete mba'épa oikóta. Ha'e pe escenario omoambuevéva tapicha kuéra apytépe.</span></td>
-          <td class="entero">Joaquín Serrano · <span class="mono">20,2 %</span></td>
-          <td class="num">0,855</td>
+          <td class="entero">Joaquín Serrano · <span class="mono">19,1 %</span></td>
+          <td class="num">0,858</td>
         </tr>
         <tr>
           <td><span data-l="es">Leyendo la nota al máximo</span><span data-l="gn">Ñamoñe'ẽvo kuatiahai hetavéva</span></td>
           <td><span data-l="es">Se toma como ranking el orden en que la nota nombró a los tres destacados sin puesto declarado.</span><span data-l="gn">Ojejapo ranking-ramo pe orden pe kuatiahai omombe'uhaguéicha umi mbohapy ojehechakuaáva puesto he'i'ỹre.</span></td>
-          <td class="entero">Joaquín Serrano · <span class="mono">10,9 %</span></td>
-          <td class="num">0,968</td>
+          <td class="entero">Hugo Vázquez · <span class="mono">10,9 %</span></td>
+          <td class="num">0,966</td>
         </tr>
         <tr>
           <td><span data-l="es">Lotería</span><span data-l="gn">Po'a rei</span></td>
           <td><span data-l="es">Nadie cocina mejor que nadie y todo lo decide el azar.</span><span data-l="gn">Avave ndombojyporãvéi ambuégui ha opa mba'e oheja po'a po guýpe.</span></td>
-          <td class="entero">Rodrigo Calonga · <span class="mono">5,6 %</span></td>
+          <td class="entero">Junior Rodríguez · <span class="mono">5,6 %</span></td>
           <td class="num">1,000</td>
         </tr>
         <tr>
           <td><span data-l="es">Plantel parejo</span><span data-l="gn">Plantel joja</span></td>
           <td><span data-l="es">Las diferencias reales de cocina entre famosos son chicas.</span><span data-l="gn">Umi ñemoambue añetegua kosína rehegua tapicha herakuãva mbytépe michĩ.</span></td>
-          <td class="entero">Joaquín Serrano · <span class="mono">7,2 %</span></td>
+          <td class="entero">Hugo Vázquez · <span class="mono">7,1 %</span></td>
           <td class="num">0,996</td>
         </tr>
         <tr>
           <td><span data-l="es">Plantel disparejo</span><span data-l="gn">Plantel joja'ỹ</span></td>
           <td><span data-l="es">Hay quienes cocinan de verdad y quienes nunca cocinaron.</span><span data-l="gn">Oĩ ombojy añetéva ha oĩ araka'eve ombojy'ỹva.</span></td>
-          <td class="entero">Joaquín Serrano · <span class="mono">17,8 %</span></td>
-          <td class="num">0,862</td>
+          <td class="entero">Hugo Vázquez · <span class="mono">17,5 %</span></td>
+          <td class="num">0,860</td>
         </tr></tbody>
     </table></div>
       
@@ -1127,22 +1150,47 @@ El gran estreno será el lunes 10 de agosto, a las 20:50, por las pantallas del 
     <div class="tabla-envoltura"><table>
       <thead><tr><th><span data-l="es">Nivel anunciado</span><span data-l="gn">Nivel oñemombe'úva</span></th><th><span data-l="es">Acierto observado</span><span data-l="gn">Oje'e porãva ojehecháva</span></th>
       <th><span data-l="es">Personas en el conjunto</span><span data-l="gn">Tapicha pe atýpe</span></th></tr></thead>
-      <tbody><tr><td class="num">50 %</td><td class="num">55,0 %</td><td class="num">6,0</td></tr><tr><td class="num">80 %</td><td class="num">80,5 %</td><td class="num">13,0</td></tr><tr><td class="num">90 %</td><td class="num">91,0 %</td><td class="num">16,0</td></tr></tbody>
-    </table></div>
-      
-    <h3><span data-l="es">El registro</span><span data-l="gn">Kuatiahaipyre</span></h3>
-    <div class="prosa"><p data-l="es">Cada vez que la página se actualiza, el pronóstico de ese día queda guardado con fecha. Dentro de dos meses se va a poder ver cuánto acertó.</p><p data-l="gn">Ko kuatiarogue oñembopyahu jave, pe ñemombe'u upe ára pegua opyta ñongatupyre ára reheve. Mokõi jasy rire ikatúta jahecha mboýpa oje'e porã.</p><p data-l="es" class="silencio">Una sola entrada, la de hoy. Todavía no hay nada que revisar.</p><p data-l="gn" class="silencio">Peteĩ jeike añoite, ko árape guáva. Ndaipóri gueteri mba'eve ojehecha jey hag̃ua.</p></div>
-    <div class="tabla-envoltura"><table>
-      <thead><tr><th><span data-l="es">Fecha</span><span data-l="gn">Ára</span></th><th><span data-l="es">Galas</span><span data-l="gn">Gala</span></th>
-      <th><span data-l="es">Arriba</span><span data-l="gn">Yvatépe</span></th><th><span data-l="es">Gana</span><span data-l="gn">Ipu'aka</span></th>
-      <th><span data-l="es">Ignorancia</span><span data-l="gn">Ñeikuaa'ỹ</span></th></tr></thead>
-      <tbody><tr><td class="num">2026-08-11</td><td class="num">1</td><td>Joaquín Serrano</td><td class="num">10,8 %</td><td class="num">0,966</td></tr></tbody>
+      <tbody><tr><td class="num">50 %</td><td class="num">56,5 %</td><td class="num">6,0</td></tr><tr><td class="num">80 %</td><td class="num">82,5 %</td><td class="num">12,9</td></tr><tr><td class="num">90 %</td><td class="num">92,0 %</td><td class="num">15,6</td></tr></tbody>
     </table></div>
     </details>
     <p class="silencio" style="margin-top:1.2rem">
       <span data-l="es">El código</span><span data-l="gn">Pe código</span>: <a href="https://github.com/nerln/japepo">nerln/japepo</a> ·
-      <span data-l="es">Firma de esta corrida</span><span data-l="gn">Ko ñemboguata ra'ãnga</span>: <span class="mono">4d96c96d322d</span>
+      <span data-l="es">Firma de esta corrida</span><span data-l="gn">Ko ñemboguata ra'ãnga</span>: <span class="mono">1f193247db46</span>
     </p>
+  </div>
+</section>
+
+<section id="registro">
+  <div class="envoltura">
+    <p class="rotulo">09</p>
+    <h2><span data-l="es">Lo que se dijo antes</span><span data-l="gn">Oje'e va'ekue tenonde</span></h2>
+    
+    <div class="prosa"><p data-l="es">Cada vez que la página se actualiza, el pronóstico de ese día queda guardado con fecha y no se vuelve a tocar. Es la única forma de saber después si esto servía o no: mirar lo que decía antes de cada gala, no lo que dice ahora.</p><p data-l="gn">Ko kuatiarogue oñembopyahu jave, pe ñemombe'u upe ára pegua opyta ñongatupyre ára reheve ha ndojepokói jey hese. Upéva añoite ikatu jaikuaa hag̃ua kóva iporãpa: jahecha mba'épa he'i va'ekue peteĩteĩ gala mboyve, ndaha'éi mba'épa he'i ko'ág̃a.</p>
+      <p class="persona-nota"><a href="https://github.com/nerln/japepo/blob/main/EVALUACION.md">
+        <span data-l="es">La regla de puntuación, escrita antes</span><span data-l="gn">Pe papapy tekorã, ojehai va'ekue tenonde</span></a></p>
+    </div>
+    
+    <h3><span data-l="es">Cómo se movió</span><span data-l="gn">Mba'éichapa omýi</span></h3>
+    <div class="prosa"><p data-l="es">Una línea por persona y un punto por corrida: cuánta chance de ganar le daba el modelo cada día.</p><p data-l="gn">Peteĩ línea peteĩteĩ tapichápe ha peteĩ kyta peteĩteĩ ñemboguatápe: mboýpa ikatuha ipu'aka ome'ẽ chupe pe modelo peteĩteĩ árape.</p></div>
+    <div class="tabla-envoltura" style="border:0">
+      <svg viewBox="0 0 720 240" class="movimiento" role="img"
+           aria-label="Una línea por persona y un punto por corrida: cuánta chance de ganar le daba el modelo cada día.">
+        <line x1="34" y1="214" x2="628" y2="214"
+              stroke="var(--borde)" stroke-width="1"/>
+        <polyline points="34.0,66.1 628.0,37.6" fill="none" stroke="var(--barra)" stroke-width="2.2" opacity="1" stroke-linejoin="round"/><polyline points="34.0,53.1 628.0,45.7" fill="none" stroke="var(--barra)" stroke-width="2.2" opacity="1" stroke-linejoin="round"/><polyline points="34.0,39.4 628.0,66.1" fill="none" stroke="var(--barra)" stroke-width="2.2" opacity="1" stroke-linejoin="round"/><polyline points="34.0,77.5 628.0,72.3" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,81.7 628.0,81.1" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,82.7 628.0,87.7" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,155.2 628.0,144.1" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,152.5 628.0,145.0" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,154.5 628.0,145.1" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,156.8 628.0,147.3" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,154.1 628.0,148.1" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,151.4 628.0,151.1" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,158.4 628.0,156.5" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,146.7 628.0,157.7" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,149.0 628.0,159.0" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,149.1 628.0,159.2" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,153.8 628.0,162.2" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><polyline points="34.0,146.3 628.0,162.5" fill="none" stroke="var(--plano)" stroke-width="1.1" opacity="0.45" stroke-linejoin="round"/><text x="634.0" y="41.6" font-size="11" fill="var(--texto-2)">María E.</text><text x="634.0" y="49.7" font-size="11" fill="var(--texto-2)">Negro</text><text x="634.0" y="70.1" font-size="11" fill="var(--texto-2)">Joaquín</text><text x="34.0" y="234" font-size="10" fill="var(--texto-2)" text-anchor="middle">11/08</text><text x="628.0" y="234" font-size="10" fill="var(--texto-2)" text-anchor="middle">18/08</text>
+      </svg>
+    </div>
+    <h3><span data-l="es">Las promesas y su puntaje</span><span data-l="gn">Umi ñe'ẽme'ẽ ha ipapapy</span></h3><div class="prosa"><p data-l="es">Antes de cada gala el modelo publica quién cae, y después se puntúa con la regla escrita de antes. La columna que se entiende sin cuentas es el puesto: en qué lugar tenía el modelo al que efectivamente salió.</p><p data-l="gn">Peteĩteĩ gala mboyve pe modelo omombe'u mávapa ho'a, ha upéi oñembopapapy pe tekorã ojehai va'ekue tenonde ndive. Pe columna oñentende'ỹva papapy'ỹre ha'e pe puesto: moõpa pe modelo omoĩ pe osẽ va'ekuépe.</p><p data-l="es" class="silencio">Todavía no hay ninguna gala puntuada. Una gala se puntúa sólo si la predicción estaba publicada antes; puntuar una escrita después de saber el resultado no es puntuar.</p><p data-l="gn" class="silencio">Ndaipóri gueteri gala oñemboapapyréva. Peteĩ gala oñemboapapy pe ñemombe'u osẽ ramo jepive tenonde; ojehai va'ekue jaikuaa rire ndaha'éi papapy.</p></div>
+    <h3><span data-l="es">Las versiones anteriores</span><span data-l="gn">Umi versión ohasa va'ekue</span></h3>
+    <div class="prosa"><p data-l="es">Cada publicación queda en el historial del repositorio con su firma y su commit. La página de cualquier día se recupera entera, tal como estaba, con el commit de esa fila.</p><p data-l="gn">Peteĩteĩ ñemosẽ opyta pe repositorio kuatiahaipyrépe ifirma ha icommit ndive. Peteĩ ára pegua kuatiarogue ojejuhu jey opa, oĩháicha, upe tysỹi commit ndive.</p>
+      <p class="mono persona-nota">git show &lt;commit&gt;:web/index.html</p>
+    </div>
+    <div class="tabla-envoltura"><table>
+      <thead><tr><th><span data-l="es">Fecha</span><span data-l="gn">Ára</span></th><th><span data-l="es">Galas</span><span data-l="gn">Gala</span></th>
+      <th><span data-l="es">Arriba</span><span data-l="gn">Yvatépe</span></th><th><span data-l="es">Gana</span><span data-l="gn">Ipu'aka</span></th>
+      <th><span data-l="es">Ignorancia</span><span data-l="gn">Ñeikuaa'ỹ</span></th><th><span data-l="es">Esa versión</span><span data-l="gn">Upe versión</span></th></tr></thead>
+      <tbody><tr><td class="num">2026-08-11</td><td class="num">1</td><td>Joaquín Serrano</td><td class="num">10,8 %</td><td class="num">0,966</td><td class="mono"><a href="https://github.com/nerln/japepo/commit/1b2355a921de7917ef681a704c2c8e1a7f3c2fd2">1b2355a</a></td></tr><tr><td class="num">2026-08-18</td><td class="num">3</td><td>María Elsa Núñez</td><td class="num">10,9 %</td><td class="num">0,964</td><td class="silencio">·</td></tr></tbody>
+    </table></div>
   </div>
 </section>
 </main>
@@ -1157,7 +1205,7 @@ El gran estreno será el lunes 10 de agosto, a las 20:50, por las pantallas del 
     <p><span data-l="es">Página de análisis independiente. No tiene relación con MasterChef, con Banijay, con el SNT ni con la producción del programa. Las marcas nombradas son de sus dueños y se nombran para decir de qué trata el análisis.</span><span data-l="gn">Kuatiarogue ñehesa'ỹijo ijehegui. Ndoguerekói ñemoirũ MasterChef, Banijay, SNT ha pe programa producción ndive. Umi marca oñemombe'úva ijára kuéra mba'e ha oñemombe'u oje'e hag̃ua mba'e rehepa oñeñe'ẽ.</span></p>
     <p><span data-l="es">El guaraní de esta página lo escribió una máquina y no lo revisó un hablante. Si algo está mal dicho, la corrección se agradece en el repositorio.</span><span data-l="gn">Ko kuatiarogue guarani ohai peteĩ máquina ha ndohechái peteĩ oñe'ẽkuaáva. Oĩramo oje'e vaíva, pe ñemyatyrõ ojeguerohory pe repositorio-pe.</span></p>
     <p><span data-l="es">Compuesta en Be Vietnam Pro y en Japepo Serif y Japepo Mono, que son recortes de Source Serif 4 y de Source Code, de Adobe. Las tres con licencia SIL Open Font License 1.1 e incrustadas en esta página.</span><span data-l="gn">Ojehai Be Vietnam Pro ndive, ha Japepo Serif ha Japepo Mono ndive, ha'éva Source Serif 4 ha Source Code mba'e vore, Adobe mba'e. Mbohapyve oguereko licencia SIL Open Font License 1.1 ha oĩ ko kuatiarogue ryepýpe.</span></p>
-    <p class="mono">nerln · Código con Apache-2.0, textos y datos con CC BY 4.0. · 4d96c96d322d</p>
+    <p class="mono">nerln · Código con Apache-2.0, textos y datos con CC BY 4.0. · 1f193247db46</p>
   </div>
 </footer>
 
@@ -1228,7 +1276,7 @@ El gran estreno será el lunes 10 de agosto, a las 20:50, por las pantallas del 
   // La cuenta regresiva. Las emisiones vienen del servidor en instantes UTC, asi
   // que da igual desde que huso se mire; la fecha y la hora ya estan escritas en
   // el HTML, y esto solo agrega cuanto falta.
-  var EMISIONES = [{"iso": "2026-08-11T23:50:00Z", "es": "martes 11 de agosto", "gn": "araapy 11 jasypoapy"}, {"iso": "2026-08-17T23:50:00Z", "es": "lunes 17 de agosto", "gn": "arakõi 17 jasypoapy"}, {"iso": "2026-08-18T23:50:00Z", "es": "martes 18 de agosto", "gn": "araapy 18 jasypoapy"}, {"iso": "2026-08-24T23:50:00Z", "es": "lunes 24 de agosto", "gn": "arakõi 24 jasypoapy"}, {"iso": "2026-08-25T23:50:00Z", "es": "martes 25 de agosto", "gn": "araapy 25 jasypoapy"}, {"iso": "2026-08-31T23:50:00Z", "es": "lunes 31 de agosto", "gn": "arakõi 31 jasypoapy"}, {"iso": "2026-09-01T23:50:00Z", "es": "martes 1 de septiembre", "gn": "araapy 1 jasyporundy"}, {"iso": "2026-09-07T23:50:00Z", "es": "lunes 7 de septiembre", "gn": "arakõi 7 jasyporundy"}, {"iso": "2026-09-08T23:50:00Z", "es": "martes 8 de septiembre", "gn": "araapy 8 jasyporundy"}, {"iso": "2026-09-14T23:50:00Z", "es": "lunes 14 de septiembre", "gn": "arakõi 14 jasyporundy"}, {"iso": "2026-09-15T23:50:00Z", "es": "martes 15 de septiembre", "gn": "araapy 15 jasyporundy"}, {"iso": "2026-09-21T23:50:00Z", "es": "lunes 21 de septiembre", "gn": "arakõi 21 jasyporundy"}];
+  var EMISIONES = [{"iso": "2026-08-18T23:50:00Z", "es": "martes 18 de agosto", "gn": "araapy 18 jasypoapy"}, {"iso": "2026-08-24T23:50:00Z", "es": "lunes 24 de agosto", "gn": "arakõi 24 jasypoapy"}, {"iso": "2026-08-25T23:50:00Z", "es": "martes 25 de agosto", "gn": "araapy 25 jasypoapy"}, {"iso": "2026-08-31T23:50:00Z", "es": "lunes 31 de agosto", "gn": "arakõi 31 jasypoapy"}, {"iso": "2026-09-01T23:50:00Z", "es": "martes 1 de septiembre", "gn": "araapy 1 jasyporundy"}, {"iso": "2026-09-07T23:50:00Z", "es": "lunes 7 de septiembre", "gn": "arakõi 7 jasyporundy"}, {"iso": "2026-09-08T23:50:00Z", "es": "martes 8 de septiembre", "gn": "araapy 8 jasyporundy"}, {"iso": "2026-09-14T23:50:00Z", "es": "lunes 14 de septiembre", "gn": "arakõi 14 jasyporundy"}, {"iso": "2026-09-15T23:50:00Z", "es": "martes 15 de septiembre", "gn": "araapy 15 jasyporundy"}, {"iso": "2026-09-21T23:50:00Z", "es": "lunes 21 de septiembre", "gn": "arakõi 21 jasyporundy"}, {"iso": "2026-09-22T23:50:00Z", "es": "martes 22 de septiembre", "gn": "araapy 22 jasyporundy"}, {"iso": "2026-09-28T23:50:00Z", "es": "lunes 28 de septiembre", "gn": "arakõi 28 jasyporundy"}];
 
   function proximaEmision(ahora) {
     for (var i = 0; i < EMISIONES.length; i++) {

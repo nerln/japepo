@@ -150,12 +150,12 @@
     "gn": "Pe modelo ojehaiháicha."
   },
   "esc_sin_gala1_n": {
-    "es": "Sin la gala 1",
-    "gn": "Gala 1 'ỹre"
+    "es": "Sin la prueba de cortes",
+    "gn": "Ñeikytĩ ñeha'ã'ỹre"
   },
   "esc_sin_gala1_d": {
-    "es": "Se borra la prueba de cortes. Devuelve el reparto plano exacto, que es el punto de comparación.",
-    "gn": "Oñembogue pe ñeha'ã ñeikytĩ rehegua. Omeẽ jey pe ñemboja'o joja, ha'éva pe ñembojoja renda."
+    "es": "Se borra la gala 1 y queda sólo el resultado por equipos.",
+    "gn": "Oñembogue gala 1 ha opyta pe aty rembiapokue añoite."
   },
   "esc_corte_manda_n": {
     "es": "El cuchillo manda",
@@ -394,16 +394,12 @@
     "gn": "Pe código"
   },
   "registro_h": {
-    "es": "El registro",
-    "gn": "Kuatiahaipyre"
+    "es": "Lo que se dijo antes",
+    "gn": "Oje'e va'ekue tenonde"
   },
   "registro_p": {
-    "es": "Cada vez que la página se actualiza, el pronóstico de ese día queda guardado con fecha. Dentro de dos meses se va a poder ver cuánto acertó.",
-    "gn": "Ko kuatiarogue oñembopyahu jave, pe ñemombe'u upe ára pegua opyta ñongatupyre ára reheve. Mokõi jasy rire ikatúta jahecha mboýpa oje'e porã."
-  },
-  "registro_vacio": {
-    "es": "Una sola entrada, la de hoy. Todavía no hay nada que revisar.",
-    "gn": "Peteĩ jeike añoite, ko árape guáva. Ndaipóri gueteri mba'eve ojehecha jey hag̃ua."
+    "es": "Cada vez que la página se actualiza, el pronóstico de ese día queda guardado con fecha y no se vuelve a tocar. Es la única forma de saber después si esto servía o no: mirar lo que decía antes de cada gala, no lo que dice ahora.",
+    "gn": "Ko kuatiarogue oñembopyahu jave, pe ñemombe'u upe ára pegua opyta ñongatupyre ára reheve ha ndojepokói jey hese. Upéva añoite ikatu jaikuaa hag̃ua kóva iporãpa: jahecha mba'épa he'i va'ekue peteĩteĩ gala mboyve, ndaha'éi mba'épa he'i ko'ág̃a."
   },
   "col_fecha": {
     "es": "Fecha",
@@ -506,8 +502,8 @@
     "gn": "Mávapa oguereko ikatuve"
   },
   "como_va_p": {
-    "es": "Con una sola gala jugada y ninguna eliminación, las {n} personas están casi empatadas. La prueba de cortes mueve poco: el puntero llega a {max_pct} por ciento y el reparto plano da {plano_pct}.",
-    "gn": "Peteĩ gala añoite ojejapo ha ndaipóri ñemosẽ, umi {n} tapicha ojojogua haimete. Pe ñeikytĩ ñeha'ã omomýi sa'i: pe tenondegua og̃uahẽ {max_pct} porciento ha pe ñemboja'o joja ome'ẽ {plano_pct}."
+    "es": "Van {galas_jugadas} galas y ninguna eliminación publicada, así que las {n} siguen adentro. El modelo mira dos cosas: la prueba de cortes y qué equipos subieron al balcón. Con eso el puntero llega a {max_pct} por ciento, cuando el reparto plano da {plano_pct}.",
+    "gn": "Oĩ {galas_jugadas} gala ha ndaipóri ñemosẽ osẽva, upévare umi {n} opyta gueteri. Pe modelo omaña mokõi mba'ére: pe ñeikytĩ ñeha'ã ha mba'e aty ojupi balcón-pe. Upéva ndive pe tenondegua og̃uahẽ {max_pct} porciento, ha pe ñemboja'o joja ome'ẽ {plano_pct}."
   },
   "como_va_empate": {
     "es": "{lider} y {segundo} encabezan con {max_pct} y {segundo_pct} por ciento, y sus márgenes se superponen: hoy no hay un primero.",
@@ -548,5 +544,105 @@
   "chance_ganar": {
     "es": "de ganar",
     "gn": "ipu'aka hag̃ua"
+  },
+  "nav_registro": {
+    "es": "El registro",
+    "gn": "Kuatiahaipyre"
+  },
+  "movimiento_h": {
+    "es": "Cómo se movió",
+    "gn": "Mba'éichapa omýi"
+  },
+  "movimiento_p": {
+    "es": "Una línea por persona y un punto por corrida: cuánta chance de ganar le daba el modelo cada día.",
+    "gn": "Peteĩ línea peteĩteĩ tapichápe ha peteĩ kyta peteĩteĩ ñemboguatápe: mboýpa ikatuha ipu'aka ome'ẽ chupe pe modelo peteĩteĩ árape."
+  },
+  "movimiento_una": {
+    "es": "Con una sola corrida publicada todavía no hay movimiento que mirar. La línea aparece cuando haya dos.",
+    "gn": "Peteĩ ñemboguata añoite osẽva gueteri, ndaipóri jeku'e jahecha hag̃ua. Pe línea osẽta oĩ jave mokõi."
+  },
+  "promesas_h": {
+    "es": "Las promesas y su puntaje",
+    "gn": "Umi ñe'ẽme'ẽ ha ipapapy"
+  },
+  "promesas_p": {
+    "es": "Antes de cada gala el modelo publica quién cae, y después se puntúa con la regla escrita de antes. La columna que se entiende sin cuentas es el puesto: en qué lugar tenía el modelo al que efectivamente salió.",
+    "gn": "Peteĩteĩ gala mboyve pe modelo omombe'u mávapa ho'a, ha upéi oñembopapapy pe tekorã ojehai va'ekue tenonde ndive. Pe columna oñentende'ỹva papapy'ỹre ha'e pe puesto: moõpa pe modelo omoĩ pe osẽ va'ekuépe."
+  },
+  "promesas_vacio": {
+    "es": "Todavía no hay ninguna gala puntuada. Una gala se puntúa sólo si la predicción estaba publicada antes; puntuar una escrita después de saber el resultado no es puntuar.",
+    "gn": "Ndaipóri gueteri gala oñemboapapyréva. Peteĩ gala oñemboapapy pe ñemombe'u osẽ ramo jepive tenonde; ojehai va'ekue jaikuaa rire ndaha'éi papapy."
+  },
+  "col_gala": {
+    "es": "Gala",
+    "gn": "Gala"
+  },
+  "col_cayo": {
+    "es": "Cayó",
+    "gn": "Ho'a va'ekue"
+  },
+  "col_puesto_modelo": {
+    "es": "Dónde lo tenía",
+    "gn": "Moõpa omoĩ"
+  },
+  "col_brier": {
+    "es": "Brier",
+    "gn": "Brier"
+  },
+  "col_uniforme": {
+    "es": "Contra el azar",
+    "gn": "Po'a rei rovái"
+  },
+  "versiones_h": {
+    "es": "Las versiones anteriores",
+    "gn": "Umi versión ohasa va'ekue"
+  },
+  "versiones_p": {
+    "es": "Cada publicación queda en el historial del repositorio con su firma y su commit. La página de cualquier día se recupera entera, tal como estaba, con el commit de esa fila.",
+    "gn": "Peteĩteĩ ñemosẽ opyta pe repositorio kuatiahaipyrépe ifirma ha icommit ndive. Peteĩ ára pegua kuatiarogue ojejuhu jey opa, oĩháicha, upe tysỹi commit ndive."
+  },
+  "col_version": {
+    "es": "Esa versión",
+    "gn": "Upe versión"
+  },
+  "evaluacion_enlace": {
+    "es": "La regla de puntuación, escrita antes",
+    "gn": "Pe papapy tekorã, ojehai va'ekue tenonde"
+  },
+  "esc_sin_equipos_n": {
+    "es": "Sin la prueba por equipos",
+    "gn": "Aty ñeha'ã'ỹre"
+  },
+  "esc_sin_equipos_d": {
+    "es": "Se borra la gala 2. Es lo que la página decía la semana pasada.",
+    "gn": "Oñembogue gala 2. Upéva he'i va'ekue ko kuatiarogue semana ohasa va'ekuépe."
+  },
+  "esc_sin_nada_n": {
+    "es": "Sin ninguna de las dos",
+    "gn": "Mokõivéva'ỹre"
+  },
+  "esc_sin_nada_d": {
+    "es": "Se borran las dos pruebas. Devuelve el reparto plano exacto, que es el punto de comparación.",
+    "gn": "Oñembogue mokõive ñeha'ã. Omeẽ jey pe ñemboja'o joja, ha'éva pe ñembojoja renda."
+  },
+  "gala_sin_cronica": {
+    "es": "Se emitió y ningún medio la contó",
+    "gn": "Osẽ ha avave medio nomombe'úi"
+  },
+  "gala_balcon": {
+    "es": "Al balcón",
+    "gn": "Balcón-pe"
+  },
+  "gala_riesgo": {
+    "es": "A la zona de riesgo",
+    "gn": "Zona de riesgo-pe"
+  },
+  "equipos_h": {
+    "es": "Los equipos",
+    "gn": "Umi aty"
+  },
+  "equipos_deducido": {
+    "es": "Por descarte",
+    "gn": "Ojehejáva rupive"
   }
 }
