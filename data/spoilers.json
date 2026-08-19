@@ -6,49 +6,49 @@
   },
   "anunciado": [
     {
-      "id": "duelo",
-      "es": "La gala del lunes 17 tenía anunciado el duelo de eliminación: los nueve del delantal negro competían por el último cupo de salvación. Qué pasó esa noche no lo publicó ningún medio.",
-      "gn": "Gala arakõi 17-pegua oguereko ñemombe'upyre pe ñorãirõ ñemosẽ: umi porundy delantal hũ reheve oñeha'ã pe salvación paha rehe. Mba'e oiko upe pyharépe ndosẽi mamove.",
-      "fuente": "rdn_gala2"
-    },
-    {
       "id": "dias",
-      "es": "El programa va lunes y martes a las 20:50 por el SNT. Las emisiones del 10, el 11 y el 17 salieron en esa grilla.",
-      "gn": "Pe programa osẽ arakõi ha araapy 20:50-pe SNT rupi. Umi emisión 10, 11 ha 17-pegua osẽ upe grilla-pe.",
+      "es": "El programa va lunes y martes a las 20:50 por el SNT. Las cuatro emisiones salieron en esa grilla.",
+      "gn": "Pe programa osẽ arakõi ha araapy 20:50-pe SNT rupi. Umi irundy emisión osẽ upe grilla-pe.",
       "fuente": "tvpy_estreno"
     },
     {
       "id": "youtube",
-      "es": "Cada programa sube al canal oficial de YouTube en partes, la misma madrugada.",
-      "gn": "Peteĩteĩ programa ojupi pe canal oficial YouTube-pe vore vorépe, upe pyhareve voi.",
+      "es": "Cada programa sube al canal oficial de YouTube en tres partes, la misma noche.",
+      "gn": "Peteĩteĩ programa ojupi pe canal oficial YouTube-pe mbohapy vorépe, upe pyhare voi.",
       "fuente": "yt_programa3"
     }
   ],
   "rumores": [],
   "no_confirmado": [
     {
-      "id": "gala3",
-      "es": "Todo lo de la gala del lunes 17: la prueba, los platos, y sobre todo si hubo eliminación y de quién. El episodio está subido y ningún medio escribió una línea.",
-      "gn": "Opa mba'e gala arakõi 17-pegua: pe ñeha'ã, umi tembi'u, ha tuichavéva oĩpa ñemosẽ ha mávape. Pe episodio oĩ ojupi ha avave medio ndohaíri peteĩ tysỹi jepe.",
-      "fuente": "yt_programa3"
+      "id": "gala4",
+      "es": "Qué se cocinó en la gala de eliminación del martes 18, y qué le dijo el jurado a Jessica Santa Cruz. Se publicó la decisión, no los argumentos.",
+      "gn": "Mba'épa ojejapo pe gala ñemosẽme araapy 18, ha mba'épa he'i pe jurado Jessica Santa Cruz-pe. Osẽ pe decisión, ndaha'éi mba'érepa.",
+      "fuente": "tvpy_eliminada"
+    },
+    {
+      "id": "fuente_unica",
+      "es": "La eliminación la publicó un solo medio. Lo que la sostiene aparte es la planilla del propio medio, que marca a Jessica Santa Cruz como eliminada y a los otros diecisiete en competencia.",
+      "gn": "Pe ñemosẽ omombe'u peteĩ medio añoite. Omoañetéva ha'e pe planilla upe medio mba'éva, omarkáva Jessica Santa Cruz osẽma ha umi ambue papoteĩ oñeha'ãha gueteri.",
+      "fuente": "tvpy_planilla"
     },
     {
       "id": "trampa",
-      "es": "Cuidado con el sitio del canal: las direcciones que llevan a MasterChef redirigen hoy a una nota de mayo de 2025 que anuncia un primer eliminado. Esa nota es de la edición anterior, y ese nombre no está entre los 18 de esta temporada.",
-      "gn": "Eñangareko pe canal renda ndive: umi dirección oguerahava MasterChef-pe oho ko'ág̃a peteĩ kuatiahai jasypo 2025-pegua ha he'i mávapa osẽ ypy. Upe kuatiahai ha'e edición ohasa va'ekue mba'e, ha upe téra ndaipóri umi papoapy ko temporada-pegua apytépe.",
+      "es": "Cuidado con el sitio del canal: las direcciones que llevan a MasterChef redirigen a una nota de mayo de 2025 que anuncia otro primer eliminado. Esa nota es de la edición anterior.",
+      "gn": "Eñangareko pe canal renda ndive: umi dirección oguerahava MasterChef-pe oho peteĩ kuatiahai jasypo 2025-pegua, he'íva ambue osẽ ypy. Upe kuatiahai ha'e edición ohasa va'ekue mba'e.",
       "fuente": "snt_2025_ariel"
     },
     {
       "id": "equipo_marilina",
-      "es": "Con quiénes cocinó Marilina Bogado. La nota nombra a un «Yuk» que no está en la lista oficial; los dos que aparecen en su equipo salen por descarte, no de una fuente.",
-      "gn": "Mávandi ombojy Marilina Bogado. Pe kuatiahai omombe'u peteĩ «Yuk» ndaipóriva pe lista oficial-pe; umi mokõi osẽva iñatýpe ou ojehejáva rupive, ndaha'éi peteĩ fuente-gui.",
+      "es": "Con quiénes cocinó Marilina Bogado en la gala 2. Los dos que aparecen en su equipo salen por descarte, no de una fuente.",
+      "gn": "Mávandi ombojy Marilina Bogado gala 2-pe. Umi mokõi osẽva iñatýpe ou ojehejáva rupive, ndaha'éi peteĩ fuente-gui.",
       "fuente": "rdn_gala1"
     },
     {
       "id": "nueve",
-      "es": "Quiénes son exactamente los nueve del delantal negro. La nota se contradice al enumerarlos: repite un nombre e incluye a alguien de un equipo que subió al balcón. Los tres equipos que cayeron sí están claros.",
-      "gn": "Máva hína añetehápe umi porundy delantal hũ reheve. Pe kuatiahai ojoavy omombe'u jave: he'ijey peteĩ téra ha omoĩ peteĩ tapicha aty ojupi va'ekue balcón-pe. Umi mbohapy aty ho'a va'ekue katu hesakã.",
-      "fuente": "rdn_gala2"
+      "es": "RDN nombró mal a los nueve del delantal negro el 12 de agosto: repitió un nombre e incluyó a alguien de un equipo que había subido al balcón. La lista que compitió el 17 es la de la crónica del 18, y es la que vale acá.",
+      "gn": "RDN omombe'u vai umi porundy delantal hũ reheve 12 jasypoapýpe: he'ijey peteĩ téra ha omoĩ peteĩ tapicha aty ojupi va'ekuégui balcón-pe. Pe lista oñeha'ã va'ekue 17-pe ha'e pe kuatiahai 18-pegua mba'e, ha upéva ovale ko'ápe.",
+      "fuente": "rdn_gala3"
     },
     {
       "id": "premio",

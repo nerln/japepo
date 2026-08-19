@@ -2,61 +2,64 @@
 
 ## El problema
 
-Al 18 de agosto de 2026 van tres galas y **ninguna eliminación publicada**. Lo
-observado es esto y nada más:
+Al 19 de agosto de 2026 van cuatro galas y **una eliminación**. Lo observado es
+esto:
 
-- **Gala 1**, prueba individual de cortes: RDN nombra primero, segundo y tercero,
-  y completa los seis destacados sin declarar el orden de los otros tres.
-- **Gala 2**, prueba por equipos: tres tríos subieron al balcón y tres cayeron a
-  la zona de riesgo, sin orden declarado dentro de cada grupo.
-- **Gala 3**: se emitió el lunes 17 y ningún medio la contó. Un silencio no es un
-  dato, así que no entra.
-
-Un modelo honesto tiene que devolver algo parecido a dieciocho veces 5,6 %, y su
-valor está en decir *cuánto* se apartó de ahí y por qué.
+- **Gala 1**, prueba individual de cortes: primero, segundo y tercero declarados,
+  y los otros tres destacados sin orden.
+- **Gala 2**, prueba por equipos: tres tríos al balcón y tres a la zona de
+  riesgo, sin orden dentro de cada grupo.
+- **Gala 3**, zona de riesgo: de los nueve sentenciados, cuatro se salvaron y
+  cinco quedaron abajo. Es un orden parcial entre esos nueve y nadie más.
+- **Gala 4**: cayó Jessica Santa Cruz, de entre cinco.
 
 ## El modelo
 
-Cuatro piezas.
+Cinco piezas.
 
 **Habilidad.** Cada persona tiene un número que no se ve, `theta_i`, sacado de
 una normal de media cero y desviación `sigma`. En el caso base `sigma = 0,9`.
 
-**La prueba individual.** El resultado de la gala 1 es un ranking ruidoso de esa
-habilidad, modelado como Plackett-Luce sobre `exp(alpha_prueba * theta)`, con
-`alpha_prueba = 0,6` en el caso base.
+**La prueba individual.** Plackett-Luce sobre `exp(alpha_prueba * theta)`, con
+`alpha_prueba = 0,6`. Los tres primeros entran como secuencia; los otros tres
+destacados como conjunto, sumando las seis permutaciones.
 
-Los tres primeros puestos entran como secuencia ordenada. Los otros tres
-destacados entran como **conjunto**: se suman las seis permutaciones posibles,
-que es exactamente lo que significa «la lista se completó con estos tres» sin
-decir en qué orden. Se ve en la página: esos tres salen iguales entre sí.
+**La prueba por equipos.** Plackett-Luce sobre los seis **tríos**, con la fuerza
+de un trío igual al promedio de las tres habilidades. `alpha_equipo = 0,35`, más
+bajo porque un resultado repartido entre tres dice menos de cada uno.
 
-**La prueba por equipos.** El resultado de la gala 2 es un ranking ruidoso sobre
-los seis **tríos**, no sobre las personas. La fuerza de un trío es el promedio de
-las tres habilidades: el plato sale de los tres. Tres subieron y tres cayeron, sin
-orden dentro de cada grupo, así que la verosimilitud suma las 3! × 3! = 36
-ordenaciones compatibles.
+**La zona de riesgo.** Un orden parcial entre los sentenciados **y nadie más**:
+el denominador son los nueve que compitieron esa noche. Meter a los otros nueve
+sería decir que compitieron y perdieron.
 
-`alpha_equipo` vale 0,35, más bajo que `alpha_prueba`, y la razón es simple: un
-resultado repartido entre tres dice menos de cada uno que una prueba individual.
-
-**Las galas.** En cada ronda se elimina a alguien con probabilidad proporcional a
-`exp(-alpha_gala * theta)`. Se repite hasta que queda una persona.
+**Las eliminaciones.** Cae quien cocina peor: probabilidad proporcional a
+`exp(-alpha_gala * theta)` entre los que estaban en riesgo. Es la misma regla con
+la que después se simula el resto de la temporada, y hasta el 18 de agosto no
+había ninguna que cargar.
 
 ### Cuánto movió cada observación
 
 | Escenario | Ignorancia | Arriba |
 | --- | --- | --- |
-| Caso base, con las dos pruebas | 0,9635 | María Elsa Núñez, 10,9 % |
-| Sin la prueba por equipos | 0,9680 | Joaquín Serrano, 10,8 % |
-| Sin la prueba de cortes | 0,9982 | Marilina Bogado, 6,7 % |
-| Sin ninguna de las dos | 0,9997 | el reparto plano, 5,6 % |
+| Caso base | 0,9510 | Joaquín Serrano, 12,7 % |
+| Sin la prueba por equipos | 0,9523 | Joaquín Serrano, 14,2 % |
+| Sin la prueba de cortes | 0,9977 | Maricha Olitte, 5,1 % |
+| Sin ninguna de las dos pruebas | 0,9994 | queda sólo la eliminación |
+| Lotería pura | 1,0000 | nadie: 5,9 % cada uno |
 
-La gala 2 no es un detalle: **cambia quién puntea**. Con la prueba de cortes sola
-el primero era Joaquín Serrano; su equipo cayó a la zona de riesgo y el de María
-Elsa Núñez subió al balcón, y el orden se dio vuelta. Las dos observaciones juntas
-bajan la ignorancia de 1 a 0,964, que sigue siendo casi todo lo que hay
-para saber.
+## El índice de ignorancia, y una corrección
+
+Entropía de la distribución de ganadores dividida por la entropía máxima:
+
+```
+I = -sum(p log p) / log(m)
+```
+
+donde **m es la cantidad de gente que sigue en competencia**, no las dieciocho
+del principio. La primera versión de este archivo dividía siempre por log(18), y
+eso estaba mal: el índice habría bajado solo porque queda menos gente, midiendo
+el paso del tiempo en vez de lo que se sabe. Con la normalización correcta, el
+escenario de lotería pura da exactamente 1,000.
 
 ## Cómo se resuelve
 
@@ -138,11 +141,29 @@ Los conjuntos salen algo conservadores: el nivel del 50 % acierta el
 56,5 %, el del 80 % el 82,5 % y el del 90 % el 92,0 %. Un intervalo conservador anuncia menos
 certeza de la que tiene, que es el lado por el que conviene errar acá.
 
-Esto **no** valida el modelo contra la realidad. La validación de verdad empieza
-cuando haya eliminados, vive en `data/historial_pronostico.json` y se puntúa con
-la regla que [EVALUACION.md](EVALUACION.md) fijó por adelantado: Brier
-multiclase contra la baseline uniforme. `model/puntaje.py` se niega a puntuar
-una gala que no tenía predicción publicada de antes.
+Esto **no** valida el modelo contra la realidad. Eso lo hace el puntaje, con la
+regla que [EVALUACION.md](EVALUACION.md) fijó por adelantado.
+
+## El primer puntaje
+
+La predicción para la gala 4 se publicó el **18 de agosto a las 07:31 UTC**, en
+el commit `de296f3`, unas dieciséis horas antes de que la gala saliera al aire.
+Ponía a Jessica Santa Cruz **2ª de 18** entre las que podían caer, con
+6,9 %. Cayó ella.
+
+| | Modelo | Uniforme |
+| --- | --- | --- |
+| Brier | 0,9213 | 0,9444 |
+| Log-loss | 2,681 | 2,890 |
+
+El modelo le gana a la baseline. Con **una** gala puntuada eso no dice casi
+nada: la diferencia es chica y una sola observación no distingue un modelo que
+sirve de uno con suerte. Lo que sí queda establecido es el procedimiento, y que
+la predicción es verificable por cualquiera sin creerle a nadie:
+
+```bash
+git show de296f3:data/historial_pronostico.json | python3 -c "import json,sys; print(json.load(sys.stdin)['predicciones_gala'][-1]['p_cae'])"
+```
 
 ## El calendario
 

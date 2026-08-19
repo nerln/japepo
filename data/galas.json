@@ -158,20 +158,81 @@
     {
       "n": 3,
       "fecha": "2026-08-17",
-      "titulo_es": "El duelo que nadie contó",
-      "titulo_gn": "Pe ñorãirõ avave omombe'u'ỹva",
+      "titulo_es": "Milanesas con puré, en la zona de riesgo",
+      "titulo_gn": "Milanesa puré ndive, zona de riesgo-pe",
       "prueba": "eliminacion",
-      "prueba_detalle_es": "Los nueve del delantal negro competían individualmente por el último cupo de salvación y después iban al duelo de eliminación. Eso es lo que estaba anunciado; qué pasó esa noche no lo publicó ningún medio.",
-      "prueba_detalle_gn": "Umi porundy delantal hũ reheve oñeha'ãva'erã peteĩteĩ pe salvación pahaguáre ha upéi oho ñorãirõ ñemosẽme. Upéva oñemombe'u va'ekue; mba'e oiko upe pyharépe ndosẽi mamove.",
-      "minutos": null,
+      "prueba_detalle_es": "Estreno de la zona de riesgo. Los nueve del delantal gris cocinaron individualmente milanesas con puré de papas en 60 minutos, mientras el resto miraba desde el balcón.",
+      "prueba_detalle_gn": "Zona de riesgo ñepyrũ. Umi porundy delantal hũngy reheve ombojy peteĩteĩ milanesa puré papa ndive 60 aravo'ípe, ha umi ambue omaña balcón guive.",
+      "minutos": 60,
       "eliminado": null,
-      "sin_eliminacion": null,
-      "estado": "emitida_sin_cronica",
+      "sin_eliminacion": true,
+      "estado": null,
       "destacados": null,
-      "consecuencia_es": null,
-      "consecuencia_gn": null,
-      "fuente": "yt_programa3",
-      "segunda_fuente": "rdn_gala2"
+      "consecuencia_es": "Cuatro se salvaron y subieron al balcón. Los otros cinco pasaron al delantal negro y a la primera gala de eliminación de la temporada.",
+      "consecuencia_gn": "Irundy osẽ porã ha ojupi balcón-pe. Umi ambue po oho delantal hũme ha pe gala ñemosẽ peteĩha temporada-pegua.",
+      "fuente": "rdn_gala3",
+      "segunda_fuente": "rdn_gala2",
+      "balcon": [
+        "marisa",
+        "maricha",
+        "joaquin",
+        "faro"
+      ],
+      "riesgo": [
+        "vale",
+        "silvia",
+        "junior",
+        "jessica",
+        "jorge"
+      ],
+      "momentos": [
+        {
+          "es": "La noche arrancó con el cumpleaños de Marilina Bogado.",
+          "gn": "Pe pyhare oñepyrũ Marilina Bogado ára ramoite ndive."
+        },
+        {
+          "es": "Marisa Monutti convenció con una preparación casera y Maricha Olitte con una receta de su madre.",
+          "gn": "Marisa Monutti omoneĩ peteĩ tembi'u ógape guare ndive ha Maricha Olitte isy receta ndive."
+        },
+        {
+          "es": "Silvia Flores presentó su plato «Mil amores» y la cebolla cruda en el puré lo arruinó.",
+          "gn": "Silvia Flores omoĩ hembi'u «Mil amores» ha pe sevói pyahu puré-pe ombyai chupe."
+        },
+        {
+          "es": "Al plato de Jessica Santa Cruz el jurado lo comparó con un tiro libre al travesaño, por falta de condimento.",
+          "gn": "Jessica Santa Cruz rembi'u pe jurado ombojoja peteĩ tiro libre travesaño-pe, ndoguerekóigui he'ẽ."
+        },
+        {
+          "es": "A Vale Vierci y a Jorge Castro les falló la cocción de la carne; a Junior Rodríguez, un apanado seco.",
+          "gn": "Vale Vierci ha Jorge Castro ndoikói porã so'o ñembojy; Junior Rodríguez katu apanado ipiru."
+        }
+      ],
+      "momentos_fuente": "rdn_gala3"
+    },
+    {
+      "n": 4,
+      "fecha": "2026-08-18",
+      "titulo_es": "La primera eliminación",
+      "titulo_gn": "Ñemosẽ peteĩha",
+      "prueba": "eliminacion",
+      "prueba_detalle_es": "Los cinco del delantal negro volvieron a cocinar individualmente para seguir. Qué prepararon no lo publicó ningún medio.",
+      "prueba_detalle_gn": "Umi po delantal hũ reheve ombojy jey peteĩteĩ opyta hag̃ua. Mba'épa ojapo hikuái ndosẽi mamove.",
+      "minutos": null,
+      "eliminado": "jessica",
+      "sin_eliminacion": false,
+      "estado": null,
+      "en_riesgo": [
+        "vale",
+        "silvia",
+        "junior",
+        "jessica",
+        "jorge"
+      ],
+      "consecuencia_es": "Jessica Santa Cruz es la primera eliminada de la temporada.",
+      "consecuencia_gn": "Jessica Santa Cruz ha'e pe osẽ ypy va'ekue ko temporada-pe.",
+      "fuente": "tvpy_eliminada",
+      "segunda_fuente": "tvpy_planilla",
+      "_nota": "Un solo medio publico la eliminacion. La sostiene, aparte, la planilla del propio medio, leida el 19 de agosto. Que se cocino esa noche no lo publico nadie."
     }
   ]
 }

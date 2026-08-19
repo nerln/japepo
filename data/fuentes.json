@@ -146,6 +146,38 @@
       "fecha": "2025-05-21",
       "consultada": "2026-08-18",
       "_nota": "Nota de la PRIMERA edicion, la de 2025. Hoy las URL snt.com.py/masterchef redirigen aca, y quien entra por ahi se lleva un eliminado que no es de esta temporada."
+    },
+    "yt_presentaciones": {
+      "medio": "YouTube · canal oficial del programa",
+      "titulo": "Los dieciocho videos de presentacion, uno por participante",
+      "url": "https://www.youtube.com/watch?v=ExEvTt87Toc",
+      "fecha": "2026-08-07",
+      "consultada": "2026-08-19",
+      "_nota": "Mismo canal, mismo formato, subidos todos el 7 de agosto. Eso es lo que hace comparables las vistas entre si. Los ids de los dieciocho estan en model/social.py."
+    },
+    "rdn_gala3": {
+      "medio": "RDN",
+      "titulo": "MasterChef Celebrity Paraguay: cinco famosos van a eliminacion",
+      "url": "https://www.rdn.com.py/2026/08/18/masterchef-celebrity-paraguay-cinco-famosos-van-a-eliminacion/",
+      "fecha": "2026-08-18",
+      "consultada": "2026-08-19",
+      "_nota": "Firma Katya Ayala, 10:21. Cuenta la gala del lunes 17 y anuncia la de eliminacion."
+    },
+    "tvpy_eliminada": {
+      "medio": "TVPY / television.com.py",
+      "titulo": "Jessica Santacruz se convirtio en la primera eliminada de MasterChef Celebrity Paraguay 2026",
+      "url": "https://television.com.py/jessica-santacruz-se-convirtio-en-la-primera-eliminada-de-masterchef-celebrity-paraguay-2026",
+      "fecha": "2026-08-18",
+      "consultada": "2026-08-19",
+      "_nota": "Unico medio que publico la eliminacion. La sostiene la planilla del propio medio."
+    },
+    "tvpy_planilla": {
+      "medio": "TVPY / planilla del programa",
+      "titulo": "Hoja PROGRAMAS que alimenta la ficha de television.com.py",
+      "url": "https://docs.google.com/spreadsheets/d/1-MOASLpE4whBq2dq0OGJf-tf8L2wtjdSTumsOjWdiIk/gviz/tq?tqx=out:csv&sheet=PROGRAMAS",
+      "fecha": "2026-08-19",
+      "consultada": "2026-08-19",
+      "_nota": "Leida el 19 de agosto: los 18 figuran «En Competencia» salvo Jessica Santa Cruz, «Eliminada». Es una segunda comprobacion, legible por maquina, de lo que dice la nota."
     }
   }
 }

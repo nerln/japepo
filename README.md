@@ -23,6 +23,7 @@ poner un número a ese poco.
 | Dónde seguirlo | Las cuentas oficiales, las etiquetas y los tuits |
 | La ficha | Canal, horario, conducción, jurado, premio |
 | Cómo se hizo | El modelo, sus límites, y el detalle para quien lo quiera |
+| Qué mira la gente | Las vistas de los dieciocho videos de presentación, y por qué el jurado y el público no miran a la misma persona |
 | El registro | Lo que se dijo antes de cada gala, cuánto se acercó, y todas las versiones publicadas |
 
 El orden es el de quien mira el programa. El modelo y su letra chica van al
@@ -33,6 +34,7 @@ final, que es donde los busca quien los busca.
 ```bash
 bin/publicar.sh                 # el camino entero: recalcula, comprueba y publica
 bin/publicar.sh --gala 5        # además congela la predicción para la gala 5
+bin/publicar.sh --social        # vuelve a medir vistas y comentarios
 bin/publicar.sh --sin-empujar   # deja el commit hecho y no lo manda
 ```
 
@@ -45,6 +47,7 @@ Los pasos por separado, cuando hace falta:
 python3 model/preparacion.py                     # el modelo → data/estadisticas.json
 python3 model/registrar.py --fecha AAAA-MM-DD --gala N   # congela la corrida y la promesa
 python3 model/puntaje.py --gala N                # puntúa una gala ya resuelta
+python3 model/social.py --fecha AAAA-MM-DD       # vistas y comentarios → data/social.json
 python3 gui/fuentes.py                           # recorta e incrusta las tipografías
 python3 gui/build.py                             # arma web/index.html desde data/
 python3 gui/tarjeta.py                           # la tarjeta de previsualización y el icono
@@ -77,6 +80,30 @@ letras de otra tipografía.
 En [ACTUALIZACION.md](ACTUALIZACION.md). Resumen: se carga la gala en
 `data/galas.json`, se marca al eliminado en `data/plantel.json`, y se vuelve a
 correr la secuencia de arriba.
+
+## Lo que se puede medir del público, y lo que no
+
+Este programa casi no tiene conversación pública, y eso es una cuenta, no una
+impresión. `model/social.py` deja escritos los seis corpus que se probaron y por
+qué cinco no sirven: los comentarios de los episodios no devuelven nada, Facebook
+pide sesión, Instagram y TikTok piden credenciales, X está quieto, y al widget de
+comentarios de Popular no se llegó. Lo que sí se puede medir son las vistas de
+los dieciocho videos de presentación, que son del mismo canal, del mismo día y
+del mismo formato: uno por participante.
+
+Miden **atención, no aprobación**, y la página lo dice antes de mostrar la
+primera barra.
+
+## El primer puntaje
+
+La predicción para la gala 4 se publicó el 18 de agosto a las 07:31 UTC, en el
+commit `de296f3`, dieciséis horas antes de la emisión. Ponía a Jessica Santa Cruz
+segunda de dieciocho entre las que podían caer. Cayó ella, y el Brier del modelo
+(0,921) le gana al de la uniforme (0,944).
+
+Con una sola gala puntuada eso no dice casi nada, y la página lo dice así. Lo que
+queda establecido es el procedimiento: la predicción está en un commit público
+anterior a la gala y cualquiera puede leerla sin creerle a nadie.
 
 ## Cómo se sabe si el pronóstico sirve
 

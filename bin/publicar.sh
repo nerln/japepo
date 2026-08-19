@@ -9,6 +9,7 @@
 #
 #   bin/publicar.sh                       recalcula todo y publica
 #   bin/publicar.sh --gala 5              además congela la promesa para la gala 5
+#   bin/publicar.sh --social              vuelve a medir vistas y comentarios
 #   bin/publicar.sh --solo-web            no recalcula el modelo, sólo rearma la página
 #   bin/publicar.sh --sin-empujar         deja el commit hecho y no lo manda
 #
@@ -20,12 +21,14 @@ cd "$(dirname "$0")/.."
 
 SOLO_WEB=0
 EMPUJAR=1
+SOCIAL=0
 GALA=""
 FECHA=$(date +%Y-%m-%d)
 
 while [ $# -gt 0 ]; do
   case "$1" in
     --solo-web)    SOLO_WEB=1 ;;
+    --social)      SOCIAL=1 ;;
     --sin-empujar) EMPUJAR=0 ;;
     --gala)        shift; GALA="$1" ;;
     --fecha)       shift; FECHA="$1" ;;
@@ -35,6 +38,12 @@ while [ $# -gt 0 ]; do
 done
 
 corre() { echo ">>> $*"; "$@"; }
+
+# Las vistas se miden solo si se pide: son treinta pedidos a YouTube y tardan
+# unos minutos. El resto de la corrida no las necesita para nada.
+if [ "$SOCIAL" -eq 1 ]; then
+  corre python3 model/social.py --fecha "$FECHA"
+fi
 
 if [ "$SOLO_WEB" -eq 0 ]; then
   corre python3 model/preparacion.py

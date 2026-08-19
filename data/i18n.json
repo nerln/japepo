@@ -378,8 +378,8 @@
     "gn": "Umi temporada ohasa va'ekue. Pe versión tapicha herakuãva ndive oĩ peteĩnte opa va'ekue, ha upévagui ndaikatúi oñemboheko peteĩ tasa base peteĩteĩ campo-pe. Pe tembiasakue oĩ ko kuatiaroguépe contexto-ramo ha pe modelo ndome'ẽi chupe mba'eve."
   },
   "metodo_lim2": {
-    "es": "Las eliminaciones todavía no entran en la verosimilitud. Cuando empiecen, hay que sumarlas: hasta que eso se haga, la ignorancia va a bajar solo porque queda menos gente.",
-    "gn": "Umi ñemosẽ ndoikéi gueteri pe verosimilitud-pe. Oñepyrũvo, tekotevẽ ojembojoapy: upéva ojejapo'ỹ aja, pe ñeikuaa'ỹ oguejýta opytágui sa'ive tapicha, ndaha'éi oikuaágui hetave."
+    "es": "Hay una sola eliminación cargada. El modelo ya la usa, pero una observación no alcanza para saber cuánto pesa: el parámetro que dice cuánto manda la habilidad en una eliminación sigue puesto a mano, no estimado.",
+    "gn": "Oĩ peteĩ ñemosẽnte oñemoĩva. Pe modelo oiporúma, ha katu peteĩ jehecha ndohupytýi jaikuaa hag̃ua mboýpa ipohýi: pe parámetro he'íva mboýpa oisãmbyhy katupyry peteĩ ñemosẽme opyta gueteri oñemoĩva pópe, ndaha'éi oñemboheko va'ekue."
   },
   "metodo_lim3": {
     "es": "El voto del público. Este formato lo decide el jurado, así que no hay encuestas que calibrar.",
@@ -502,8 +502,8 @@
     "gn": "Mávapa oguereko ikatuve"
   },
   "como_va_p": {
-    "es": "Van {galas_jugadas} galas y ninguna eliminación publicada, así que las {n} siguen adentro. El modelo mira dos cosas: la prueba de cortes y qué equipos subieron al balcón. Con eso el puntero llega a {max_pct} por ciento, cuando el reparto plano da {plano_pct}.",
-    "gn": "Oĩ {galas_jugadas} gala ha ndaipóri ñemosẽ osẽva, upévare umi {n} opyta gueteri. Pe modelo omaña mokõi mba'ére: pe ñeikytĩ ñeha'ã ha mba'e aty ojupi balcón-pe. Upéva ndive pe tenondegua og̃uahẽ {max_pct} porciento, ha pe ñemboja'o joja ome'ẽ {plano_pct}."
+    "es": "Van {galas_jugadas} galas y {eliminados} eliminada, así que quedan {en_competencia} en competencia. El modelo mira cuatro cosas: la prueba de cortes, qué equipos subieron al balcón, quién se salvó en la zona de riesgo y quién cayó en la eliminación. Con eso el puntero llega a {max_pct} por ciento, cuando el reparto plano da {plano_pct}.",
+    "gn": "Oĩ {galas_jugadas} gala ha {eliminados} osẽ va'ekue, upévare opyta {en_competencia} oñeha'ãva. Pe modelo omaña irundy mba'ére: pe ñeikytĩ ñeha'ã, mba'e aty ojupi balcón-pe, máva osẽ porã zona de riesgo-pe ha máva ho'a ñemosẽme. Upéva ndive pe tenondegua og̃uahẽ {max_pct} porciento, ha pe ñemboja'o joja ome'ẽ {plano_pct}."
   },
   "como_va_empate": {
     "es": "{lider} y {segundo} encabezan con {max_pct} y {segundo_pct} por ciento, y sus márgenes se superponen: hoy no hay un primero.",
@@ -566,8 +566,8 @@
     "gn": "Umi ñe'ẽme'ẽ ha ipapapy"
   },
   "promesas_p": {
-    "es": "Antes de cada gala el modelo publica quién cae, y después se puntúa con la regla escrita de antes. La columna que se entiende sin cuentas es el puesto: en qué lugar tenía el modelo al que efectivamente salió.",
-    "gn": "Peteĩteĩ gala mboyve pe modelo omombe'u mávapa ho'a, ha upéi oñembopapapy pe tekorã ojehai va'ekue tenonde ndive. Pe columna oñentende'ỹva papapy'ỹre ha'e pe puesto: moõpa pe modelo omoĩ pe osẽ va'ekuépe."
+    "es": "Antes de cada gala el modelo publica quién cae, queda congelado en el repositorio y después se puntúa con la regla escrita de antes. La columna que se entiende sin cuentas es el puesto: en qué lugar tenía el modelo al que efectivamente salió.",
+    "gn": "Peteĩteĩ gala mboyve pe modelo omombe'u mávapa ho'a, opyta ñongatupyre pe repositorio-pe ha upéi oñembopapapy pe tekorã ojehai va'ekue tenonde ndive. Pe columna oñentende'ỹva papapy'ỹre ha'e pe puesto: moõpa pe modelo omoĩ pe osẽ va'ekuépe."
   },
   "promesas_vacio": {
     "es": "Todavía no hay ninguna gala puntuada. Una gala se puntúa sólo si la predicción estaba publicada antes; puntuar una escrita después de saber el resultado no es puntuar.",
@@ -644,5 +644,61 @@
   "equipos_deducido": {
     "es": "Por descarte",
     "gn": "Ojehejáva rupive"
+  },
+  "nav_gente": {
+    "es": "Qué mira la gente",
+    "gn": "Mba'épa omaña tapicha kuéra"
+  },
+  "gente_h": {
+    "es": "Qué mira la gente",
+    "gn": "Mba'épa omaña tapicha kuéra"
+  },
+  "gente_p": {
+    "es": "El canal subió el mismo día un video de presentación por cada participante: mismo formato, misma duración, la misma exposición para los {n}. Las vistas de esos videos son lo único público que se puede comparar persona por persona, y suman {vistas_totales}.",
+    "gn": "Pe canal omoĩ peteĩ árape peteĩ video ñemoirũ peteĩteĩ oikévape: peteĩcha formato, peteĩcha are, peteĩcha jehechauka umi {n} peteĩteĩme. Umi video jehecha ha'e pe mba'e tapicha mba'éva ikatúva ojejoja peteĩteĩme, ha ombyaty {vistas_totales}."
+  },
+  "gente_ojo": {
+    "es": "Miden atención, no cariño. A un video se entra por curiosidad, por simpatía o por bronca, y las tres cuentan igual.",
+    "gn": "Ohechauka jesareko, ndaha'éi mborayhu. Peteĩ video-pe ojeike ojekuaase haguére, ojeguerohory haguére térã ipochy haguére, ha mbohapyve ojepapa peteĩcha."
+  },
+  "gente_lider": {
+    "es": "Arriba está {atencion_lider}, con {atencion_lider_vistas} vistas. Abajo, {atencion_ultimo}, con {atencion_ultimo_vistas}.",
+    "gn": "Yvatépe oĩ {atencion_lider}, {atencion_lider_vistas} jehecha reheve. Iguýpe, {atencion_ultimo}, {atencion_ultimo_vistas} reheve."
+  },
+  "gente_contraste_h": {
+    "es": "El jurado y el público no miran a la misma persona",
+    "gn": "Pe jurado ha tapicha kuéra ndomañái peteĩ tapichápe"
+  },
+  "gente_contraste_p": {
+    "es": "La correlación entre las dos listas, la del modelo y la de las vistas, es {rho}: no hay relación. El caso más claro es {contraste_nombre}, que el modelo pone {contraste_puesto_modelo}º y las vistas dejan {contraste_puesto_gente}º de {n}. Tampoco tendría por qué haberla: en este formato elimina el jurado, no el voto de la gente.",
+    "gn": "Pe mokõi tysỹi ojoajuha, modelo mba'e ha jehecha mba'e, ha'e {rho}: ndaipóri ojoaju. Pe caso hesakãvéva ha'e {contraste_nombre}, pe modelo omoĩva {contraste_puesto_modelo}º ha jehecha oheja {contraste_puesto_gente}º {n} apytégui. Ndaikatúi voi oĩ: ko formato-pe omosẽ pe jurado, ndaha'éi tapicha kuéra voto."
+  },
+  "comentarios_h": {
+    "es": "Lo que se escribió",
+    "gn": "Ojehai va'ekue"
+  },
+  "comentarios_p": {
+    "es": "En los dieciocho videos hay {n_comentarios} comentarios en total. {n_ruido} son pedidos al canal y {n_sin_clasificar} no traen ninguna marca de signo. Con eso no se mide el humor de nadie, y decirlo es más útil que inventar un porcentaje.",
+    "gn": "Umi papoapy video-pe oĩ {n_comentarios} ñe'ẽ ombyatypáva. {n_ruido} ha'e jerure pe canal-pe ha {n_sin_clasificar} ndoguerúi mba'eve ohechaukáva mba'éichapa oñeñandu. Upévape ndaikatúi ojehecha avave ñeñandu, ha upéva he'i iporãve ojejapógui peteĩ porciento."
+  },
+  "comentarios_donde": {
+    "es": "En los doce videos de los cuatro programas, la sección de comentarios no devuelve nada.",
+    "gn": "Umi pakõi video irundy programa pegua, pe ñe'ẽ renda ndome'ẽi mba'eve."
+  },
+  "descartados_h": {
+    "es": "Dónde más se buscó",
+    "gn": "Moõve ojeheka"
+  },
+  "col_vistas": {
+    "es": "Vistas",
+    "gn": "Jehecha"
+  },
+  "col_megusta": {
+    "es": "Me gusta",
+    "gn": "Ojegustáva"
+  },
+  "proxima_sin_anuncio": {
+    "es": "Nadie anunció la próxima gala. La grilla del SNT tiene el programa lunes y martes, y de ahí sale la fecha de arriba: es deducción, no anuncio.",
+    "gn": "Avave nomombe'úi pe gala oútava. Pe SNT grilla oguereko pe programa arakõi ha araapy, ha upégui osẽ pe ára yvatépe: ojeguenohẽva, ndaha'éi ñemombe'u."
   }
 }

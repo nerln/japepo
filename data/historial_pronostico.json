@@ -62,6 +62,37 @@
         "vale": 0.04246,
         "jessica": 0.03378,
         "calonga": 0.04061
+      },
+      "commit": "de296f3e66c6307db21c9626c5d74ea4e83d8358"
+    },
+    {
+      "fecha": "2026-08-19",
+      "galas": 4,
+      "eliminados": 1,
+      "en_competencia": 17,
+      "lider": "joaquin",
+      "p_lider": 0.12716,
+      "p_lider_ee": 0.00303,
+      "ignorancia": 0.951,
+      "semilla": 20260810,
+      "p_gana": {
+        "marilina": 0.0939,
+        "will": 0.03501,
+        "luana": 0.03688,
+        "betha": 0.03991,
+        "maricha": 0.10527,
+        "marisa": 0.05278,
+        "silvia": 0.05117,
+        "walter": 0.04022,
+        "jorge": 0.02249,
+        "faro": 0.056,
+        "junior": 0.0245,
+        "mariaelsa": 0.10418,
+        "negro": 0.09896,
+        "chad": 0.04019,
+        "joaquin": 0.12716,
+        "vale": 0.0322,
+        "calonga": 0.03918
       }
     }
   ],
@@ -160,8 +191,70 @@
       },
       "regla": "EVALUACION.md",
       "_supuesto": "Se escribe suponiendo que las 18 personas siguen en competencia. La gala 3 se emitio el 17 con un duelo de eliminacion anunciado y ningun medio publico el resultado. Si esa noche salio alguien, esta promesa esta hecha sobre un plantel que ya no existe, y eso queda escrito aca antes de saberlo."
+    },
+    {
+      "gala": 5,
+      "corrida": "2026-08-19",
+      "en_riesgo": [
+        "marilina",
+        "will",
+        "luana",
+        "betha",
+        "maricha",
+        "marisa",
+        "silvia",
+        "walter",
+        "jorge",
+        "faro",
+        "junior",
+        "mariaelsa",
+        "negro",
+        "chad",
+        "joaquin",
+        "vale",
+        "calonga"
+      ],
+      "p_cae": {
+        "marilina": 0.0413,
+        "will": 0.078,
+        "luana": 0.0694,
+        "betha": 0.0671,
+        "maricha": 0.0362,
+        "marisa": 0.0557,
+        "silvia": 0.0544,
+        "walter": 0.0683,
+        "jorge": 0.0798,
+        "faro": 0.0542,
+        "junior": 0.0761,
+        "mariaelsa": 0.0394,
+        "negro": 0.0403,
+        "chad": 0.0673,
+        "joaquin": 0.0319,
+        "vale": 0.0714,
+        "calonga": 0.0692
+      },
+      "regla": "EVALUACION.md"
     }
   ],
   "_nota_puntajes": "Lo escribe model/puntaje.py cuando una gala se resuelve, con la regla escrita en EVALUACION.md antes de conocer el resultado.",
-  "puntajes": []
+  "puntajes": [
+    {
+      "gala": 4,
+      "fecha": "2026-08-18",
+      "eliminado": "jessica",
+      "en_riesgo": 18,
+      "regla": "EVALUACION.md, escrita antes de conocer el resultado",
+      "corrida_de_la_promesa": "2026-08-18",
+      "modelo": {
+        "p_del_eliminado": 0.0685,
+        "puesto": 2,
+        "de": 18,
+        "brier": 0.921345,
+        "brier_uniforme": 0.944444,
+        "log_loss": 2.6809,
+        "log_loss_uniforme": 2.8904,
+        "gana_a_la_uniforme": true
+      }
+    }
+  ]
 }

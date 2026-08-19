@@ -1,0 +1,313 @@
+{
+  "_nota": "Lo que se puede medir del publico de este programa, y lo que no. Las vistas miden ATENCION, no aprobacion: a un video se entra por curiosidad, por simpatia o por bronca, y las tres cuentan igual.",
+  "medido": "2026-08-19",
+  "fuente": "yt_presentaciones",
+  "atencion": {
+    "marilina": {
+      "video": "ExEvTt87Toc",
+      "vistas": 793,
+      "likes": 16,
+      "subido": "2026-08-07",
+      "parte": 0.16267
+    },
+    "luana": {
+      "video": "ThlKe4gSjb4",
+      "vistas": 771,
+      "likes": 8,
+      "subido": "2026-08-07",
+      "parte": 0.15815
+    },
+    "mariaelsa": {
+      "video": "OiWRuU3N_Fc",
+      "vistas": 592,
+      "likes": 5,
+      "subido": "2026-08-07",
+      "parte": 0.12144
+    },
+    "will": {
+      "video": "OtkZhWjYvSM",
+      "vistas": 298,
+      "likes": 3,
+      "subido": "2026-08-07",
+      "parte": 0.06113
+    },
+    "jorge": {
+      "video": "hesL6P7GNp0",
+      "vistas": 283,
+      "likes": 4,
+      "subido": "2026-08-07",
+      "parte": 0.05805
+    },
+    "betha": {
+      "video": "tVGRFzDp6bw",
+      "vistas": 240,
+      "likes": 3,
+      "subido": "2026-08-07",
+      "parte": 0.04923
+    },
+    "silvia": {
+      "video": "4UA75fFmfuk",
+      "vistas": 235,
+      "likes": 8,
+      "subido": "2026-08-07",
+      "parte": 0.04821
+    },
+    "chad": {
+      "video": "4A7ZibclTsc",
+      "vistas": 222,
+      "likes": 2,
+      "subido": "2026-08-07",
+      "parte": 0.04554
+    },
+    "vale": {
+      "video": "bK1j9rFnsWo",
+      "vistas": 219,
+      "likes": 6,
+      "subido": "2026-08-07",
+      "parte": 0.04492
+    },
+    "junior": {
+      "video": "a3egRGHDKzg",
+      "vistas": 210,
+      "likes": 2,
+      "subido": "2026-08-07",
+      "parte": 0.04308
+    },
+    "jessica": {
+      "video": "aFiLdpPIMkM",
+      "vistas": 200,
+      "likes": 4,
+      "subido": "2026-08-07",
+      "parte": 0.04103
+    },
+    "marisa": {
+      "video": "hZWfpLpd2bo",
+      "vistas": 149,
+      "likes": 0,
+      "subido": "2026-08-07",
+      "parte": 0.03056
+    },
+    "walter": {
+      "video": "WKEcjRN_wp4",
+      "vistas": 143,
+      "likes": 4,
+      "subido": "2026-08-07",
+      "parte": 0.02933
+    },
+    "faro": {
+      "video": "Cf4XX_PdF2A",
+      "vistas": 140,
+      "likes": 1,
+      "subido": "2026-08-07",
+      "parte": 0.02872
+    },
+    "maricha": {
+      "video": "C1hK3eOv0OE",
+      "vistas": 117,
+      "likes": 1,
+      "subido": "2026-08-07",
+      "parte": 0.024
+    },
+    "joaquin": {
+      "video": "zOPNbl2Ni1w",
+      "vistas": 110,
+      "likes": 3,
+      "subido": "2026-08-07",
+      "parte": 0.02256
+    },
+    "calonga": {
+      "video": "CAWU6mAJNro",
+      "vistas": 79,
+      "likes": 1,
+      "subido": "2026-08-07",
+      "parte": 0.01621
+    },
+    "negro": {
+      "video": "bmrAjjrBcZQ",
+      "vistas": 74,
+      "likes": 1,
+      "subido": "2026-08-07",
+      "parte": 0.01518
+    }
+  },
+  "vistas_totales": 4875,
+  "mismo_dia": true,
+  "dia_de_subida": "2026-08-07",
+  "_nota_comentarios": "Corpus completo, sin muestrear: son todos los que hay. El que no trae marca de signo queda SIN CLASIFICAR, que no es lo mismo que indiferente.",
+  "comentarios": [
+    {
+      "de": "marilina",
+      "video": "ExEvTt87Toc",
+      "texto": "❤",
+      "clase": "sin_clasificar"
+    },
+    {
+      "de": "marilina",
+      "video": "ExEvTt87Toc",
+      "texto": "Me encantooo",
+      "clase": "favor"
+    },
+    {
+      "de": "marilina",
+      "video": "ExEvTt87Toc",
+      "texto": "Resuban el Live 10/08",
+      "clase": "ruido"
+    },
+    {
+      "de": "luana",
+      "video": "ThlKe4gSjb4",
+      "texto": "hermosa reyna",
+      "clase": "favor"
+    },
+    {
+      "de": "luana",
+      "video": "ThlKe4gSjb4",
+      "texto": "En que momento Luana regreso al Pais,no era que no iba a regresar",
+      "clase": "sin_clasificar"
+    },
+    {
+      "de": "luana",
+      "video": "ThlKe4gSjb4",
+      "texto": "Será que ela tem o dom da culinária  comi tem de ser linda?",
+      "clase": "sin_clasificar"
+    },
+    {
+      "de": "mariaelsa",
+      "video": "OiWRuU3N_Fc",
+      "texto": "❤❤❤\n🤩🤩🤩\n💪🏼💪🏼💪🏼",
+      "clase": "sin_clasificar"
+    },
+    {
+      "de": "jorge",
+      "video": "hesL6P7GNp0",
+      "texto": "Que bueno una nueva edi ion lo voy a ver desde Oberá misiones argentinas",
+      "clase": "sin_clasificar"
+    },
+    {
+      "de": "betha",
+      "video": "tVGRFzDp6bw",
+      "texto": "Resuban el Live de hoy 10/08",
+      "clase": "ruido"
+    },
+    {
+      "de": "silvia",
+      "video": "4UA75fFmfuk",
+      "texto": "Resuban el Live de hoy 10/08",
+      "clase": "ruido"
+    },
+    {
+      "de": "chad",
+      "video": "4A7ZibclTsc",
+      "texto": "Resuban el Live 10/08",
+      "clase": "ruido"
+    },
+    {
+      "de": "junior",
+      "video": "a3egRGHDKzg",
+      "texto": "Resuban el live 10/08",
+      "clase": "ruido"
+    },
+    {
+      "de": "marisa",
+      "video": "hZWfpLpd2bo",
+      "texto": "Resuban el Live de hoy 10/08",
+      "clase": "ruido"
+    },
+    {
+      "de": "walter",
+      "video": "WKEcjRN_wp4",
+      "texto": "Resuban el live de hoy 10/08",
+      "clase": "ruido"
+    },
+    {
+      "de": "faro",
+      "video": "Cf4XX_PdF2A",
+      "texto": "Resuban el Live 10/08",
+      "clase": "ruido"
+    },
+    {
+      "de": "calonga",
+      "video": "CAWU6mAJNro",
+      "texto": "Danny Pereira",
+      "clase": "sin_clasificar"
+    }
+  ],
+  "conteo": {
+    "sin_clasificar": 6,
+    "favor": 2,
+    "ruido": 8
+  },
+  "_nota_episodios": "Los doce videos de los cuatro programas, sondeados con el mismo metodo que las presentaciones. Que devuelvan cero es el dato; por que devuelven cero no se afirma.",
+  "sondeo_episodios": [
+    {
+      "video": "2FSTpgJXWaQ",
+      "comentarios": 0
+    },
+    {
+      "video": "XQB01fI0qBA",
+      "comentarios": 0
+    },
+    {
+      "video": "Ue3gFogpuCI",
+      "comentarios": 0
+    },
+    {
+      "video": "ttiXPnCM5fQ",
+      "comentarios": 0
+    },
+    {
+      "video": "TibEeiv0KZs",
+      "comentarios": 0
+    },
+    {
+      "video": "y9biOuVCfso",
+      "comentarios": 0
+    },
+    {
+      "video": "X7dRAAO54MI",
+      "comentarios": 0
+    },
+    {
+      "video": "sEpnuGtBoTc",
+      "comentarios": 0
+    },
+    {
+      "video": "FrvhEm3laFU",
+      "comentarios": 0
+    },
+    {
+      "video": "PhOFNHMmy1s",
+      "comentarios": 0
+    },
+    {
+      "video": "pTNGzSusnc8",
+      "comentarios": 0
+    },
+    {
+      "video": "GU_0HBWDmV0",
+      "comentarios": 0
+    }
+  ],
+  "descartados": [
+    {
+      "corpus": "Comentarios de los episodios en el canal oficial",
+      "porque": "estan desactivados; lo dice la propia pagina del video"
+    },
+    {
+      "corpus": "Facebook",
+      "porque": "la pagina publica devuelve un muro de inicio de sesion"
+    },
+    {
+      "corpus": "Instagram y TikTok",
+      "porque": "cargan, pero los comentarios piden credenciales"
+    },
+    {
+      "corpus": "X",
+      "porque": "las dos cuentas estan casi quietas y el lector anonimo devuelve lo mas interactuado, no lo mas reciente"
+    },
+    {
+      "corpus": "Voiz, los comentarios de Popular",
+      "porque": "la sonda anonima al iframe devolvio 404; no alcanzado, que no es lo mismo que vacio"
+    }
+  ]
+}

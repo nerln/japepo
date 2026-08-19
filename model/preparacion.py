@@ -4,17 +4,17 @@
 El pronostico de MasterChef Celebrity Paraguay 2026 cuando todavia no hay
 casi nada que pronosticar.
 
-Van tres galas y ninguna eliminacion publicada. Lo observado son dos ordenes
-parciales, y nada mas:
+Van cuatro galas y una eliminacion. Lo observado, en orden:
 
   * gala 1, prueba individual de cortes: RDN nombra primero, segundo y tercero,
     y completa los seis destacados sin decir el orden de los otros tres;
   * gala 2, prueba por equipos: tres trios subieron al balcon y tres cayeron a
     la zona de riesgo, sin orden adentro de cada grupo;
-  * gala 3: se emitio y ningun medio la conto, asi que no aporta nada. Un
-    silencio no es un dato.
+  * gala 3, zona de riesgo: de los nueve sentenciados, cuatro se salvaron y
+    cinco quedaron abajo. Es un orden parcial entre esos nueve y nadie mas;
+  * gala 4: la primera eliminacion. Cayo Jessica Santa Cruz de entre cinco.
 
-El modelo convierte esos dos ordenes parciales en una posterior sobre la
+El modelo convierte esos ordenes parciales en una posterior sobre la
 habilidad de cada persona, y dice con cuanta fuerza. La medida que importa no es
 quien puntea sino el indice de ignorancia, que es la entropia de la distribucion
 dividida por la entropia maxima. Arranca en 1 y solo baja cuando pasa algo.
@@ -22,7 +22,9 @@ dividida por la entropia maxima. Arranca en 1 y solo baja cuando pasa algo.
     habilidad     theta_i ~ Normal(0, sigma^2)
     prueba        Plackett-Luce sobre exp(alpha_prueba * theta)
     equipos       Plackett-Luce sobre exp(alpha_equipo * promedio del trio)
-    galas         se elimina con probabilidad proporcional a exp(-theta)
+    riesgo        Plackett-Luce entre los sentenciados, y solo entre ellos
+    eliminacion   cae con probabilidad proporcional a exp(-alpha_gala * theta)
+                  entre los que estaban en riesgo esa noche
 
 alpha_prueba es cuanto vale una prueba de cuchillo como prediccion de una
 temporada entera; alpha_equipo es lo mismo para un resultado repartido entre
@@ -96,7 +98,8 @@ def log_pl_secuencia(logw: np.ndarray, orden: list[int], vivos: np.ndarray) -> n
     return total
 
 
-def log_orden_parcial(logw: np.ndarray, bloques: list[list[int]], n: int) -> np.ndarray:
+def log_orden_parcial(logw: np.ndarray, bloques: list[list[int]], n: int,
+                      universo: list[int] | None = None) -> np.ndarray:
     """
     log P de un orden parcial: una lista de bloques, de mejor a peor.
 
@@ -107,6 +110,10 @@ def log_orden_parcial(logw: np.ndarray, bloques: list[list[int]], n: int) -> np.
 
     Se suman las permutaciones dentro de cada bloque, que es lo que significa
     «no dijo el orden»: no es lo mismo que inventarle uno.
+
+    universo acota contra quienes se compite. La gala 1 se corrio entre las
+    dieciocho; la gala 3, solo entre los nueve que estaban en riesgo, y meter a
+    los otros nueve en el denominador seria decir que compitieron y perdieron.
     """
     ramas = None
     for bloque in bloques:
@@ -118,7 +125,8 @@ def log_orden_parcial(logw: np.ndarray, bloques: list[list[int]], n: int) -> np.
         else:
             ramas = [previa + extra for previa in ramas for extra in nuevas]
 
-    vivos = np.ones(n, dtype=bool)
+    vivos = np.zeros(n, dtype=bool)
+    vivos[universo if universo is not None else range(n)] = True
     apilado = np.stack([log_pl_secuencia(logw, rama, vivos.copy()) for rama in ramas])
     m = apilado.max(axis=0)
     return m + np.log(np.exp(apilado - m).sum(axis=0))
@@ -149,6 +157,24 @@ def log_verosimilitud(theta: np.ndarray, obs: dict, par: dict) -> np.ndarray:
         bloques += ([[i] for i in g1["sin_orden"]] if par["orden_completo"]
                     else [list(g1["sin_orden"])])
         total = total + log_orden_parcial(par["alpha_prueba"] * theta, bloques, n)
+
+    # La zona de riesgo: un orden parcial entre los que estaban ahi y nadie mas.
+    if par["alpha_prueba"] > 0 and obs.get("riesgo"):
+        for r in obs["riesgo"]:
+            total = total + log_orden_parcial(
+                par["alpha_prueba"] * theta,
+                [list(r["arriba"])], n, universo=r["universo"])
+
+    # Las eliminaciones. Es lo que faltaba: hasta la gala 4 no habia ninguna, y
+    # el modelo lo decia. Cae quien cocina peor, con probabilidad proporcional a
+    # exp(-alpha_gala * theta) entre los que estaban en riesgo esa noche, que es
+    # exactamente la misma regla con la que despues se simula la temporada.
+    if par["alpha_gala"] > 0 and obs.get("eliminaciones"):
+        for e in obs["eliminaciones"]:
+            uni = e["universo"]
+            w = np.exp(-par["alpha_gala"] * theta[:, uni])
+            total = total + (-par["alpha_gala"] * theta[:, e["quien"]]
+                             - np.log(w.sum(axis=1)))
 
     if par["alpha_equipo"] > 0 and obs.get("equipos"):
         eq = obs["equipos"]
@@ -193,13 +219,17 @@ def n_efectivo(rng, n, obs, par) -> float:
 # la temporada
 # --------------------------------------------------------------------------
 
-def simular(rng, theta_draws: np.ndarray, reps: int, alpha_gala: float):
+def simular(rng, theta_draws: np.ndarray, reps: int, alpha_gala: float,
+            fuera: list[int] | None = None):
     """
     Corre la temporada hasta que queda uno.
 
     En cada ronda sale alguien con probabilidad proporcional a exp(-alpha*theta):
-    quien cocina peor cae mas seguido, pero nadie esta a salvo. Devuelve la
-    posicion final de cada persona (1 = gana) por simulacion.
+    quien cocina peor cae mas seguido, pero nadie esta a salvo.
+
+    `fuera` son los que ya se fueron. No arrancan la simulacion y su puesto
+    final es el que tuvieron de verdad, no uno sorteado: quien ya salio no puede
+    ganar, y dejarlo adentro seria repartirle probabilidad a alguien que no esta.
     """
     draws, n = theta_draws.shape
     theta = np.repeat(theta_draws, reps, axis=0)
@@ -209,13 +239,19 @@ def simular(rng, theta_draws: np.ndarray, reps: int, alpha_gala: float):
     puesto = np.zeros((s, n), dtype=np.int16)
     filas = np.arange(s)
 
-    for ronda in range(n - 1):
+    fuera = fuera or []
+    for i in fuera:
+        vivo[:, i] = False
+        puesto[:, i] = n            # todos los que salieron comparten el ultimo escalon
+    quedan = n - len(fuera)
+
+    for ronda in range(quedan - 1):
         p = np.where(vivo, riesgo, 0.0)
         p /= p.sum(axis=1, keepdims=True)
         u = rng.random(s)
         elegido = (p.cumsum(axis=1) < u[:, None]).sum(axis=1)
         elegido = np.minimum(elegido, n - 1)
-        puesto[filas, elegido] = n - ronda
+        puesto[filas, elegido] = quedan - ronda
         vivo[filas, elegido] = False
 
     ganador = vivo.argmax(axis=1)
@@ -223,16 +259,18 @@ def simular(rng, theta_draws: np.ndarray, reps: int, alpha_gala: float):
     return puesto
 
 
-def resumen(puesto: np.ndarray, n: int) -> dict:
+def resumen(puesto: np.ndarray, n: int, quedan: int | None = None) -> dict:
+    quedan = quedan or n
     return {
         "p_gana": (puesto == 1).mean(axis=0),
         "p_final3": (puesto <= 3).mean(axis=0),
-        "p_mitad": (puesto <= n // 2).mean(axis=0),
-        "p_proxima": (puesto == n).mean(axis=0),
+        "p_mitad": (puesto <= quedan // 2).mean(axis=0),
+        "p_proxima": (puesto == quedan).mean(axis=0),
     }
 
 
-def por_lotes(rng, theta: np.ndarray, n: int, alpha_gala: float) -> dict:
+def por_lotes(rng, theta: np.ndarray, n: int, alpha_gala: float,
+              fuera: list[int] | None = None) -> dict:
     """
     Corre la simulacion en lotes y devuelve media y error estandar por persona.
 
@@ -246,7 +284,8 @@ def por_lotes(rng, theta: np.ndarray, n: int, alpha_gala: float) -> dict:
     claves = ("p_gana", "p_final3", "p_mitad", "p_proxima")
     acumulado = {k: [] for k in claves}
     for trozo in trozos:
-        r = resumen(simular(rng, trozo, N_TEMPORADAS, alpha_gala), n)
+        r = resumen(simular(rng, trozo, N_TEMPORADAS, alpha_gala, fuera), n,
+                    n - len(fuera or []))
         for k in claves:
             acumulado[k].append(r[k])
     salida = {}
@@ -258,9 +297,20 @@ def por_lotes(rng, theta: np.ndarray, n: int, alpha_gala: float) -> dict:
 
 
 def ignorancia(p: np.ndarray) -> float:
-    """Entropia sobre entropia maxima. 1 = no sabemos nada, 0 = certeza."""
-    q = np.clip(p, 1e-12, None)
-    return float(-(q * np.log(q)).sum() / np.log(len(p)))
+    """
+    Entropia sobre entropia maxima. 1 = no sabemos nada, 0 = certeza.
+
+    Se normaliza contra los que SIGUEN, no contra los dieciocho del principio.
+    Si se dividiera siempre por log(18), el indice bajaria solo porque queda
+    menos gente, y estaria midiendo el paso del tiempo en vez de lo que se sabe.
+    Con esta normalizacion, que baje significa que se aprendio algo sobre los
+    que quedan.
+    """
+    vivos = p[p > 0]
+    if len(vivos) < 2:
+        return 0.0
+    q = np.clip(vivos, 1e-12, None)
+    return float(-(q * np.log(q)).sum() / np.log(len(vivos)))
 
 
 # --------------------------------------------------------------------------
@@ -384,6 +434,7 @@ def main():
     ids = [p["id"] for p in plantel]
     n = len(ids)
     pos = {pid: i for i, pid in enumerate(ids)}
+    fuera = [pos[p["id"]] for p in plantel if p["estado"] != "en_competencia"]
 
     g1 = galas[0]
     obs = {"gala1": {"ordenados": [pos[x] for x in g1["destacados"]["ordenados"]],
@@ -391,7 +442,20 @@ def main():
 
     # La prueba por equipos: los seis trios, con los del balcon primero. El
     # orden adentro de cada grupo no se declaro y no se inventa.
-    g2 = next((g for g in galas if g.get("balcon")), None)
+    # La zona de riesgo de la gala 3 y las eliminaciones, si las hay.
+    obs["riesgo"] = [
+        {"arriba": [pos[x] for x in g["balcon"]],
+         "universo": [pos[x] for x in g["balcon"] + g["riesgo"]]}
+        for g in galas
+        if g.get("balcon") and g.get("riesgo") and g.get("prueba") != "equipos"
+    ]
+    obs["eliminaciones"] = [
+        {"quien": pos[g["eliminado"]],
+         "universo": [pos[x] for x in (g.get("en_riesgo") or ids)]}
+        for g in galas if g.get("eliminado")
+    ]
+
+    g2 = next((g for g in galas if g.get("prueba") == "equipos" and g.get("balcon")), None)
     if g2 and g1.get("equipos"):
         por_capitan = {e["capitan"]: [e["capitan"]] + e["companeros"] for e in g1["equipos"]}
         balcon = [c for c in g2["balcon"] if c in por_capitan]
@@ -408,7 +472,8 @@ def main():
         "observaciones": {
             "gala1": bool(obs.get("gala1")),
             "equipos": bool(obs.get("equipos")),
-            "eliminaciones": 0,
+            "riesgo": len(obs.get("riesgo") or []),
+            "eliminaciones": len(obs.get("eliminaciones") or []),
         },
         "n_particulas": N_PARTICULAS,
         "n_posterior": N_POSTERIOR,
@@ -416,14 +481,14 @@ def main():
         "parametros_base": BASE,
         "orden": ids,
         "galas_jugadas": sum(1 for g in galas if g.get("estado") != "anunciada"),
-        "eliminados": 0,
+        "eliminados": len(fuera),
         "escenarios": {},
     }
 
     for nombre, cambios in ESCENARIOS:
         par = {**BASE, **cambios}
         theta = posterior(rng, n, obs, par)
-        r = por_lotes(rng, theta, n, par["alpha_gala"])
+        r = por_lotes(rng, theta, n, par["alpha_gala"], fuera)
         salida["escenarios"][nombre] = {
             "parametros": par,
             "ignorancia": round(ignorancia(r["p_gana"]), 4),
@@ -438,9 +503,10 @@ def main():
     # el numero que resume todo: cuanto separo la unica gala jugada
     esc = salida["escenarios"]["base"]
     base, ee = esc["p_gana"], esc["p_gana_ee"]
-    plano = 1.0 / n
+    # el reparto plano es entre los que quedan, no entre los que empezaron
+    plano = 1.0 / (n - len(fuera))
     lider = max(base, key=base.get)
-    orden_p = sorted(base, key=base.get, reverse=True)
+    orden_p = [k for k in sorted(base, key=base.get, reverse=True) if base[k] > 0]
     # dos personas se distinguen si sus intervalos de +-2 errores no se tocan
     sep_12 = (base[orden_p[0]] - 2 * ee[orden_p[0]]) > (base[orden_p[1]] + 2 * ee[orden_p[1]])
     salida["separacion"] = {

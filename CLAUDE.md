@@ -32,7 +32,11 @@ cero.
    nombre nuevo trae una letra que el recorte no cubre, la verificación falla:
    se agrega a `CHARSET` y se vuelve a correr `gui/fuentes.py`.
 
-9. **Una promesa escrita no se reescribe.** `data/historial_pronostico.json` es
+9. **Lo que no se puede medir se dice, no se estima.** `model/social.py` publica
+   el tamaño del corpus y la lista de corpus descartados con su motivo. Un
+   porcentaje de sentimiento sacado de dieciséis comentarios sería inventado.
+   Las vistas miden atención, y la palabra «atención» va en la página.
+10. **Una promesa escrita no se reescribe.** `data/historial_pronostico.json` es
    append-only en sus tres series. Puntuar una gala cuya predicción no estaba
    publicada de antes no es puntuar: `model/puntaje.py` se niega y hace bien.
    La regla de puntuación está en `EVALUACION.md` y no se toca.
@@ -58,6 +62,7 @@ gui/fuentes.py        →  gui/fuentes.css   (solo cuando cambia CHARSET)
 model/preparacion.py  →  data/estadisticas.json
 model/registrar.py    →  data/historial_pronostico.json (corridas, promesas)
 model/puntaje.py      →  data/historial_pronostico.json (puntajes)
+model/social.py       →  data/social.json   (solo con --social: tarda)
 gui/build.py          →  web/index.html, web/datos.json
 gui/verificar.py      →  el permiso para publicar
 ```

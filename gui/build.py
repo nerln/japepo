@@ -37,12 +37,13 @@ SECCIONES = [
     ("01", "proxima", "nav_proxima"),
     ("02", "plantel", "nav_plantel"),
     ("03", "como-va", "nav_como_va"),
-    ("04", "galas", "nav_galas"),
-    ("05", "spoilers", "nav_spoilers"),
-    ("06", "social", "nav_social"),
-    ("07", "ficha", "nav_ficha"),
-    ("08", "metodo", "nav_metodo"),
-    ("09", "registro", "nav_registro"),
+    ("04", "gente", "nav_gente"),
+    ("05", "galas", "nav_galas"),
+    ("06", "spoilers", "nav_spoilers"),
+    ("07", "social", "nav_social"),
+    ("08", "ficha", "nav_ficha"),
+    ("09", "metodo", "nav_metodo"),
+    ("10", "registro", "nav_registro"),
 ]
 MESES_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
             "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
@@ -141,6 +142,50 @@ class Texto:
 # contexto: todo numero que aparece en la prosa entra por aca
 # --------------------------------------------------------------------------
 
+def atencion_publico(d: dict, nombres: dict) -> dict:
+    """
+    Los numeros de la seccion del publico, incluida la correlacion con el modelo.
+
+    Se calcula aca y no a mano: es una cuenta sobre dos archivos de data/, y
+    tiene que moverse sola cuando cualquiera de los dos cambie.
+    """
+    s = d["social"]
+    p_gana = d["stats"]["escenarios"]["base"]["p_gana"]
+    ids = [k for k in s["atencion"] if k in p_gana]
+    vistas = {k: s["atencion"][k]["vistas"] or 0 for k in ids}
+
+    def puestos(valores):
+        orden = sorted(ids, key=lambda k: -valores[k])
+        return {k: i + 1 for i, k in enumerate(orden)}
+
+    r_gente, r_modelo = puestos(vistas), puestos(p_gana)
+    n = len(ids)
+    dif = sum((r_gente[k] - r_modelo[k]) ** 2 for k in ids)
+    rho = 1 - 6 * dif / (n * (n * n - 1))
+
+    # el contraste mas fuerte: quien mas se separa entre las dos listas, mirando
+    # solo a los que el modelo pone arriba, que es donde el lector se sorprende
+    arriba = sorted(ids, key=lambda k: r_modelo[k])[:5]
+    contraste = max(arriba, key=lambda k: r_gente[k] - r_modelo[k])
+
+    orden_vistas = sorted(ids, key=lambda k: -vistas[k])
+    conteo = s["conteo"]
+    return {
+        "vistas_totales": f"{s['vistas_totales']:,}".replace(",", "."),
+        "atencion_lider": nombres[orden_vistas[0]],
+        "atencion_lider_vistas": vistas[orden_vistas[0]],
+        "atencion_ultimo": nombres[orden_vistas[-1]],
+        "atencion_ultimo_vistas": vistas[orden_vistas[-1]],
+        "rho": num(rho, 2),
+        "contraste_nombre": nombres[contraste],
+        "contraste_puesto_modelo": r_modelo[contraste],
+        "contraste_puesto_gente": r_gente[contraste],
+        "n_comentarios": len(s["comentarios"]),
+        "n_ruido": conteo.get("ruido", 0),
+        "n_sin_clasificar": conteo.get("sin_clasificar", 0),
+    }
+
+
 def contexto(d: dict) -> dict:
     stats, programa, historia = d["stats"], d["programa"], d["historia"]
     base = stats["escenarios"]["base"]
@@ -155,6 +200,7 @@ def contexto(d: dict) -> dict:
         "n": programa["n_participantes"],
         "galas_jugadas": stats["galas_jugadas"],
         "eliminados": stats["eliminados"],
+        "en_competencia": programa["n_participantes"] - stats["eliminados"],
         "plano_pct": pct(sep["plano"]),
         "ignorancia": num(base["ignorancia"], 3),
         "sabido_pct": pct(1 - base["ignorancia"]),
@@ -170,6 +216,7 @@ def contexto(d: dict) -> dict:
         "emisiones": cal["emisiones_semana"],
         "semanas_rapido": num_corto(cal["semanas_rapido"]),
         "semanas_lento": num_corto(cal["semanas_lento"]),
+        **atencion_publico(d, nombres),
     }
     return {
         "es": {**comun,
@@ -313,7 +360,7 @@ def ficha(d: dict, t: Texto) -> str:
     return f"""
 <section id="ficha">
   <div class="envoltura">
-    <p class="rotulo">07</p>
+    <p class="rotulo">08</p>
     <h2>{t('ficha_h')}</h2>
     <div class="prosa">{t.par('ficha_p')}</div>
     <dl class="ficha">{celdas}</dl>
@@ -364,7 +411,7 @@ def seccion_proxima(d: dict, t: Texto) -> str:
     <div class="prosa">{t.par('capitanes_p')}</div>
     <div class="capitanes">{fichas}</div>
     <h3>{t('calendario_h')}</h3>
-    <div class="prosa">{t.par('calendario_p', clase='silencio')}</div>
+    <div class="prosa">{t.par('proxima_sin_anuncio')}{t.par('calendario_p', clase='silencio')}</div>
     <ul class="calendario">{filas}</ul>
   </div>
 </section>"""
@@ -485,6 +532,60 @@ def proxima_caida(d: dict, t: Texto) -> str:
       <th>{t.libre('margen', 'margen')}</th></tr></thead>
       <tbody>{filas}</tbody>
     </table></div>"""
+
+
+def seccion_gente(d: dict, t: Texto) -> str:
+    """
+    Lo que se puede medir del publico, que no es lo que se suele publicar.
+
+    No hay sentimiento que medir: el corpus de texto son dieciseis comentarios.
+    Lo que si hay son dieciocho videos comparables, uno por persona, del mismo
+    dia y del mismo formato. Eso mide atencion, y la pagina lo dice antes de
+    mostrar la primera barra.
+    """
+    s = d["social"]
+    nombres = {p["id"]: p["nombre"] for p in d["plantel"]["plantel"]}
+    orden = sorted(s["atencion"], key=lambda k: -(s["atencion"][k]["vistas"] or 0))
+    tope = max(a["vistas"] or 0 for a in s["atencion"].values())
+
+    filas = "".join(
+        f'<div class="barra-fila"><span class="barra-nombre">{esc(nombres[pid])}</span>'
+        f'<span class="pista"><span class="valor" '
+        f'style="width:{(s["atencion"][pid]["vistas"] or 0) / tope * 100:.1f}%"></span></span>'
+        f'<span class="barra-num">{s["atencion"][pid]["vistas"]}'
+        f' · {s["atencion"][pid]["likes"]}</span></div>'
+        for pid in orden
+    )
+
+    descartes = "".join(
+        f'<li><b>{esc(x["corpus"])}</b> · {esc(x["porque"])}</li>' for x in s["descartados"]
+    )
+
+    return f"""
+<section id="gente">
+  <div class="envoltura">
+    <p class="rotulo">04</p>
+    <h2>{t('gente_h')}</h2>
+    <div class="prosa">{t.par('gente_p')}{t.par('gente_ojo', clase='silencio')}
+      {t.par('gente_lider')}
+      <p class="persona-nota">{t('fuente_label')}: {enlace_fuente(d, s['fuente'])}</p>
+    </div>
+    <div class="barras">{filas}</div>
+    <div class="leyenda">
+      <span>{t('col_vistas')}</span><span>·</span><span>{t('col_megusta')}</span>
+    </div>
+
+    <h3>{t('gente_contraste_h')}</h3>
+    <div class="prosa">{t.par('gente_contraste_p')}</div>
+
+    <h3>{t('comentarios_h')}</h3>
+    <div class="prosa">{t.par('comentarios_p')}{t.par('comentarios_donde', clase='silencio')}</div>
+    <details class="spoiler">
+      <summary>{t('descartados_h')}</summary>
+      <ul class="lista-limpia">{descartes}</ul>
+    </details>
+  </div>
+</section>"""
 
 
 def seccion_como_va(d: dict, t: Texto) -> str:
@@ -637,7 +738,7 @@ def galas(d: dict, t: Texto) -> str:
     return f"""
 <section id="galas">
   <div class="envoltura">
-    <p class="rotulo">04</p>
+    <p class="rotulo">05</p>
     <h2>{t('galas_h')}</h2>
     <div class="prosa">{t.par('galas_p')}</div>
     <div style="margin-top:1.5rem">{''.join(bloques)}</div>
@@ -662,7 +763,7 @@ def spoilers(d: dict, t: Texto) -> str:
     return f"""
 <section id="spoilers">
   <div class="envoltura">
-    <p class="rotulo">05</p>
+    <p class="rotulo">06</p>
     <h2>{t('spoilers_h')}</h2>
     <div class="prosa aviso">{t('spoilers_aviso')}</div>
     <details class="spoiler" id="spoilers-abre">
@@ -694,7 +795,7 @@ def seccion_social(d: dict, t: Texto) -> str:
     return f"""
 <section id="social">
   <div class="envoltura">
-    <p class="rotulo">06</p>
+    <p class="rotulo">07</p>
     <h2>{t('social_h')}</h2>
     <div class="prosa">{t.par('social_p')}</div>
     <h3>{t('seguir_h')}</h3>
@@ -736,7 +837,7 @@ def metodo(d: dict, t: Texto, firma: str) -> str:
     return f"""
 <section id="metodo">
   <div class="envoltura">
-    <p class="rotulo">08</p>
+    <p class="rotulo">09</p>
     <h2>{t('metodo_h')}</h2>
     <div class="prosa">{t.par('metodo_p')}</div>
     <h3>{t('metodo_modelo_h')}</h3>
@@ -852,7 +953,7 @@ def seccion_registro(d: dict, t: Texto) -> str:
     return f"""
 <section id="registro">
   <div class="envoltura">
-    <p class="rotulo">09</p>
+    <p class="rotulo">10</p>
     <h2>{t('registro_h')}</h2>
     {registro(d, t)}
   </div>
@@ -908,6 +1009,7 @@ def cargar() -> dict:
         "fuentes": j("fuentes.json"),
         "i18n": j("i18n.json"),
         "historial": j("historial_pronostico.json"),
+        "social": j("social.json"),
     }
 
 
@@ -918,6 +1020,7 @@ def main():
 
     cuerpo = "\n".join([
         portada(d, t), seccion_proxima(d, t), plantel(d, t), seccion_como_va(d, t),
+        seccion_gente(d, t),
         galas(d, t), spoilers(d, t), seccion_social(d, t), ficha(d, t),
         metodo(d, t, firma), seccion_registro(d, t),
     ])
